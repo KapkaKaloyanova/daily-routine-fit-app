@@ -1,30 +1,30 @@
+import {Routes, Route} from 'react-router';
+
 import About from "./components/About";
 import Appointment from "./components/Appointment";
 import Blog from "./components/Blog";
 import Customers from "./components/Customers";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Loader from "./components/Loader";
 import Pricing from "./components/Pricing";
 import Services from "./components/Services";
 import Slider from "./components/Slider";
+import Register from "./components/register/Register";
 
 function App() {
   return (
     <>
-  {/* body */}
-  {/* loader  */}
     <Loader />
-  {/* end loader */}
   <div className="full_bg">
-    {/* header */}
     <Header />
-    {/* end header inner */}
-    {/* top */}
-    <Slider />
+    <Routes>
+      <Route path='/' element={<Slider />} />
+
+
+    </Routes>
   </div>
-  {/* end banner */}
-  {/* appointment */}
+    <Register />
     <Appointment />
   {/* end appointment */}
   {/* services */}

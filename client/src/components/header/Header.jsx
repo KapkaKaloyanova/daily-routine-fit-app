@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Header(){
     return (
         <>
@@ -6,7 +8,7 @@ export default function Header(){
         <div className="row d_flex">
           <div className=" col-md-3 col-sm-3">
             <div className="logo">
-              <a href="index.html">Daily Fit Routine</a>
+              <Link to="/">Daily Fit Routine</Link>
             </div>
           </div>
           <div className="col-md-9 col-sm-9">
@@ -14,31 +16,34 @@ export default function Header(){
               <nav className="site-navbar">
                 <ul>
                   <li>
-                    <a className="active" href="index.html">
+                    <Link className="active" to="/">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="about.html">About</a>
+                    <Link to="/services">Explore</Link>
                   </li>
                   <li>
-                    <a href="service.html">Explore</a>
+                    <Link to="/routine/create">Create Routine</Link>
                   </li>
-                 {/*  <li>
-                    <a href="blog.html">Blog</a>
-                  </li> */}
                   <li>
-                    <a href="contact.html">Contact us</a>
+                    <Link to="#">Contact us</Link>
+                  </li>
+                  <li>
+                    <Link to="/logout">Logout</Link>
+                  </li>
+                  <li>
+                    <Link to="/register">Register</Link>
                   </li>
                   <li className="d_none">
-                    <a href="Javascript:void(0)">
+                    <Link to="/login">
                       <i className="fa fa-user" aria-hidden="true" />
-                    </a>
+                    </Link>
                   </li>
                   <li className="d_none">
-                    <a href="Javascript:void(0)">
+                    <Link to="Javascript:void(0)">
                       <i className="fa fa-search" aria-hidden="true" />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <button className="nav-toggler">
