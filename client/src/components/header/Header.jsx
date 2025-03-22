@@ -24,7 +24,7 @@ export default function Header(){
                     <Link to="/services">Explore</Link>
                   </li>
                   <li>
-                    <Link to="/routine/create">Create</Link>
+                    <Link to="/services/create">Create</Link>
                   </li>
                   <li>
                     <Link to="/about">About</Link>
