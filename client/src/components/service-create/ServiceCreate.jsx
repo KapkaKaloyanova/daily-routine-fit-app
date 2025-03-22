@@ -1,7 +1,13 @@
 export default function ServiceCreate() {
+
+  const submitAction = (FormData) => {
+
+  }
+
+
   return (
     <>
-      <div className="appointment">
+      <div className="creates">
         <div className="container">
           <div className="row">
             <div className="col-md-12 ">
@@ -14,64 +20,80 @@ export default function ServiceCreate() {
               </div>
             </div>
             <div className="col-md-12">
-              <form id="request" className="main_form">
+              <form id="create" className="main_form" action={submitAction}>
                 <div className="row">
                   <div className="col-md-6 ">
                     <input
                       className="form_control"
-                      placeholder="Name of the routine"
+                      placeholder="Title of the routine"
                       type="type"
-                      name="Name"
+                      name="title"
                     />
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Email"
-                      type="type"
-                      name="Email"
+                      placeholder="Category type / workout / nutrition / meditation"
+                      type="text"
+                      name="category"
                     />
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Phone Number"
-                      type="type"
-                      name="Phone Number"
+                      placeholder="Short / Long Workout"
+                      type="text"
+                      name="length"
                     />
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Select Massage spa"
-                      type="type"
-                      name="Select"
+                      placeholder="Low / Medium / High Intensity"
+                      type="text"
+                      name="intensity"
                     />
                   </div>
                   <div className="col-md-6 ">
                     <input
                       className="form_control"
                       placeholder="Time"
-                      type="type"
-                      name="Time"
+                      type="number"
+                      name="time"
                     />
                   </div>
                   <div className="col-md-6">
                     <input
-                      type="text"
                       className="form_control"
-                      id="my_date_picker"
-                      placeholder="Select Date"
+                      placeholder="Image Url"
+                      type="text"
+                      name="imageUrl"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      className="form_control"
+                      placeholder="Smoothies & Juices / Soups & Stews / Salads / Pasta / Rice / Quinoa"
+                      type="text"
+                      name="nutrient"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      className="form_control"
+                      placeholder="High Protein / Low Calorie / High Fiber / Anti-Inflammatory / Increase Metabolism"
+                      type="type"
+                      name="typeBenefit"
                     />
                   </div>
                   <div className="col-md-12">
                     <textarea
                       style={{ color: "#d0d0cf" }}
                       className="textarea"
-                      placeholder="Message"
-                      type="type"
-                      name="message"
-                      defaultValue={"message "}
+                      placeholder="Description"
+                      type="description"
+                      name="description"
+                      defaultValue={"Description "}
                     />
                   </div>
                   <div className="col-md-12">

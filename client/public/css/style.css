@@ -594,15 +594,15 @@ button {
 /** end banner section **/
 
 
-/** appointment  **/
+/** creates  **/
 
-.appointment {
+.creates {
     background: #fdc001;
     padding-top: 90px;
     padding-bottom: 90px;
 }
 
-.appointment .titlepage p {
+.creates .titlepage p {
     padding-top: 10px;
 }
 
@@ -660,12 +660,17 @@ button {
     opacity: 1;
 }
 
+#creates *::placeholder {
+    color: #d0d0cf;
+    opacity: 1;
+}
+
 .datepicker-days {
     padding: 20px;
 }
 
 
-/** end appointment  **/
+/** end creates  **/
 
 
 /** services section **/
@@ -1217,7 +1222,7 @@ ul.social_icon li a i:hover {
 .inner_page .about {
      margin-top: 90px;
 }
-.inner_page .appointment {
+.inner_page .create {
      margin-top: 90px;
 }
 

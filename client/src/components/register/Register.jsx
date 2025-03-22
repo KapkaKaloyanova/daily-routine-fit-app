@@ -5,7 +5,7 @@ export default function Register() {
     
   return (
     <>
-      <div className="appointment">
+      <div className="creates">
         <div className="container">
           <div className="row">
             <div className="col-md-12 ">
