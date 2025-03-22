@@ -34,7 +34,7 @@ function App() {
     <Pricing />
   {/* end priceing */}
   {/* blog */}
-    <Blog />
+    {/* <Blog /> */}
   {/* end blog */}
   {/* about */}
     <About />

@@ -18,19 +18,19 @@ export default function Slider(){
                   <div className="col-md-5">
                     <div className="creative">
                       <h1>
-                        Spa <br />
-                        Center{" "}
+                        Explore <br />
+                        Exercises{" "}
                       </h1>
                       <p>
                         commodo consequat. Duis aute irure dolor in
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      <a className="read_more" href="Javascript:void(0)">
+                      {/* <a className="read_more" href="Javascript:void(0)">
                         Contact us
-                      </a>
+                      </a> */}
                       <a className="read_more" href="Javascript:void(0)">
-                        Read More
+                        Find out
                       </a>
                     </div>
                   </div>
@@ -51,7 +51,7 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img2.png" alt="#" />
+                            <img src="images/img7.png" alt="#" />
                           </figure>
                           <div className="play_icon">
                             <a className="play-btn" href="javascript:void(0)">
@@ -59,7 +59,7 @@ export default function Slider(){
                             </a>
                           </div>
                         </div>
-                      </div>
+                      </div> 
                     </div>
                   </div>
                 </div>
@@ -74,19 +74,19 @@ export default function Slider(){
                   <div className="col-md-5">
                     <div className="creative">
                       <h1>
-                        Spa <br />
-                        Center{" "}
+                        Explore <br />
+                        Meditation{" "}
                       </h1>
                       <p>
                         commodo consequat. Duis aute irure dolor in
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      <a className="read_more" href="Javascript:void(0)">
+                      {/* <a className="read_more" href="Javascript:void(0)">
                         Contact us
-                      </a>
+                      </a> */}
                       <a className="read_more" href="Javascript:void(0)">
-                        Read More
+                        Find out
                       </a>
                     </div>
                   </div>
@@ -95,7 +95,7 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img1.png" alt="#" />
+                            <img src="images/img2.png" alt="#" />
                           </figure>
                           <div className="play_icon">
                             <a className="play-btn" href="javascript:void(0)">
@@ -107,7 +107,7 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img2.png" alt="#" />
+                            <img src="images/img4.png" alt="#" />
                           </figure>
                           <div className="play_icon">
                             <a className="play-btn" href="javascript:void(0)">
@@ -130,19 +130,19 @@ export default function Slider(){
                   <div className="col-md-5">
                     <div className="creative">
                       <h1>
-                        Spa <br />
-                        Center{" "}
+                        Explore <br />
+                        Nutrition{" "}
                       </h1>
                       <p>
                         commodo consequat. Duis aute irure dolor in
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      <a className="read_more" href="Javascript:void(0)">
+                      {/* <a className="read_more" href="Javascript:void(0)">
                         Contact us
-                      </a>
+                      </a> */}
                       <a className="read_more" href="Javascript:void(0)">
-                        Read More
+                        Find out
                       </a>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img1.png" alt="#" />
+                            <img src="images/img5.png" alt="#" />
                           </figure>
                           <div className="play_icon">
                             <a className="play-btn" href="javascript:void(0)">
@@ -163,7 +163,7 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img2.png" alt="#" />
+                            <img src="images/img6.png" alt="#" />
                           </figure>
                           <div className="play_icon">
                             <a className="play-btn" href="javascript:void(0)">

@@ -13,7 +13,7 @@ export default function About(){
         </div>
         <div className="col-md-6 order">
           <div className="titlepage text_align_left">
-            <h2>About Our Center</h2>
+            <h2>Your path to <br/> a healthy lifestyle</h2>
             <p>
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris

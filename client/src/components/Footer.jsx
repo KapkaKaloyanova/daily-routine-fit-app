@@ -43,7 +43,7 @@ export default function Footer(){
                       <a href="about.html">About</a>
                     </li>
                     <li>
-                      <a href="service.html">Service</a>
+                      <a href="service.html">Explore</a>
                     </li>
                     <li>
                       <a href="blog.html">Blog</a>
@@ -56,7 +56,7 @@ export default function Footer(){
               </div>
               <div className="col-lg-6 col-md-12">
                 <div className="hedingh3  text_align_left">
-                  <h3>Newsletter</h3>
+                  <h3>Account login</h3>
                   <form id="colof" className="form_subscri">
                     <input
                       className="newsl"
@@ -64,12 +64,12 @@ export default function Footer(){
                       type="text"
                       name="Email"
                     />
-                    <button className="subsci_btn">Subscribe</button>
+                    <button className="subsci_btn">Log in</button>
                   </form>
                   <ul className="top_infomation">
                     <li>
                       <i className="fa fa-phone" aria-hidden="true" />
-                      +01 1234567890
+                      +359 1234567890
                     </li>
                     <li>
                       <i className="fa fa-envelope" aria-hidden="true" />
@@ -94,19 +94,15 @@ export default function Footer(){
                       <i className="fa fa-facebook" aria-hidden="true" />
                     </a>
                   </li>
-                  <li>
-                    <a href="Javascript:void(0)">
-                      <i className="fa fa-twitter" aria-hidden="true" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="Javascript:void(0)">
-                      <i className="fa fa-linkedin" aria-hidden="true" />
-                    </a>
-                  </li>
+
                   <li>
                     <a href="Javascript:void(0)">
                       <i className="fa fa-instagram" aria-hidden="true" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="Javascript:void(0)">
+                      <i className="fa fa-tiktok" aria-hidden="true" />
                     </a>
                   </li>
                 </ul>
@@ -114,7 +110,7 @@ export default function Footer(){
             </div>
             <div className="col-md-12">
               <p>
-                © 2020 All Rights Reserved. Design by{" "}
+                © 2025 All Rights Reserved. Design based on{" "}
                 <a href="https://html.design/"> Free html Templates</a>
               </p>
             </div>

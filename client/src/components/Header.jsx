@@ -6,7 +6,7 @@ export default function Header(){
         <div className="row d_flex">
           <div className=" col-md-3 col-sm-3">
             <div className="logo">
-              <a href="index.html">Bliss</a>
+              <a href="index.html">Daily Fit Routine</a>
             </div>
           </div>
           <div className="col-md-9 col-sm-9">
@@ -22,11 +22,11 @@ export default function Header(){
                     <a href="about.html">About</a>
                   </li>
                   <li>
-                    <a href="service.html">Service</a>
+                    <a href="service.html">Explore</a>
                   </li>
-                  <li>
+                 {/*  <li>
                     <a href="blog.html">Blog</a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="contact.html">Contact us</a>
                   </li>
