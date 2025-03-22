@@ -1,4 +1,4 @@
-export default function Services(){
+export default function ServiceCatalog(){
     return (
         <>
           <div className="services">

@@ -1,4 +1,4 @@
-export default function Customers(){
+export default function CustomerReview(){
     return (
         <>
           <div className="customers">

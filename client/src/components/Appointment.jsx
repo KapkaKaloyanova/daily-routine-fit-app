@@ -6,10 +6,9 @@ export default function Appointment(){
       <div className="row">
         <div className="col-md-12 ">
           <div className="titlepage text_align_center">
-            <h2>Make Appointment</h2>
+            <h2>Make a Routine</h2>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu
+              How are you feeling today? Choose your exercises, nutrition and meditations for a perfect day.
             </p>
           </div>
         </div>
@@ -19,9 +18,9 @@ export default function Appointment(){
               <div className="col-md-6 ">
                 <input
                   className="form_control"
-                  placeholder="Your name"
+                  placeholder="Name of the routine"
                   type="type"
-                  name=" Name"
+                  name="Name"
                 />
               </div>
               <div className="col-md-6">
@@ -53,7 +52,7 @@ export default function Appointment(){
                   className="form_control"
                   placeholder="Time"
                   type="type"
-                  name=" Time"
+                  name="Time"
                 />
               </div>
               <div className="col-md-6">

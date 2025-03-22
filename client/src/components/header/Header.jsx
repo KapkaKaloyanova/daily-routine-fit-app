@@ -24,10 +24,10 @@ export default function Header(){
                     <Link to="/services">Explore</Link>
                   </li>
                   <li>
-                    <Link to="/routine/create">Create Routine</Link>
+                    <Link to="/routine/create">Create</Link>
                   </li>
                   <li>
-                    <Link to="#">Contact us</Link>
+                    <Link to="/about">About</Link>
                   </li>
                   <li>
                     <Link to="/logout">Logout</Link>
