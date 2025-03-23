@@ -1,9 +1,10 @@
 export default function ServiceCreate() {
+  const submitAction = (formData) => {
+    const data = Object.fromEntries(formData);
 
-  const submitAction = (FormData) => {
-
-  }
-
+    console.log(data);
+    console.log("proba");
+  };
 
   return (
     <>
@@ -91,13 +92,17 @@ export default function ServiceCreate() {
                       style={{ color: "#d0d0cf" }}
                       className="textarea"
                       placeholder="Description"
-                      type="description"
+                      type="textarea"
                       name="description"
                       defaultValue={"Description "}
                     />
                   </div>
                   <div className="col-md-12">
-                    <button className="send_btn">Send Now</button>
+                    <button
+                      className="send_btn" >
+                        Create
+                    </button>
+                    
                   </div>
                 </div>
               </form>

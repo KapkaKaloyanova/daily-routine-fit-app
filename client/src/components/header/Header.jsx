@@ -46,9 +46,9 @@ export default function Header(){
                     </Link>
                   </li>
                 </ul>
-                <button className="nav-toggler">
+                {/* <button className="nav-toggler">
                   <span />
-                </button>
+                </button> */}
               </nav>
             </div>
           </div>
