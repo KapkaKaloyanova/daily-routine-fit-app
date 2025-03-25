@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Reviews from "./Reviews";
 
 export default function About() {
@@ -26,9 +27,9 @@ export default function About() {
                   veniam, quis nostrud exercitation ullamco laboris nisi ut
                   aliquip
                 </p>
-                <a className="read_more" href="about.html">
+                <Link className="read_more" to="/about">
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -673,30 +673,30 @@ button {
 /** end creates  **/
 
 
-/** services section **/
+/** activity section **/
 
-.services {
+.activity {
     background: #fff;
     padding-top: 90px;
 }
 
-.services .titlepage {
+.activity .titlepage {
     padding-bottom: 10px;
 }
 
-.services_box {
+.activity_box {
     margin-top: 30px;
 }
 
-.services_box figure {
+.activity_box figure {
     margin: 0;
 }
 
-.services_box figure img {
+.activity_box figure img {
     transition: ease-in all 0.5s;
 }
 
-.services_box h3 {
+.activity_box h3 {
     color: #363636;
     font-size: 24px;
     line-height: 25px;
@@ -704,13 +704,31 @@ button {
     padding-bottom: 25px;
 }
 
-.services_box p {
+.activity_box p {
     line-height: 30px;
     padding-top: 23px;
     padding-bottom: 30px;
 }
 
-#ho_shad:hover.services_box figure img {
+.activity_box duration {
+    color: rgb(15, 186, 44);
+    font-size: 14px;
+    line-height: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.details_box p {
+    color: #2d2d2d;
+    font-size: 15px;
+    line-height: 30px;
+    border: #bcbcbb solid 1px;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+#ho_shad:hover.activity_box figure img {
     transition: ease-in all 0.5s;
     box-shadow: 0 0 38px rgba(13, 3, 3, 0.10)
 }
@@ -722,7 +740,7 @@ button {
 }
 
 
-/** end services section **/
+/** end activity section **/
 
 
 /** priceing section **/

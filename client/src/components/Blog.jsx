@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Blog(){
     return (
         <>
@@ -28,9 +30,9 @@ export default function Blog(){
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip
               </p>
-              <a className="read_more" href="blog.html">
+              <Link className="read_more" to="blog.html">
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -47,9 +49,9 @@ export default function Blog(){
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip
               </p>
-              <a className="read_more" href="blog.html">
+              <Link className="read_more" to="blog.html">
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -66,9 +68,9 @@ export default function Blog(){
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 ullamco laboris nisi ut aliquip
               </p>
-              <a className="read_more" href="blog.html">
+              <Link className="read_more" to="blog.html">
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

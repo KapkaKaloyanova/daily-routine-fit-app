@@ -8,9 +8,11 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
 import Pricing from './components/Pricing';
-import ServiceCatalog from './components/service-catalog/ServiceCatalog';
-import ServiceCreate from './components/service-create/ServiceCreate';
+import ActivityCatalog from './components/activity-catalog/ActivityCatalog';
+import ActivityCreate from './components/activity-create/ActivityCreate';
 import CustomerReview from './components/customer-review/CustomerReview';
+import Exercise from './components/activity-exercise/Exercise';
+import ActivityDetails from './components/activity-details/ActivityDetails';
 
 function App() {
   return (
@@ -20,13 +22,15 @@ function App() {
     <Header />
     <Routes>
       <Route path="/" element={<Slider />} />
-      <Route path="/services" element={<ServiceCatalog />} />
-      <Route path="/services/create" element={<ServiceCreate />} />
+      <Route path="/activity" element={<ActivityCatalog />} />
+      <Route path="/activity/create" element={<ActivityCreate />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/about" element={<About />} />
       <Route path="/customers" element={<CustomerReview />} />
+      <Route path="/activity/exercise" element={<Exercise />} />
+      <Route path="/activity/exercise/details" element={<ActivityDetails />} />
       
 
     </Routes>

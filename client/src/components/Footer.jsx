@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
                       </li>
                       <li>
                         <i className="fa fa-envelope" aria-hidden="true" />
-                        <a href="Javascript:void(0)">demo@gmail.com</a>
+                        <Link to="Javascript:void(0)">demo@gmail.com</Link>
                       </li>
                     </ul>
                   </div>
@@ -27,13 +28,13 @@ export default function Footer() {
                     <h3>Explore</h3>
                     <ul className="menu_footer">
                       <li>
-                        <a href="index.html">Exercises</a>
+                        <Link to="/activity/exercise">Exercises</Link>
                       </li>
                       <li>
-                        <a href="about.html">Nutrition</a>
+                        <Link to="/activity/nutrition">Nutrition</Link>
                       </li>
                       <li>
-                        <a href="service.html">Meditation</a>
+                        <Link to="/activity/meditation">Meditation</Link>
                       </li>
                     </ul>
                   </div>
@@ -47,16 +48,16 @@ export default function Footer() {
                     <h3>Menu</h3>
                     <ul className="menu_footer">
                       <li>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <a href="/about">About</a>
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
-                        <a href="/services">Explore</a>
+                        <Link to="/activity">Explore</Link>
                       </li>
                       <li>
-                        <a href="#">Contact us</a>
+                        <Link to="#">Contact us</Link>
                       </li>
                     </ul>
                   </div>
@@ -87,20 +88,20 @@ export default function Footer() {
                   <h3>Follow Us</h3>
                   <ul className="social_icon ">
                     <li>
-                      <a href="Javascript:void(0)">
+                      <Link to="Javascript:void(0)">
                         <i className="fa fa-facebook" aria-hidden="true" />
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a href="Javascript:void(0)">
+                      <Link to="Javascript:void(0)">
                         <i className="fa fa-instagram" aria-hidden="true" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="Javascript:void(0)">
+                      <Link to="Javascript:void(0)">
                         <i className="fa fa-twitter" aria-hidden="true" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -108,7 +109,7 @@ export default function Footer() {
               <div className="col-md-12">
                 <p>
                   © 2025 All Rights Reserved. Design based on{" "}
-                  <a href="https://html.design/"> Free html Templates</a>
+                  <Link to="https://html.design/"> Free html Templates</Link>
                 </p>
               </div>
             </div>

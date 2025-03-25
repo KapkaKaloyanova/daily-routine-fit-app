@@ -1,4 +1,4 @@
-export default function ServiceCreate() {
+export default function ActivityCreate() {
   const submitAction = (formData) => {
     const data = Object.fromEntries(formData);
 
@@ -13,7 +13,7 @@ export default function ServiceCreate() {
           <div className="row">
             <div className="col-md-12 ">
               <div className="titlepage text_align_center">
-                <h2>Create a Routine</h2>
+                <h2>Create Activity</h2>
                 <p>
                   How are you feeling today? Choose your exercises, nutrition
                   and meditations for a perfect day.
