@@ -1,3 +1,6 @@
+import { Link } from "react-router";
+import Reviews from "../Reviews";
+
 export default function Slider(){
     return (
         <>
@@ -26,12 +29,12 @@ export default function Slider(){
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      {/* <a className="read_more" href="Javascript:void(0)">
+                      {/* <Link className="read_more" to="Javascript:void(0)">
                         Contact us
-                      </a> */}
-                      <a className="read_more" href="Javascript:void(0)">
+                      </Link> */}
+                      <Link className="read_more" to="/activity/exercise">
                         Find out
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-7">
@@ -39,24 +42,24 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img1.png" alt="#" />
+                            <img src="/images/img1.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img7.png" alt="#" />
+                            <img src="/images/img7.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div> 
@@ -82,12 +85,12 @@ export default function Slider(){
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      {/* <a className="read_more" href="Javascript:void(0)">
+                      {/* <Link className="read_more" to="Javascript:void(0)">
                         Contact us
-                      </a> */}
-                      <a className="read_more" href="Javascript:void(0)">
+                      </Link> */}
+                      <Link className="read_more" to="/activity/meditation">
                         Find out
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-7">
@@ -95,24 +98,24 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img2.png" alt="#" />
+                            <img src="/images/img2.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img4.png" alt="#" />
+                            <img src="/images/img4.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -138,12 +141,12 @@ export default function Slider(){
                         reprehenderit in voluptate velit esse cillum dolore eu
                         fugiat nulla pariatur. Excepteur sint
                       </p>
-                      {/* <a className="read_more" href="Javascript:void(0)">
+                      {/* <Link className="read_more" to="Javascript:void(0)">
                         Contact us
-                      </a> */}
-                      <a className="read_more" href="Javascript:void(0)">
+                      </Link> */}
+                      <Link className="read_more" to="/activity/nutrition">
                         Find out
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="col-md-7">
@@ -151,24 +154,24 @@ export default function Slider(){
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img5.png" alt="#" />
+                            <img src="/images/img5.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="agency">
                           <figure>
-                            <img src="images/img6.png" alt="#" />
+                            <img src="/images/img6.png" alt="#" />
                           </figure>
                           <div className="play_icon">
-                            <a className="play-btn" href="javascript:void(0)">
-                              <img src="images/play_icon.png" />
-                            </a>
+                            <Link className="play-btn" to="javascript:void(0)">
+                              <img src="/images/play_icon.png" />
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -179,27 +182,18 @@ export default function Slider(){
             </div>
           </div>
         </div>
-        {/* controls */}
-        <a
-          className="carousel-control-prev"
-          href="#banner1"
-          role="button"
-          data-slide="prev"
-        >
-          <i className="fa fa-angle-left" aria-hidden="true" />
-          <span className="sr-only">Previous</span>
-        </a>
-        <a
-          className="carousel-control-next"
-          href="#banner1"
-          role="button"
-          data-slide="next"
-        >
-          <i className="fa fa-angle-right" aria-hidden="true" />
-          <span className="sr-only">Next</span>
-        </a>
+        {/* controls from bootstrap */}
+               <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+               <i class="fa fa-angle-left" aria-hidden="true"></i>
+               <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+               <i class="fa fa-angle-right" aria-hidden="true"></i>
+               <span class="sr-only">Next</span>
+               </a>
       </div>
     </div>
+    <Reviews />
         </>
     );
 }
