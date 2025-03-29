@@ -604,6 +604,8 @@ button {
     background: #fdc001;
     padding-top: 90px;
     padding-bottom: 90px;
+    display: flex;
+    justify-content: center;
 }
 
 .creates .titlepage p {
@@ -690,6 +692,11 @@ button {
 
 .activity_box {
     margin-top: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .activity_box figure {
@@ -724,8 +731,7 @@ button {
 .activity_box duration {
     color: rgb(15, 186, 44);
     font-size: 14px;
-    line-height: 15px;
-    padding-top: 5px;
+    line-height: 10px;
 }
 
 .details_center {
@@ -916,7 +922,7 @@ button {
 /** about section **/
 
 .about {
-    background: #fdc001;
+    background: #fdc001; 
     padding-top: 90px;
     padding-bottom: 90px;
 }
@@ -973,14 +979,24 @@ button {
     box-shadow: 0 0 16px 3px #635d5d38;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 
+.center-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
 /** end about section **/
 
 
 /** customers **/
 
 .customers {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
     padding-top: 80px;
     padding-bottom: 110px;
 }

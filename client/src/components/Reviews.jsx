@@ -2,7 +2,7 @@ export default function Reviews() {
   return (
     <>
       <div className="customers">
-         <div className="clients_bg">
+         {/* <div className="clients_bg"> */}
             <div className="container">
                <div className="row">
                   <div className="col-sm-12">
@@ -12,7 +12,7 @@ export default function Reviews() {
                   </div>
                </div>
             </div>
-         </div>
+         {/* </div> */}
          {/* <!-- start slider section --> */}
          <div id="myCarousel" className="carousel slide clients_banner" data-ride="carousel">
             <ol className="carousel-indicators">

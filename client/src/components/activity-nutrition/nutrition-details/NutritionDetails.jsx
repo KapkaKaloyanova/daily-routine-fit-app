@@ -48,10 +48,6 @@ export default function NutritionDetails({
             Get started
         </Link> */}
           </div>
-          <div className="col-md-8">
-            
-          </div>
-
         </div>
       </div>
     </>

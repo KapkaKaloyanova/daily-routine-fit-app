@@ -19,7 +19,7 @@ export default function ExerciseItem({
             <p>
               Restore future flexibility and mobility through a series of tension-releasing exercises that can be done at your desk - no equipment needed.
             </p>
-            <Link className="read_more" to="#">
+            <Link className="read_more" to="/activity/exercise/details">
               Details
             </Link>
           </div>
