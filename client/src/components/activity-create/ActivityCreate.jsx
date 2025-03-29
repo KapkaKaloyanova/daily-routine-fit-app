@@ -26,58 +26,77 @@ export default function ActivityCreate() {
                   <div className="col-md-6 ">
                     <input
                       className="form_control"
-                      placeholder="Title of the routine"
+                      placeholder="Title"
                       type="type"
                       name="title"
+                      required
                     />
+                  </div>
+                  <div className="col-md-6">
+                  <select className="form_control" name="category">
+                      <option value="" disabled selected>
+                      Category type
+                      </option>
+                      <option value="workout">Workout</option>
+                      <option value="nutrition">Nutrition</option>
+                      <option value="meditation">Meditation</option>
+                      required
+                    </select>
+                    
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Category type / workout / nutrition / meditation"
-                      type="text"
-                      name="category"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <input
-                      className="form_control"
-                      placeholder="Short / Long Workout"
-                      type="text"
-                      name="length"
-                    />
-                  </div>
-                  <div className="col-md-6">
-                    <input
-                      className="form_control"
-                      placeholder="Low / Medium / High Intensity"
-                      type="text"
-                      name="intensity"
-                    />
-                  </div>
-                  <div className="col-md-6 ">
-                    <input
-                      className="form_control"
-                      placeholder="Time"
+                      placeholder="Duration / Preparation time"
                       type="number"
                       name="time"
                     />
                   </div>
                   <div className="col-md-6">
+                    <select className="form_control" name="intensity">
+                      <option value="" disabled selected>
+                      Intensity
+                      </option>
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                    </select>
+                  </div>
+
+                  <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Image Url"
-                      type="text"
+                      placeholder="Image link"
+                      type="url"
                       name="imageUrl"
+                      // required
+                      // pattern="https?://.*\.(jpg|jpeg|png|gif|bmp|webp)"  // Only allow image links
+
                     />
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Smoothies & Juices / Soups & Stews / Salads / Pasta / Rice / Quinoa"
-                      type="text"
-                      name="nutrient"
+                      id="videoLink"
+                      type="url" 
+                      name="videoLink"
+                      placeholder="Video link"
+                      // required
                     />
+                    <small>Enter valid video link</small>
+                  </div>
+                  <div className="col-md-6">
+                  <select className="form_control" name="intensity">
+                      <option value="" disabled selected>
+                        Nutrient
+                      </option>
+                      <option value="smoothies-juices">Smoothies & Juices</option>
+                      <option value="soups-stews">Soups & Stews</option>
+                      <option value="salad">Salad</option>
+                      <option value="pasta">Pasta</option>
+                      <option value="rice">Rice</option>
+                      <option value="quinoa">Quinoa</option>
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <input
@@ -98,11 +117,7 @@ export default function ActivityCreate() {
                     />
                   </div>
                   <div className="col-md-12">
-                    <button
-                      className="send_btn" >
-                        Create
-                    </button>
-                    
+                    <button className="send_btn">Create</button>
                   </div>
                 </div>
               </form>
