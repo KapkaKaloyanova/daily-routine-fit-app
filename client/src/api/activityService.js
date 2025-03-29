@@ -1,16 +1,19 @@
+import request from "../utils/request";
+
 const baseUrl = ' http://localhost:3030/jsonstore/activity';
 
 export default {
-    async create(activityData) {
-        const response = await fetch(baseUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(activityData)
-        });
-        const result = await response.json();
+    async getAll(){
+        const result= await request.get(baseUrl);
 
-        return result;
-    }
+        const activities = Object.values(result);
+
+        return activities;
+
+    },
+
+    create(activityData) {
+        return request.post(baseUrl, activityData)
+    },
+
 }

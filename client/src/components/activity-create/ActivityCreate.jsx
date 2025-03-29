@@ -1,9 +1,31 @@
-export default function ActivityCreate() {
-  const submitAction = (formData) => {
-    const data = Object.fromEntries(formData);
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import activityService from "../../api/activityService";
 
-    console.log(data);
-    console.log("proba");
+export default function ActivityCreate() {
+  const navigate = useNavigate();
+  const [category, setCategory] = useState("");
+
+  const submitAction = async (formData) => {
+    const activityData = Object.fromEntries(formData);
+    // TODO: make a conditional based on the category
+    // TODO: try/catch error handling
+    try {
+      await activityService.create(activityData);
+      if (category === "workout") {
+        navigate("/activity/exercise");
+      } else if (category === "nutrition") {
+        navigate("/activity/nutrition");
+      } else if (category === " meditation") {
+        navigate("/activity/meditation");
+      } 
+      else {
+        navigate("/activity");
+      }
+    } catch (error) {
+      console.error("Error creating activity", error);
+    }
+    console.log(category);
   };
 
   return (
@@ -27,22 +49,21 @@ export default function ActivityCreate() {
                     <input
                       className="form_control"
                       placeholder="Title"
-                      type="type"
+                      type="text"
                       name="title"
                       required
                     />
                   </div>
                   <div className="col-md-6">
-                  <select className="form_control" name="category">
+                    <select className="form_control" name="category">
                       <option value="" disabled selected>
-                      Category type
+                        Category type
                       </option>
                       <option value="workout">Workout</option>
                       <option value="nutrition">Nutrition</option>
                       <option value="meditation">Meditation</option>
                       required
                     </select>
-                    
                   </div>
                   <div className="col-md-6">
                     <input
@@ -55,7 +76,7 @@ export default function ActivityCreate() {
                   <div className="col-md-6">
                     <select className="form_control" name="intensity">
                       <option value="" disabled selected>
-                      Intensity
+                        Intensity
                       </option>
                       <option value="low">Low</option>
                       <option value="medium">Medium</option>
@@ -71,26 +92,26 @@ export default function ActivityCreate() {
                       name="imageUrl"
                       // required
                       // pattern="https?://.*\.(jpg|jpeg|png|gif|bmp|webp)"  // Only allow image links
-
                     />
                   </div>
                   <div className="col-md-6">
                     <input
                       className="form_control"
                       id="videoLink"
-                      type="url" 
+                      type="url"
                       name="videoLink"
                       placeholder="Video link"
                       // required
                     />
-                    <small>Enter valid video link</small>
                   </div>
                   <div className="col-md-6">
-                  <select className="form_control" name="intensity">
+                    <select className="form_control" name="intensity">
                       <option value="" disabled selected>
                         Nutrient
                       </option>
-                      <option value="smoothies-juices">Smoothies & Juices</option>
+                      <option value="smoothies-juices">
+                        Smoothies & Juices
+                      </option>
                       <option value="soups-stews">Soups & Stews</option>
                       <option value="salad">Salad</option>
                       <option value="pasta">Pasta</option>
@@ -102,7 +123,7 @@ export default function ActivityCreate() {
                     <input
                       className="form_control"
                       placeholder="High Protein / Low Calorie / High Fiber / Anti-Inflammatory / Increase Metabolism"
-                      type="type"
+                      type="text"
                       name="typeBenefit"
                     />
                   </div>
@@ -113,7 +134,7 @@ export default function ActivityCreate() {
                       placeholder="Description"
                       type="textarea"
                       name="description"
-                      defaultValue={"Description "}
+                      defaultValue={"Description"}
                     />
                   </div>
                   <div className="col-md-12">
