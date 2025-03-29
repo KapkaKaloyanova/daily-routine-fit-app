@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------
     File Name: custom.js
 ---------------------------------------------------------------------*/
-
+document.addEventListener('DOMContentLoaded', function () {
 $(function () {
 
   "use strict";
@@ -178,15 +178,20 @@ const navToggler = document.querySelector('.nav-toggler');
 const navMenu = document.querySelector('.site-navbar ul');
 const navLinks = document.querySelectorAll('.site-navbar a');
 
+
 // load all event listners
 allEventListners();
 
 // functions of all event listners
 function allEventListners() {
   // toggler icon click event
-  navToggler.addEventListener('click', togglerClick);
+  if (navToggler){
+    navToggler.addEventListener('click', togglerClick);
+  }
   // nav links click event
+  if (navLinks.length > 0) {
   navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+  }
 }
 
 // togglerClick function
@@ -211,4 +216,5 @@ $(function () {
   $("#my_date_picker").datepicker({
     defaultDate: "09/22/2019"
   });
+});
 });

@@ -9,8 +9,11 @@ export default function ExerciseDetails({
 }) {
   return (
     <>
-      <div className="container col-md-12">
+
+      <div className="container col-md-12"> 
         <div id="ho_shad" className="activity_box text_align_center">
+
+
           <div className="col-md-8">
             <h3>Desk Remedy I</h3>
             <div>with Angela</div>
@@ -38,8 +41,9 @@ export default function ExerciseDetails({
               </a>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+
     </>
   );
 }

@@ -35,6 +35,8 @@ basic
 
 .container {
     max-width: 1170px;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 html {
@@ -437,6 +439,8 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 .slider_main {
@@ -722,6 +726,12 @@ button {
     font-size: 14px;
     line-height: 15px;
     padding-top: 5px;
+}
+
+.details_center {
+    max-width: 1170px;
+    display: flex;
+    justify-content: center;
 }
 
 .details_box p {

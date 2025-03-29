@@ -10,7 +10,8 @@ export default function NutritionDetails({
   return (
     <>
       <div className="container col-md-12">
-        <div id="ho_shad" className="activity_box text_align_center">
+        <div id="ho_shad" className="activity_box details_center text_align_center">
+
           <div className="col-md-6">
           <figure>
               <img src="/images/green-matcha-smoothie.jpg" alt="#" />
@@ -50,6 +51,7 @@ export default function NutritionDetails({
           <div className="col-md-8">
             
           </div>
+
         </div>
       </div>
     </>
