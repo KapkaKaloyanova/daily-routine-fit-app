@@ -71,7 +71,7 @@ export default function WorkoutDetails({
             </a>
           </div>
         </div>
-        <div className="button-container2">
+        <div className="container">
             <div className="creative">
               <Link className="edit_delete read_more" to="Javascript:void(0)">
                 Edit
@@ -82,8 +82,7 @@ export default function WorkoutDetails({
               >
                 Delete
               </button>
-            
-          </div>
+            </div>
         </div>
       </div>
     </div>
