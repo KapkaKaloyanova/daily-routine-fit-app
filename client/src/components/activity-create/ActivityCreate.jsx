@@ -35,9 +35,9 @@ export default function ActivityCreate() {
           <div className="row">
             <div className="col-md-12 ">
               <div className="titlepage text_align_center">
-                <h2>Create Activity</h2>
+                <h2>Create</h2>
                 <p>
-                  How are you feeling today? Choose your workouts, nutrition
+                  How are you feeling today? Create your workouts, nutrition
                   and meditations for a perfect day.
                 </p>
               </div>

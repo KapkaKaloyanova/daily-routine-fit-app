@@ -5,8 +5,8 @@ import activityService from "../../api/activityService";
 export default function WorkoutCatalog() {
   const [activities, setActivities] = useState([]);
   useEffect(() => {
-    activityService.getAll()
-      .then(setActivities);
+      activityService.getAll()
+          .then(setActivities);
   }, []);
 
   return (
@@ -16,13 +16,15 @@ export default function WorkoutCatalog() {
           <div className="row">
             <div className="col-md-12">
               <div className="titlepage text_align_center ">
-                <h2>All Workouts</h2>
+                <h2>Workouts</h2>
               </div>
             </div>
           </div>
           <div className="row">
-            {activities.map(activity => 
-              <WorkoutCatalogItem key={activity._id} {...activity} />)}
+            {activities.length > 0 
+              ? activities.map(activity => <WorkoutCatalogItem key={activity._id} {...activity} />) 
+              : <h3 className="titlepage text_align_center">No workouts yet</h3>
+            }
           </div>
         </div>
       </div>

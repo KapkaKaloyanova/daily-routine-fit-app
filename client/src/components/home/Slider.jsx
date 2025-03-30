@@ -24,13 +24,13 @@ export default function Slider(){
           <HomeSlideMeditation />
         </div>
         {/* controls from bootstrap */}
-               <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
-               <i class="fa fa-angle-left" aria-hidden="true"></i>
-               <span class="sr-only">Previous</span>
+               <a className="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+               <i className="fa fa-angle-left" aria-hidden="true"></i>
+               <span className="sr-only">Previous</span>
                </a>
-               <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
-               <i class="fa fa-angle-right" aria-hidden="true"></i>
-               <span class="sr-only">Next</span>
+               <a className="carousel-control-next" href="#banner1" role="button" data-slide="next">
+               <i className="fa fa-angle-right" aria-hidden="true"></i>
+               <span className="sr-only">Next</span>
                </a>
       </div>
     </div>

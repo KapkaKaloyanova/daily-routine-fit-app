@@ -11,7 +11,7 @@ export default function HomeSlideWorkout() {
                 <div className="creative">
                   <h1>
                     Explore <br />
-                    Workouts{" "}
+                    Exercise{" "}
                   </h1>
                   <p>
                     commodo consequat. Duis aute irure dolor in reprehenderit in
