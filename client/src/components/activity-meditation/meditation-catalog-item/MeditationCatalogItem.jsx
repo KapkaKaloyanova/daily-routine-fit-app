@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function MeditationItem({
+export default function MeditationCatalogItem({
     _id,
     title,
     duration,

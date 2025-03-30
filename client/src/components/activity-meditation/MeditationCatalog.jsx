@@ -1,6 +1,6 @@
-import MeditationItem from "./meditation-item/MeditationItem";
+import MeditationCatalogItem from "./meditation-catalog-item/MeditationCatalogItem";
 
-export default function Meditation(){
+export default function MeditationCatalog(){
     return (
         <>
           <div className="activity">
@@ -13,10 +13,10 @@ export default function Meditation(){
         </div>
       </div>
       <div className="row">
-          <MeditationItem />
-          <MeditationItem />
-          <MeditationItem />
-          <MeditationItem />
+          <MeditationCatalogItem />
+          <MeditationCatalogItem />
+          <MeditationCatalogItem />
+          
       </div>
     </div>
   </div>

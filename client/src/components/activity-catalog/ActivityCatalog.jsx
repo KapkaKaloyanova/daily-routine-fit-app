@@ -7,7 +7,7 @@ export default function ActivityCatalog() {
   useEffect(() => {
     activityService.getAll().then(setActivities);
   }, []);
-console.log(activities);
+
   return (
     <>
       <div className="activity">
@@ -15,14 +15,14 @@ console.log(activities);
           <div className="row">
             <div className="col-md-12">
               <div className="titlepage text_align_center ">
-                <h2>Explore</h2>
+                <h2>Explore All</h2>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-4">
               <div id="ho_shad" className="activity_box text_align_left">
-                <h3>Exercise</h3>
+                <h3>Workouts</h3>
                 <figure>
                   <img src="/images/service1.jpg" alt="#" />
                 </figure>
@@ -31,7 +31,7 @@ console.log(activities);
                   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                   ullamco laboris nisi ut aliquip
                 </p>
-                <Link className="read_more" to="/activity/exercise">
+                <Link className="read_more" to="/activity/workout">
                   Find out
                 </Link>
               </div>

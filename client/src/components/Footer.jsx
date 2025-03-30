@@ -28,7 +28,7 @@ export default function Footer() {
                     <h3>Explore</h3>
                     <ul className="menu_footer">
                       <li>
-                        <Link to="/activity/exercise">Exercises</Link>
+                        <Link to="/activity/workout">Workout</Link>
                       </li>
                       <li>
                         <Link to="/activity/nutrition">Nutrition</Link>

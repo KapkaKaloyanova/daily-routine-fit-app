@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function ExerciseDetails({
+export default function WorkoutDetails({
   _id,
   title,
   duration,

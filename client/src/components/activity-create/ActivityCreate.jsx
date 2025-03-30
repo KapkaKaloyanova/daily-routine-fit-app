@@ -13,7 +13,7 @@ export default function ActivityCreate() {
     try {
       await activityService.create(activityData);
       if (category === "workout") {
-        navigate("/activity/exercise");
+        navigate("/activity/workout");
       } else if (category === "nutrition") {
         navigate("/activity/nutrition");
       } else if (category === " meditation") {
@@ -37,7 +37,7 @@ export default function ActivityCreate() {
               <div className="titlepage text_align_center">
                 <h2>Create Activity</h2>
                 <p>
-                  How are you feeling today? Choose your exercises, nutrition
+                  How are you feeling today? Choose your workouts, nutrition
                   and meditations for a perfect day.
                 </p>
               </div>
@@ -55,8 +55,8 @@ export default function ActivityCreate() {
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="category">
-                      <option value="" disabled selected>
+                    <select className="form_control" name="category" defaultValue="">
+                      <option value="" disabled >
                         Category type
                       </option>
                       <option value="workout">Workout</option>
@@ -74,8 +74,8 @@ export default function ActivityCreate() {
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="intensity">
-                      <option value="" disabled selected>
+                    <select className="form_control" name="intensity" defaultValue="">
+                      <option value="" disabled >
                         Intensity
                       </option>
                       <option value="low">Low</option>
@@ -105,8 +105,8 @@ export default function ActivityCreate() {
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="intensity">
-                      <option value="" disabled selected>
+                    <select className="form_control" name="intensity" defaultValue="">
+                      <option value="" disabled >
                         Nutrient
                       </option>
                       <option value="smoothies-juices">

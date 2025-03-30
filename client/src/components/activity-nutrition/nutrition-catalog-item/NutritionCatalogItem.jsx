@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function NutritionItem({
+export default function NutritionCatalogItem({
     _id,
     title,
     duration,

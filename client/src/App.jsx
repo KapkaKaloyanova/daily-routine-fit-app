@@ -11,12 +11,12 @@ import Loader from "./components/Loader";
 import Pricing from "./components/Pricing";
 import ActivityCatalog from "./components/activity-catalog/ActivityCatalog";
 import ActivityCreate from "./components/activity-create/ActivityCreate";
-import CustomerReview from "./components/customer-review/CustomerReview";
-import Exercise from "./components/activity-exercise/Exercise";
-import Nutrition from "./components/activity-nutrition/Nutrition";
-import ExerciseDetails from "./components/activity-exercise/exercise-details/ExerciseDetails";
+import WorkoutCatalog from "./components/activity-workout/WorkoutCatalog";
+import WorkoutDetails from "./components/activity-workout/workout-details/WorkoutDetails";
+import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
 import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
-import Meditation from "./components/activity-meditation/Meditation";
+import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
+import CustomerReview from "./components/customer-review/CustomerReview";
 import NotFound from "./components/notFound/NotFound";
 
 function App() {
@@ -35,17 +35,17 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/customers" element={<CustomerReview />} />
-          <Route path="/activity/exercise" element={<Exercise />} />
+          <Route path="/activity/workout" element={<WorkoutCatalog />} />
           <Route
-            path="/activity/exercise/details"
-            element={<ExerciseDetails />}
+            path="/activity/workout/details"
+            element={<WorkoutDetails />}
           />
-          <Route path="/activity/nutrition" element={<Nutrition />} />
+          <Route path="/activity/nutrition" element={<NutritionCatalog />} />
           <Route
             path="/activity/nutrition/details"
             element={<NutritionDetails />}
           />
-          <Route path="/activity/meditation" element={<Meditation />} />
+          <Route path="/activity/meditation" element={<MeditationCatalog />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

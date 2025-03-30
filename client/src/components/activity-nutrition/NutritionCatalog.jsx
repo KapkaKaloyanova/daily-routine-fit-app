@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import NutritionItem from "./nutrition-item/NutritionItem";
+import NutritionCatalogItem from "./nutrition-catalog-item/NutritionCatalogItem";
 
-export default function Nutrition() {
+export default function NutritionCatalog() {
   return (
     <>
       <div className="activity">
@@ -14,11 +14,9 @@ export default function Nutrition() {
             </div>
           </div>
           <div className="row">
-            <NutritionItem />
-            <NutritionItem />
-            <NutritionItem />
-            <NutritionItem />
-            <NutritionItem />
+            <NutritionCatalogItem />
+            <NutritionCatalogItem />
+            <NutritionCatalogItem />
           </div>
         </div>
       </div>
