@@ -9,10 +9,9 @@ export default function ActivityCreate() {
   const submitAction = async (formData) => {
     const activityData = Object.fromEntries(formData);
     // TODO: make a conditional based on the category
-    // TODO: try/catch error handling
     try {
       await activityService.create(activityData);
-      if (category === "workout") {
+      /* if (category === "workout") {
         navigate("/activity/workout");
       } else if (category === "nutrition") {
         navigate("/activity/nutrition");
@@ -21,11 +20,12 @@ export default function ActivityCreate() {
       } 
       else {
         navigate("/activity");
-      }
+      } */
+      navigate('/activity');
     } catch (error) {
       console.error("Error creating activity", error);
     }
-    console.log(category);
+
   };
 
   return (
@@ -52,6 +52,14 @@ export default function ActivityCreate() {
                       type="text"
                       name="title"
                       required
+                    />
+                  </div>
+                  <div className="col-md-6 ">
+                    <input
+                      className="form_control"
+                      placeholder="Instructor"
+                      type="text"
+                      name="instructor"
                     />
                   </div>
                   <div className="col-md-6">

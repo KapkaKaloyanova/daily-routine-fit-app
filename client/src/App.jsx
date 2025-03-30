@@ -37,7 +37,7 @@ function App() {
           <Route path="/customers" element={<CustomerReview />} />
           <Route path="/activity/workout" element={<WorkoutCatalog />} />
           <Route
-            path="/activity/workout/details"
+            path="/activity/workout/:activityId/details"
             element={<WorkoutDetails />}
           />
           <Route path="/activity/nutrition" element={<NutritionCatalog />} />

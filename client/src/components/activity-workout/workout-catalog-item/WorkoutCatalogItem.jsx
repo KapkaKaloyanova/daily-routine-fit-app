@@ -19,7 +19,7 @@ export default function WorkoutCatalogItem({
             <p>
               {description}
             </p>
-            <Link className="read_more" to="/activity/workout/details">
+            <Link className="read_more" to={`/activity/workout/${_id}/details`}>
               Details
             </Link>
           </div>

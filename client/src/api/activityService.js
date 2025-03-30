@@ -1,14 +1,18 @@
 import request from "../utils/request";
 
-const baseUrl = ' http://localhost:3030/jsonstore/activity';
+const baseUrl = 'http://localhost:3030/jsonstore/activity';
 
 export default {
-    async getAll(){
-        const result= await request.get(baseUrl);
+    async getAll() {
+        const result = await request.get(baseUrl);
 
         const activities = Object.values(result);
 
         return activities;
+
+    },
+     getOne(activityId) {
+        return  request.get(`${baseUrl}/${activityId}`);
 
     },
 
