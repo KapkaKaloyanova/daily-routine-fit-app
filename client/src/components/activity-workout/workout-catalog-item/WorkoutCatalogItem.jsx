@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
 export default function WorkoutCatalogItem({
     _id,
@@ -7,6 +8,7 @@ export default function WorkoutCatalogItem({
     imageUrl,
     description,
 }){
+  const processedImageUrl = imageUrl ? getDirectImageUrl(imageUrl) : null;
     return (
         <>
         <div className="col-md-4">
@@ -14,8 +16,15 @@ export default function WorkoutCatalogItem({
             <div className="duration">{time} MIN</div>
             <h3>{title}</h3>
             <figure>
-              <img src={imageUrl} alt="#" />
-            </figure>
+            {processedImageUrl ? (
+              <img
+                src={processedImageUrl}
+                alt={title}
+              />
+            ) : (
+              <p>No image available</p>
+            )}
+          </figure>
             <p>
               {description}
             </p>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import activityService from "../../../api/activityService";
+import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
 export default function WorkoutDetails({
   _id,
@@ -13,8 +14,14 @@ export default function WorkoutDetails({
   videoLink,
   description,
 }) {
+  const navigate = useNavigate();
+
   const [activity, setActivity] = useState({});
   const { activityId } = useParams();
+
+  const processedImageUrl = activity.imageUrl
+    ? getDirectImageUrl(activity.imageUrl)
+    : null;
 
   useEffect(() => {
     (async () => {
@@ -23,17 +30,16 @@ export default function WorkoutDetails({
     })();
   }, [activityId]);
 
-  // Function to convert Google Drive URL to direct image URL
-  const getDirectImageUrl = (url) => {
-    if (!url) {
-      return null;
+  const activityDeleteClickHandler = async () => {
+    const hasConfirm = confirm(
+      `Are you sure you want to delete ${activity.title} activity?`
+    );
+    if (!hasConfirm) {
+      return;
     }
-    const regex = /\/file\/d\/(.*)\/view/;
-    const match = url.match(regex);
-    if (match && match[1]) {
-      return `https://drive.google.com/uc?export=view&id=${match[1]}`;
-    }
-    return url; // Return original URL if not a Google Drive link
+    await activityService.delete(activityId);
+
+    navigate("/activity/workout");
   };
 
   return (
@@ -52,11 +58,8 @@ export default function WorkoutDetails({
 
         <div className="col-md-8">
           <figure>
-            {activity.imageUrl ? (
-              <img
-                src={getDirectImageUrl(activity.imageUrl)}
-                alt={activity.title}
-              />
+            {processedImageUrl ? (
+              <img src={processedImageUrl} alt={activity.title} />
             ) : (
               <p>No image available</p>
             )}
@@ -66,6 +69,20 @@ export default function WorkoutDetails({
             <a className="play-btn" href="javascript:void(0)">
               <img src="/images/play_icon.png" />
             </a>
+          </div>
+        </div>
+        <div className="button-container2">
+            <div className="creative">
+              <Link className="edit_delete read_more" to="Javascript:void(0)">
+                Edit
+              </Link>
+              <button
+                onClick={activityDeleteClickHandler}
+                className="edit_delete read_more"
+              >
+                Delete
+              </button>
+            
           </div>
         </div>
       </div>

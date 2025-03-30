@@ -19,5 +19,8 @@ export default {
     create(activityData) {
         return request.post(baseUrl, activityData)
     },
+    delete(activityId) {
+        return request.delete(`${baseUrl}/${activityId}`)
+    }
 
 }
