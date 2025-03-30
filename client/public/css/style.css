@@ -482,6 +482,29 @@ button {
     margin-right: 5px;
 }
 
+.creative .edit_delete {
+    display: inline-block;
+    margin: 50px 5px;
+  }
+  
+.creative .edit_delete .read_more {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 10px 20px;
+    background: #363636;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+.creative .edit_delete .read_more:hover {
+    background: #fdc001;
+    color: #fff;
+  
+  }  
+
 .mar_right {
     margin-right: -90px;
 }
@@ -1002,6 +1025,14 @@ button {
     justify-content: center;
     margin-top: 20px;
   }
+
+.button-container2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
 
 .center-container {
     display: flex;
