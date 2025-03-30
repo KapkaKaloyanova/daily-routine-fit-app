@@ -4,9 +4,8 @@
         "category": "workout",
         "time": "20",
         "intensity": "smoothies-juices",
-        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=drive_link",
-        "videoLink": "",
-        "typeBenefit": "",
+        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
+        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
         "description": "Restore future flexibility and mobility through a series of tension-releasing exercises that can be done at your desk - no equipment needed.",
         "_id": "df34835e-80c0-4b44-b6a1-7a626c555bf2"
     },
@@ -17,7 +16,6 @@
         "intensity": "medium",
         "imageUrl": "",
         "videoLink": "",
-        "typeBenefit": "",
         "description": "First workout",
         "_id": "72e8bfb9-3a96-48ca-847f-c84d52eb30a3"
     },
@@ -28,7 +26,6 @@
         "intensity": "rice",
         "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEBUTExMTFRUVFRcWGRgVFxgWGBgSGBUXFxcZGBkYHCggGhslHRUVIjEjJykrLi4uFyAzODMvNygtLisBCgoKDg0OGxAQGy4lHyU1LS0vKy0tNS8tNS0tLS0tLy0tLS0tLS8tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABQMEBgIHAf/EAEYQAAEDAgIFBwoDBwMDBQAAAAEAAgMEERIhBQYxQVETImFxgZGhFjIzU3SUsbPB00LR8FJigpKi4fEVI3JDssIUY3OD0v/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACcRAQEAAgEEAgEEAwEAAAAAAAABAhEDEiExQQRREyIykdFhgaEU/9oADAMBAAIRAxEAPwD7iiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiCZoDShqGSOLHM5Oomh5wIxCKRzA4X3EAeKpqRqz6OX2qp+e9V0BERAREQEREBEWvNXxMkZE6SNskmLAwuAe/CLuwtJu6wzNtiDYRc5HrnT8rKxwljbE2d3KvaBG8UzgyowEEuOBxAN2i+66/KzWwMhZMKapwumbHhfGWSYCwvMjYzdzrNaThycbEWvkg6RFzWqGsjqsyh7A0Y3vgc2+GWi5V8ccgJ/FzDccHMP4l0ckgaCXEADMkmwA6SUHpFoaJ0zBVNLqeRsrQbFzLlt+AdaxPUVvoCIiAiIgIiICIiAiIgIiICIiCRqz6OX2qp+e9V1I1Z9HL7VU/Peq6AiIgIiICIvEsga0uN7AXyBcewAXJ6Ag9qFrVo18jYZYWB08FRDI3NrSY8eCZuI7jFJL2r9ptLVMwvFSOiAcW4qp4jJaNjmMjxud",
         "videoLink": "",
-        "typeBenefit": "",
         "description": "Description 1",
         "_id": "ff456e7d-4e33-41d8-ba11-43e84acce291"
     },
@@ -39,7 +36,6 @@
         "intensity": "medium",
         "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
         "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
-        "typeBenefit": "",
         "description": "Restore nourishment to your kidneys and liver through a series of flowing exercises that effectively stimulate two of the body's most vital organs.",
         "_id": "47268cdd-01d8-413a-932b-cb0b1695d338"
     }

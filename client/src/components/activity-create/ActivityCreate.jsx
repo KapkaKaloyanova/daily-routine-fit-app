@@ -54,14 +54,6 @@ export default function ActivityCreate() {
                       required
                     />
                   </div>
-                  <div className="col-md-6 ">
-                    <input
-                      className="form_control"
-                      placeholder="Instructor"
-                      type="text"
-                      name="instructor"
-                    />
-                  </div>
                   <div className="col-md-6">
                     <select className="form_control" name="category" defaultValue="">
                       <option value="" disabled >

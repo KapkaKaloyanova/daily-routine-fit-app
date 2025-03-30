@@ -7,6 +7,7 @@ export default function NutritionDetails({
   description,
   imageUrl,
 }) {
+
   return (
     <>
       <div className="container col-md-12">
@@ -17,7 +18,6 @@ export default function NutritionDetails({
               <img src="/images/green-matcha-smoothie.jpg" alt="#" />
             </figure>
             <h3>Green matcha smoothie</h3>
-            <div>by user_id</div>
             <div className="details_box text_align_center">
               <p>
                 <span>Difficulty</span> | <span>Cooking</span> |{" "}
