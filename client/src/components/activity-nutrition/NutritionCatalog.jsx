@@ -1,7 +1,21 @@
-import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import activityService from "../../api/activityService";
 import NutritionCatalogItem from "./nutrition-catalog-item/NutritionCatalogItem";
 
 export default function NutritionCatalog() {
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+      activityService.getAll()
+          .then((allActivities) => {
+            // Filter only workout activity
+            const nutritionActivities = allActivities.filter(
+              (activity) => activity.category === "nutrition"
+            );
+            setActivities(nutritionActivities)
+          });
+  }, []);
+
   return (
     <>
       <div className="activity">
@@ -14,9 +28,10 @@ export default function NutritionCatalog() {
             </div>
           </div>
           <div className="row">
-            <NutritionCatalogItem />
-            <NutritionCatalogItem />
-            <NutritionCatalogItem />
+          {activities.length > 0 
+              ? activities.map(activity => <NutritionCatalogItem key={activity._id} {...activity} />) 
+              : <h3 className="titlepage text_align_center">No recipes yet</h3>
+            }
           </div>
         </div>
       </div>

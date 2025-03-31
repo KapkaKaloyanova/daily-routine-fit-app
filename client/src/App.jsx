@@ -11,14 +11,15 @@ import Loader from "./components/Loader";
 import Pricing from "./components/Pricing";
 import ActivityCatalog from "./components/activity-catalog/ActivityCatalog";
 import ActivityCreate from "./components/activity-create/ActivityCreate";
+import ActivityEdit from "./components/activity-edit/ActivityEdit";
 import WorkoutCatalog from "./components/activity-workout/WorkoutCatalog";
 import WorkoutDetails from "./components/activity-workout/workout-details/WorkoutDetails";
 import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
 import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
+import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
 import CustomerReview from "./components/customer-review/CustomerReview";
 import NotFound from "./components/notFound/NotFound";
-import ActivityWorkoutEdit from "./components/activity-workout-edit/ActivityWorkoutEdit";
 
 function App() {
   return (
@@ -30,28 +31,43 @@ function App() {
           <Route path="/" element={<Slider />} />
           <Route path="/activity" element={<ActivityCatalog />} />
           <Route path="/activity/create" element={<ActivityCreate />} />
+
+          {/* Auth Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
+
+          {/* Customer Reviews */}
           <Route path="/customers" element={<CustomerReview />} />
+
+          {/* Catalogs */}
           <Route path="/activity/workout" element={<WorkoutCatalog />} />
+          <Route path="/activity/meditation" element={<MeditationCatalog />} />
+          <Route path="/activity/nutrition" element={<NutritionCatalog />} />
+
+          {/* Details Pages */}
           <Route
             path="/activity/workout/:activityId/details"
             element={<WorkoutDetails />}
           />
           <Route
-            path="/activity/workout/:activityId/edit"
-            element={<ActivityWorkoutEdit />}
-          />
-          <Route path="/activity/nutrition" element={<NutritionCatalog />} />
-          <Route
             path="/activity/nutrition/details"
             element={<NutritionDetails />}
           />
-          <Route path="/activity/meditation" element={<MeditationCatalog />} />
+          <Route
+            path="/activity/meditation/details"
+            element={<MeditationDetails />}
+          />
 
+          {/* Edit Page */}
+          <Route
+            path="/activity/:category/:activityId/edit"
+            element={<ActivityEdit />}
+          />
+          
+          {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

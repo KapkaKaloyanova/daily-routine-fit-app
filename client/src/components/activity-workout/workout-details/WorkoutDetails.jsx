@@ -12,6 +12,7 @@ export default function WorkoutDetails({
   foodType,
   imageUrl,
   videoLink,
+  typeBenefit,
   description,
 }) {
   const navigate = useNavigate();

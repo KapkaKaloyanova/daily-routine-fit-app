@@ -6,26 +6,33 @@ export default function ActivityCreate() {
   const navigate = useNavigate();
   const [category, setCategory] = useState("");
 
-  const submitAction = async (formData) => {
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const submitAction = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
     const activityData = Object.fromEntries(formData);
-    // TODO: make a conditional based on the category
+
+    console.log(activityData);
+
+    
+
     try {
       await activityService.create(activityData);
-      /* if (category === "workout") {
+      if (category === "workout") {
         navigate("/activity/workout");
       } else if (category === "nutrition") {
         navigate("/activity/nutrition");
-      } else if (category === " meditation") {
+      } else if (category === "meditation") {
         navigate("/activity/meditation");
-      } 
-      else {
-        navigate("/activity");
-      } */
-      navigate('/activity');
+      } else {
+        navigate("/activity"); // default navigation
+      }
     } catch (error) {
       console.error("Error creating activity", error);
     }
-
   };
 
   return (
@@ -37,13 +44,18 @@ export default function ActivityCreate() {
               <div className="titlepage text_align_center">
                 <h2>Create</h2>
                 <p>
-                  How are you feeling today? Create your workouts, nutrition
-                  and meditations for a perfect day.
+                  How are you feeling today? Create your workouts, nutrition and
+                  meditations for a perfect day.
                 </p>
               </div>
             </div>
             <div className="col-md-12">
-              <form id="create" className="main_form" action={submitAction}>
+              <form
+                id="create"
+                className="main_form"
+                action="#"
+                onSubmit={submitAction}
+              >
                 <div className="row">
                   <div className="col-md-6 ">
                     <input
@@ -54,17 +66,28 @@ export default function ActivityCreate() {
                       required
                     />
                   </div>
+
+                  {/* Category Select */}
+
                   <div className="col-md-6">
-                    <select className="form_control" name="category" defaultValue="">
-                      <option value="" disabled >
+                    <select
+                      className="form_control"
+                      name="category"
+                      value={category}
+                      onChange={ handleCategoryChange }
+                      required
+                    >
+                      <option value="" disabled>
                         Category type
                       </option>
                       <option value="workout">Workout</option>
                       <option value="nutrition">Nutrition</option>
                       <option value="meditation">Meditation</option>
-                      required
                     </select>
                   </div>
+
+                  {/* Common Fields */}
+
                   <div className="col-md-6">
                     <input
                       className="form_control"
@@ -73,16 +96,30 @@ export default function ActivityCreate() {
                       name="time"
                     />
                   </div>
-                  <div className="col-md-6">
-                    <select className="form_control" name="intensity" defaultValue="">
-                      <option value="" disabled >
-                        Intensity
-                      </option>
-                      <option value="low">Low</option>
-                      <option value="medium">Medium</option>
-                      <option value="high">High</option>
-                    </select>
-                  </div>
+
+                  {/* Conditional Fields Based on Category */}
+
+                  {category === "workout" && (
+                  <>
+                    <div className="col-md-6">
+                      <select
+                        className="form_control"
+                        name="intensity"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Intensity
+                        </option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                    </div>
+  
+                  </>
+                  )}
+
+                  {/* Common Fields */}
 
                   <div className="col-md-6">
                     <input
@@ -94,6 +131,11 @@ export default function ActivityCreate() {
                       // pattern="https?://.*\.(jpg|jpeg|png|gif|bmp|webp)"  // Only allow image links
                     />
                   </div>
+
+                  {/* Conditional Fields Based on Category */}
+
+                  {(category === "workout" || category === "meditation") && (
+                  <>
                   <div className="col-md-6">
                     <input
                       className="form_control"
@@ -104,9 +146,18 @@ export default function ActivityCreate() {
                       // required
                     />
                   </div>
+                </>
+                )}
+
+                {category === "nutrition" && (
+                <>
                   <div className="col-md-6">
-                    <select className="form_control" name="foodType" defaultValue="">
-                      <option value="" disabled >
+                    <select
+                      className="form_control"
+                      name="foodType"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
                         Nutrient
                       </option>
                       <option value="smoothies-juices">
@@ -119,6 +170,7 @@ export default function ActivityCreate() {
                       <option value="quinoa">Quinoa</option>
                     </select>
                   </div>
+
                   <div className="col-md-6">
                     <input
                       className="form_control"
@@ -127,6 +179,11 @@ export default function ActivityCreate() {
                       name="typeBenefit"
                     />
                   </div>
+  
+                  </>
+                  )}
+
+
                   <div className="col-md-12">
                     <textarea
                       style={{ color: "#d0d0cf" }}
@@ -134,9 +191,11 @@ export default function ActivityCreate() {
                       placeholder="Description"
                       type="textarea"
                       name="description"
-                      defaultValue={"Description"}
+                      defaultValue={""}
                     />
                   </div>
+
+
                   <div className="col-md-12">
                     <button className="send_btn">Create</button>
                   </div>

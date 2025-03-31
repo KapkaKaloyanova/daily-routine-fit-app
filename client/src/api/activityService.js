@@ -19,6 +19,12 @@ export default {
     create(activityData) {
         return request.post(baseUrl, activityData)
     },
+
+    edit(activityId, activityData ) {
+        return request.put(`${baseUrl}/${activityData.category}/${activityId}`, {...activityData, _id: activityId});
+
+    },
+    
     delete(activityId) {
         return request.delete(`${baseUrl}/${activityId}`)
     }

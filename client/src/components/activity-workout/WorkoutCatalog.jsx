@@ -1,12 +1,19 @@
-import WorkoutCatalogItem from "./workout-catalog-item/WorkoutCatalogItem";
 import { useEffect, useState } from "react";
 import activityService from "../../api/activityService";
+import WorkoutCatalogItem from "./workout-catalog-item/WorkoutCatalogItem";
 
 export default function WorkoutCatalog() {
   const [activities, setActivities] = useState([]);
+
   useEffect(() => {
       activityService.getAll()
-          .then(setActivities);
+          .then((allActivities) => {
+            // Filter only workout actvity
+            const workoutActivities = allActivities.filter(
+              (activity) => activity.category === "workout"
+            );
+            setActivities(workoutActivities)
+          });
   }, []);
 
   return (
