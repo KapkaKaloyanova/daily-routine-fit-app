@@ -59,6 +59,9 @@ export default function Footer() {
                       <li>
                         <Link to="#">Contact us</Link>
                       </li>
+                      <li>
+                        <Link to="#">Customer Review</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

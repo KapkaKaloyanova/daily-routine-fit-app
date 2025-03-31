@@ -1,49 +1,41 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import activityService from "../../api/activityService";
 
-export default function ActivityCreate() {
-  const navigate = useNavigate();
-  const [category, setCategory] = useState("");
+export default function ActivityWorkoutEdit({
+    _id,
+  title,
+  category,
+  time,
+  intensity,
+  foodType,
+  imageUrl,
+  videoLink,
+  description,
+}){
+    // const navigate = useNavigate();
+    const { activityId } = useParams();
+    const [activity, setActivity] = useState({});
 
-  const submitAction = async (formData) => {
-    const activityData = Object.fromEntries(formData);
-    // TODO: make a conditional based on the category
-    try {
-      await activityService.create(activityData);
-      /* if (category === "workout") {
-        navigate("/activity/workout");
-      } else if (category === "nutrition") {
-        navigate("/activity/nutrition");
-      } else if (category === " meditation") {
-        navigate("/activity/meditation");
-      } 
-      else {
-        navigate("/activity");
-      } */
-      navigate('/activity');
-    } catch (error) {
-      console.error("Error creating activity", error);
-    }
+    useEffect(() => {
+      (async () => {
+        const result = await activityService.getOne(activityId);
+        setActivity(result);
+      })();
+    }, [activityId]);
 
-  };
-
-  return (
-    <>
-      <div className="creates">
+    return (
+        <>
+        <div className="creates">
         <div className="container">
           <div className="row">
             <div className="col-md-12 ">
               <div className="titlepage text_align_center">
-                <h2>Create</h2>
-                <p>
-                  How are you feeling today? Create your workouts, nutrition
-                  and meditations for a perfect day.
-                </p>
+                <h2>Edit</h2>
               </div>
             </div>
             <div className="col-md-12">
-              <form id="create" className="main_form" action={submitAction}>
+              <form id="create" className="main_form" action="">
                 <div className="row">
                   <div className="col-md-6 ">
                     <input
@@ -51,11 +43,12 @@ export default function ActivityCreate() {
                       placeholder="Title"
                       type="text"
                       name="title"
+                      defaultValue={activity.title}
                       required
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="category" defaultValue="">
+                    <select className="form_control" name="category" defaultValue={activity.category}>
                       <option value="" disabled >
                         Category type
                       </option>
@@ -71,10 +64,11 @@ export default function ActivityCreate() {
                       placeholder="Duration / Preparation time"
                       type="number"
                       name="time"
+                      defaultValue={activity.time}
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="intensity" defaultValue="">
+                    <select className="form_control" name="intensity" defaultValue={activity.intensity}>
                       <option value="" disabled >
                         Intensity
                       </option>
@@ -90,6 +84,7 @@ export default function ActivityCreate() {
                       placeholder="Image link"
                       type="url"
                       name="imageUrl"
+                      defaultValue={activity.imageUrl}
                       // required
                       // pattern="https?://.*\.(jpg|jpeg|png|gif|bmp|webp)"  // Only allow image links
                     />
@@ -101,11 +96,12 @@ export default function ActivityCreate() {
                       type="url"
                       name="videoLink"
                       placeholder="Video link"
+                      defaultValue={activity.videoLink}
                       // required
                     />
                   </div>
                   <div className="col-md-6">
-                    <select className="form_control" name="foodType" defaultValue="">
+                    <select className="form_control" name="foodType" defaultValue={activity.foodType}>
                       <option value="" disabled >
                         Nutrient
                       </option>
@@ -125,6 +121,7 @@ export default function ActivityCreate() {
                       placeholder="High Protein / Low Calorie / High Fiber / Anti-Inflammatory / Increase Metabolism"
                       type="text"
                       name="typeBenefit"
+                      defaultValue={activity.typeBenefit}
                     />
                   </div>
                   <div className="col-md-12">
@@ -134,7 +131,7 @@ export default function ActivityCreate() {
                       placeholder="Description"
                       type="textarea"
                       name="description"
-                      defaultValue={"Description"}
+                      defaultValue={activity.description}
                     />
                   </div>
                   <div className="col-md-12">
@@ -146,6 +143,6 @@ export default function ActivityCreate() {
           </div>
         </div>
       </div>
-    </>
-  );
+        </>
+    );
 }

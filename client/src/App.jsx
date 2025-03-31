@@ -18,6 +18,7 @@ import NutritionDetails from "./components/activity-nutrition/nutrition-details/
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
 import CustomerReview from "./components/customer-review/CustomerReview";
 import NotFound from "./components/notFound/NotFound";
+import ActivityWorkoutEdit from "./components/activity-workout-edit/ActivityWorkoutEdit";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
           <Route
             path="/activity/workout/:activityId/details"
             element={<WorkoutDetails />}
+          />
+          <Route
+            path="/activity/workout/:activityId/edit"
+            element={<ActivityWorkoutEdit />}
           />
           <Route path="/activity/nutrition" element={<NutritionCatalog />} />
           <Route

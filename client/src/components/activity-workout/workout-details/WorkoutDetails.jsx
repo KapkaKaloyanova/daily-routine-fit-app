@@ -9,7 +9,7 @@ export default function WorkoutDetails({
   category,
   time,
   intensity,
-  instructor,
+  foodType,
   imageUrl,
   videoLink,
   description,
@@ -71,18 +71,19 @@ export default function WorkoutDetails({
             </a>
           </div>
         </div>
-        <div className="container">
-            <div className="creative">
-              <Link className="edit_delete read_more" to="Javascript:void(0)">
-                Edit
-              </Link>
-              <button
-                onClick={activityDeleteClickHandler}
-                className="edit_delete read_more"
-              >
-                Delete
-              </button>
-            </div>
+        <div className="button-container2">
+            <Link className="edit_delete read_more" to="Javascript:void(0)">
+              Add review
+            </Link>
+            <Link className="edit_delete read_more" to={`/activity/workout/${activityId}/edit`}>
+              Edit
+            </Link>
+            <button
+              onClick={activityDeleteClickHandler}
+              className="edit_delete read_more"
+            >
+              Delete
+            </button>
         </div>
       </div>
     </div>

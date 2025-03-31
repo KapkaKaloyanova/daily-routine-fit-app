@@ -35,8 +35,6 @@ basic
 
 .container {
     max-width: 1170px;
-    /* display: flex; */
-    /* justify-content: center; */
 }
 
 html {
@@ -1030,9 +1028,13 @@ button {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 
+ .button-container2 .read_more {
+    width:200px;
+    max-width: 204px;
+  }
 
 .center-container {
     display: flex;
