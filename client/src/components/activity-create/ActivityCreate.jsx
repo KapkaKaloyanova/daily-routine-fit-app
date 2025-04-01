@@ -179,7 +179,47 @@ export default function ActivityCreate() {
                       name="typeBenefit"
                     />
                   </div>
+
+                  <div className="col-md-6">
+                    <input
+                      className="form_control"
+                      placeholder="Difficulty"
+                      type="text"
+                      name="difficulty"
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <input
+                      className="form_control"
+                      placeholder="calories"
+                      type="number"
+                      name="calories"
+                    />
+                  </div>
   
+                  <div className="col-md-12">
+                    <textarea
+                      style={{ color: "#d0d0cf" }}
+                      className="textarea"
+                      placeholder="Ingredients"
+                      type="textarea"
+                      name="ingredients"
+                      defaultValue={""}
+                    />
+                  </div>
+
+                  <div className="col-md-12">
+                    <textarea
+                      style={{ color: "#d0d0cf" }}
+                      className="textarea"
+                      placeholder="Preparation"
+                      type="textarea"
+                      name="preparation"
+                      defaultValue={""}
+                    />
+                  </div>
+
                   </>
                   )}
 

@@ -9,6 +9,7 @@ export default function WorkoutCatalogItem({
     description,
 }){
   const processedImageUrl = imageUrl ? getDirectImageUrl(imageUrl) : null;
+  
     return (
         <>
         <div className="col-md-4">

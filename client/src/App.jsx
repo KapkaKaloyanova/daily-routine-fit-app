@@ -53,11 +53,11 @@ function App() {
             element={<WorkoutDetails />}
           />
           <Route
-            path="/activity/nutrition/details"
+            path="/activity/nutrition/:activityId/details"
             element={<NutritionDetails />}
           />
           <Route
-            path="/activity/meditation/details"
+            path="/activity/meditation/:activityId/details"
             element={<MeditationDetails />}
           />
 

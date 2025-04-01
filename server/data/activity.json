@@ -4,13 +4,13 @@
         "category": "workout",
         "time": "20",
         "intensity": "medium",
-        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
-        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVilyOHIy_07Jg8vXeSsTN0Y_t1pAJPGdHA&s",
+        "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
         "description": "Restore future flexibility and mobility through a series of tension-releasing exercises that can be done at your desk - no equipment needed.",
         "_id": "df34835e-80c0-4b44-b6a1-7a626c555bf2"
     },
     "72e8bfb9-3a96-48ca-847f-c84d52eb30a3": {
-        "title": "Workout 1",
+        "title": "Workout 1NEW",
         "category": "workout",
         "time": "10",
         "intensity": "medium",
@@ -38,5 +38,66 @@
         "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
         "description": "Restore nourishment to your kidneys and liver through a series of flowing exercises that effectively stimulate two of the body's most vital organs.",
         "_id": "47268cdd-01d8-413a-932b-cb0b1695d338"
+    },
+    "4385b0f0-0db2-45c7-8c3d-e2e852a3f570": {
+        "title": "new conditional",
+        "category": "workout",
+        "time": "5",
+        "intensity": "low",
+        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
+        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
+        "description": "conditional first try",
+        "_id": "4385b0f0-0db2-45c7-8c3d-e2e852a3f570"
+    },
+    "9ccaf8e9-8c6d-4264-b411-f3194fcae3c4": {
+        "title": "conditional 3",
+        "category": "nutrition",
+        "time": "5",
+        "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEBUTExMTFRUVFRcWGRgVFxgWGBgSGBUXFxcZGBkYHCggGhslHRUVIjEjJykrLi4uFyAzODMvNygtLisBCgoKDg0OGxAQGy4lHyU1LS0vKy0tNS8tNS0tLS0tLy0tLS0tLS8tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABQMEBgIHAf/EAEYQAAEDAgIFBwoDBwMDBQAAAAEAAgMEERIhBQYxQVETImFxgZGhFjIzU3SUsbPB00LR8FJigpKi4fEVI3JDssIUY3OD0v/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACcRAQEAAgEEAgEEAwEAAAAAAAABAhEDEiExQQRREyIykdFhgaEU/9oADAMBAAIRAxEAPwD7iiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiCZoDShqGSOLHM5Oomh5wIxCKRzA4X3EAeKpqRqz6OX2qp+e9V0BERAREQEREBEWvNXxMkZE6SNskmLAwuAe/CLuwtJu6wzNtiDYRc5HrnT8rKxwljbE2d3KvaBG8UzgyowEEuOBxAN2i+66/KzWwMhZMKapwumbHhfGWSYCwvMjYzdzrNaThycbEWvkg6RFzWqGsjqsyh7A0Y3vgc2+GWi5V8ccgJ/FzDccHMP4l0ckgaCXEADMkmwA6SUHpFoaJ0zBVNLqeRsrQbFzLlt+AdaxPUVvoCIiAiIgIiICIiAiIgIiICIiCRqz6OX2qp+e9V1I1Z9HL7VU/Peq6AiIgIiICIvEsga0uN7AXyBcewAXJ6Ag9qFrVo18jYZYWB08FRDI3NrSY8eCZuI7jFJL2r9ptLVMwvFSOiAcW4qp4jJaNjmMjxud",
+        "foodType": "smoothies-juices",
+        "typeBenefit": "high protein",
+        "description": "conditional nutrition",
+        "_id": "9ccaf8e9-8c6d-4264-b411-f3194fcae3c4"
+    },
+    "c961dba5-1f40-4602-b9af-71437a0bf8df": {
+        "title": "Meditation I2",
+        "category": "meditation",
+        "time": "7",
+        "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEBUTExMTFRUVFRcWGRgVFxgWGBgSGBUXFxcZGBkYHCggGhslHRUVIjEjJykrLi4uFyAzODMvNygtLisBCgoKDg0OGxAQGy4lHyU1LS0vKy0tNS8tNS0tLS0tLy0tLS0tLS8tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABQMEBgIHAf/EAEYQAAEDAgIFBwoDBwMDBQAAAAEAAgMEERIhBQYxQVETImFxgZGhFjIzU3SUsbPB00LR8FJigpKi4fEVI3JDssIUY3OD0v/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACcRAQEAAgEEAgEEAwEAAAAAAAABAhEDEiExQQRREyIykdFhgaEU/9oADAMBAAIRAxEAPwD7iiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiCZoDShqGSOLHM5Oomh5wIxCKRzA4X3EAeKpqRqz6OX2qp+e9V0BERAREQEREBEWvNXxMkZE6SNskmLAwuAe/CLuwtJu6wzNtiDYRc5HrnT8rKxwljbE2d3KvaBG8UzgyowEEuOBxAN2i+66/KzWwMhZMKapwumbHhfGWSYCwvMjYzdzrNaThycbEWvkg6RFzWqGsjqsyh7A0Y3vgc2+GWi5V8ccgJ/FzDccHMP4l0ckgaCXEADMkmwA6SUHpFoaJ0zBVNLqeRsrQbFzLlt+AdaxPUVvoCIiAiIgIiICIiAiIgIiICIiCRqz6OX2qp+e9V1I1Z9HL7VU/Peq6AiIgIiICIvEsga0uN7AXyBcewAXJ6Ag9qFrVo18jYZYWB08FRDI3NrSY8eCZuI7jFJL2r9ptLVMwvFSOiAcW4qp4jJaNjmMjxud",
+        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
+        "description": "Meditation test 1",
+        "_id": "c961dba5-1f40-4602-b9af-71437a0bf8df"
+    },
+    "f7310f54-8564-4845-95b4-12c079a106b4": {
+        "title": "meditation 2",
+        "category": "meditation",
+        "time": "5",
+        "imageUrl": "https://www.google.com/imgres?q=%D0%BA%D0%B0%D1%80%D1%83%D1%87%D0%BA%D0%B0&imgurl=https%3A%2F%2Fcdn.now.bg%2Fprod%2Fproducts%2Fimages%2F2%2F1066%2F1682238448.webp&imgrefurl=https%3A%2F%2Figuana.bg%2Fdarvena-dekorativna-karuchka-svetlo-darvo-proizvedena-v-balgariya-iguana-bg-p1042165&docid=PCf1YLsN-MyLhM&tbnid=EidtTtfbC3iiyM&vet=12ahUKEwi069Tm4OOHAxVURPEDHWAZAIcQM3oECBkQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwi069Tm4OOHAxVURPEDHWAZAIcQM3oECBkQAA",
+        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
+        "description": "test 2",
+        "_id": "f7310f54-8564-4845-95b4-12c079a106b4"
+    },
+    "117295d0-f8ce-4153-a8a8-b40fd7de6ba0": {
+        "title": "Green Matcha Smoothie",
+        "category": "nutrition",
+        "time": "10",
+        "imageUrl": "https://getinspiredeveryday.com/wp-content/uploads/2022/01/Grapefruit-Green-Smoothie-Get-Inspired-Everyday-9.jpg",
+        "foodType": "smoothies-juices",
+        "typeBenefit": "Increase Metabolism",
+        "difficulty": "Easy",
+        "calories": "146",
+        "ingredients": "100 g. Spinach , 200 g. Cucumber, 2 tsp Matcha Powder, 1 Green Apple, 4 Dried Dates, 1/2 Pink Grapefruit, 2 tbsp Mint, 10 g Ginger",
+        "preparation": "Using a hand blender, finely puree all the ingredients together. Serve in a glass with a slice of pink grapefruit.",
+        "description": "Packed with an incredible number of antioxidants, matcha powder is a potent source of nutrients. ...",
+        "_id": "117295d0-f8ce-4153-a8a8-b40fd7de6ba0"
+    },
+    "4bc22d0f-9a8b-4122-9dbe-ed895aab10d5": {
+        "title": "Give Gratitude",
+        "category": "meditation",
+        "time": "15",
+        "imageUrl": "https://cdn.yogajournal.com/wp-content/uploads/2017/11/gratitude-meditation.jpg",
+        "videoLink": "https://youtu.be/71GPvwBgJ00?si=Yturoy7csuIcoKzx",
+        "description": "Commit to gratitude, embrace a sense of fulfilment. Bring  happiness through a mindset of abundance.",
+        "_id": "4bc22d0f-9a8b-4122-9dbe-ed895aab10d5"
     }
 }

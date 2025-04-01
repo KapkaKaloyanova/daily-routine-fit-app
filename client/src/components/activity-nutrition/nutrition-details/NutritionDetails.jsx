@@ -1,12 +1,37 @@
-import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router";
+import activityService from "../../../api/activityService";
+import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
-export default function NutritionDetails({
-  _id,
-  title,
-  duration,
-  description,
-  imageUrl,
-}) {
+export default function NutritionDetails() {
+
+  const navigate = useNavigate();
+
+  const [ activity, setActivity ] = useState({});
+  const { activityId } = useParams();
+
+  const processedImageUrl = activity.imageUrl
+    ? getDirectImageUrl(activity.imageUrl)
+    : null;
+
+  useEffect(() => {
+    (async () => {
+      const result = await activityService.getOne(activityId);
+      setActivity(result);
+    })();
+  }, [activityId]);
+
+  const activityDeleteClickHandler = async () => {
+    const hasConfirm = confirm(
+      `Are you sure you want to delete ${activity.title} activity?`
+    );
+    if (!hasConfirm) {
+      return;
+    }
+    await activityService.delete(activityId);
+
+    navigate("/activity/nutrition");
+  };
 
   return (
     <>
@@ -14,40 +39,52 @@ export default function NutritionDetails({
         <div id="ho_shad" className="activity_box details_center text_align_center">
 
           <div className="col-md-6">
-          <figure>
-              <img src="/images/green-matcha-smoothie.jpg" alt="#" />
+            <figure>
+              {processedImageUrl ? (
+                <img src={processedImageUrl} alt={activity.title} />
+              ) : (
+                <p>No image available</p>
+              )}
             </figure>
-            <h3>Green matcha smoothie</h3>
+          
+            <h3>{activity.title}</h3>
             <div className="details_box text_align_center">
               <p>
                 <span>Difficulty</span> | <span>Cooking</span> |{" "}
                 <span>calories</span>
                 <br />
-                <span>Easy</span> | <span>10 min</span> | <span>146</span>
+                <span>{activity.difficulty}</span> | <span>{activity.time} min</span> | <span>{activity.calories}</span>
               </p>
             </div>
-            <h4>Meal Benefits</h4>
+            <h4>{activity.typeBenefit}</h4>
             <p>
-              Restore future flexibility and mobility through a series of
-              tension-releasing exercises that can be done at your desk - no
-              equipment needed.
+              {activity.description}
             </p>
             <h4>Ingredients</h4>
             <p>
-              100 g Spinach <br />
-              100 g Spinach <br />
-              100 g Spinach <br />
-              100 g Spinach <br />
-              100 g Spinach <br />
+              {activity.ingredients}
             </p>
             <h4>Preparation</h4>
             <p>
-              Using a hand blender, finely puree all the ingredients together. Serve in a glass with a slice of pink grapefruit.
+              {activity.preparation}
             </p>
-            {/* <Link className="read_more" to="#">
-            Get started
-        </Link> */}
           </div>
+
+            {/* Edit/delete/comment nav */}
+            <div className="button-container2">
+                <Link className="edit_delete read_more" to="Javascript:void(0)">
+                  Add review
+                </Link>
+                <Link className="edit_delete read_more" to={`/activity/nutrition/${activityId}/edit`}>
+                  Edit
+                </Link>
+                <button
+                  onClick={activityDeleteClickHandler}
+                  className="edit_delete read_more"
+                >
+                  Delete
+                </button>
+            </div>
         </div>
       </div>
     </>

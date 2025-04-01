@@ -21,7 +21,7 @@ export default {
     },
 
     edit(activityId, activityData ) {
-        return request.put(`${baseUrl}/${activityData.category}/${activityId}`, {...activityData, _id: activityId});
+        return request.put(`${baseUrl}/${activityId}`, {...activityData, _id: activityId});
 
     },
     

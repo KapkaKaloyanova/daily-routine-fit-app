@@ -24,9 +24,15 @@ export default function ActivityEdit(){
       e.preventDefault();
       const formData = new FormData(e.target);
       const activityData =  Object.fromEntries(formData);
-      await activityService.edit(activityId, activityData);
+      try {
+        await activityService.edit(activityId, activityData);
 
-      navigate(`/activity/${activityData.category}/${activityId}/details`);
+        navigate(`/activity/${activityData.category}/${activityId}/details`);
+      }
+      catch (error){
+        console.log("Error editing activity", error);
+      }
+
     }
 
     return (
@@ -153,8 +159,52 @@ export default function ActivityEdit(){
                         placeholder="High Protein / Low Calorie / High Fiber / Anti-Inflammatory / Increase Metabolism"
                         type="text"
                         name="typeBenefit"
-                        defaultValue={activity.typeBenefit} />
+                        defaultValue={activity.typeBenefit} 
+                      />
                     </div>
+
+                    <div className="col-md-6">
+                      <input
+                        className="form_control"
+                        placeholder="Difficulty"
+                        type="text"
+                        name="difficulty"
+                        defaultValue={activity.difficulty}
+                      />
+                    </div>
+
+                    <div className="col-md-6">
+                      <input
+                        className="form_control"
+                        placeholder="calories"
+                        type="number"
+                        name="calories"
+                        defaultValue={activity.calories}
+                      />
+                    </div>
+    
+                    <div className="col-md-12">
+                      <textarea
+                        style={{ color: "#d0d0cf" }}
+                        className="textarea"
+                        placeholder="Ingredients"
+                        type="textarea"
+                        name="ingredients"
+                        defaultValue={activity.ingredients}
+                      />
+                    </div>
+
+                    <div className="col-md-12">
+                      <textarea
+                        style={{ color: "#d0d0cf" }}
+                        className="textarea"
+                        placeholder="Preparation"
+                        type="textarea"
+                        name="preparation"
+                        defaultValue={activity.preparation}
+                      />
+                    </div>
+
                   </>
                   )}
 

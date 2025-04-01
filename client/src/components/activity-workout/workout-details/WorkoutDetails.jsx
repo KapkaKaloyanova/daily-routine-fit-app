@@ -3,18 +3,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
-export default function WorkoutDetails({
-  _id,
-  title,
-  category,
-  time,
-  intensity,
-  foodType,
-  imageUrl,
-  videoLink,
-  typeBenefit,
-  description,
-}) {
+export default function WorkoutDetails() {
   const navigate = useNavigate();
 
   const [activity, setActivity] = useState({});
@@ -72,6 +61,8 @@ export default function WorkoutDetails({
             </a>
           </div>
         </div>
+
+        {/* Edit/delete/comment nav */}
         <div className="button-container2">
             <Link className="edit_delete read_more" to="Javascript:void(0)">
               Add review

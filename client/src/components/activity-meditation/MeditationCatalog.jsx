@@ -8,7 +8,7 @@ export default function MeditationCatalog() {
   useEffect(() => {
       activityService.getAll()
           .then((allActivities) => {
-            // Filter only workout activity
+            // Filter only meditation activity
             const meditationActivities = allActivities.filter(
               (activity) => activity.category === "meditation"
             );
@@ -30,7 +30,7 @@ export default function MeditationCatalog() {
           <div className="row">
           {activities.length > 0 
               ? activities.map(activity => <MeditationCatalogItem key={activity._id} {...activity} />) 
-              : <h3 className="titlepage text_align_center">No recipes yet</h3>
+              : <h3 className="titlepage text_align_center">No meditations yet</h3>
             }
           </div>
         </div>
