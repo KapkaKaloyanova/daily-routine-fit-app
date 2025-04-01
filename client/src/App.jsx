@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router";
 
 import Header from "./components/header/Header";
@@ -23,6 +24,13 @@ import CustomerReviewCreate from "./components/customer-review-create/CustomerRe
 import NotFound from "./components/notFound/NotFound";
 
 function App() {
+
+const [email,setEmail] = useState('');
+
+const userLoginHandler = (email) => {
+  setEmail(email);
+};
+
   return (
     <>
       <Loader />
@@ -34,7 +42,7 @@ function App() {
           <Route path="/activity/create" element={<ActivityCreate />} />
 
           {/* Auth Routes */}
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onLogin={userLoginHandler}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/pricing" element={<Pricing />} />
