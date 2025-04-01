@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
+import CustomerReview from "../../customer-review/CustomerReview";
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ export default function WorkoutDetails() {
   };
 
   return (
+    <>
     <div className="container col-md-12">
       <div id="ho_shad" className="activity_box text_align_center">
         <div className="col-md-8">
@@ -64,7 +66,7 @@ export default function WorkoutDetails() {
 
         {/* Edit/delete/comment nav */}
         <div className="button-container2">
-            <Link className="edit_delete read_more" to="Javascript:void(0)">
+            <Link className="edit_delete read_more" to={"/customers-review/create"}>
               Add review
             </Link>
             <Link className="edit_delete read_more" to={`/activity/workout/${activityId}/edit`}>
@@ -77,7 +79,11 @@ export default function WorkoutDetails() {
               Delete
             </button>
         </div>
+        <div><p></p></div>
       </div>
     </div>
+    <CustomerReview />
+    </>
+
   );
 }

@@ -12,8 +12,8 @@ export default function CustomerReviewCreate() {
             <div className="col-md-12">
               <form id="create" className="main_form">
                 <div className="row">
-                  <div className="col-md-6">
-                    <input
+                  <div className="col-md-12">
+                    <textarea
                       className="textarea"
                       placeholder="Review"
                       type="textarea"

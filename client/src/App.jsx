@@ -5,9 +5,9 @@ import Slider from "./components/home/Slider";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";
-import About from "./components/About";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
+import About from "./components/about-page/About";
 import Pricing from "./components/Pricing";
 import ActivityCatalog from "./components/activity-catalog/ActivityCatalog";
 import ActivityCreate from "./components/activity-create/ActivityCreate";
@@ -16,10 +16,11 @@ import WorkoutCatalog from "./components/activity-workout/WorkoutCatalog";
 import WorkoutDetails from "./components/activity-workout/workout-details/WorkoutDetails";
 import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
-import CustomerReview from "./components/customer-review/CustomerReview";
-import NotFound from "./components/notFound/NotFound";
 import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
 import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
+import CustomerReview from "./components/customer-review/CustomerReview";
+import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   return (
@@ -40,7 +41,8 @@ function App() {
           <Route path="/about" element={<About />} />
 
           {/* Customer Reviews */}
-          <Route path="/customers" element={<CustomerReview />} />
+          <Route path="/customer-review" element={<CustomerReview />} />
+          <Route path="/customers-review/create" element={<CustomerReviewCreate />} />
 
           {/* Catalogs */}
           <Route path="/activity/workout" element={<WorkoutCatalog />} />

@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import Reviews from "../Reviews";
 import HomeSlideWorkout from "./home-slides/HomeSlideWorkout";
 import HomeSlideMeditation from "./home-slides/HomeSlideMeditation";
 import HomeSlideNutrition from "./home-slides/HomeSlideNutrition";
+import CustomerReview from "../customer-review/CustomerReview";
 
 export default function Slider(){
     return (
@@ -34,7 +34,7 @@ export default function Slider(){
                </a>
       </div>
     </div>
-    <Reviews />
+    <CustomerReview />
         </>
     );
 }
