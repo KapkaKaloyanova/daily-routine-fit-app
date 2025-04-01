@@ -60,15 +60,15 @@ const userLoginHandler = (email) => {
           {/* Details Pages */}
           <Route
             path="/activity/workout/:activityId/details"
-            element={<WorkoutDetails />}
+            element={<WorkoutDetails email={email}/>}
           />
           <Route
             path="/activity/nutrition/:activityId/details"
-            element={<NutritionDetails />}
+            element={<NutritionDetails email={email}/>}
           />
           <Route
             path="/activity/meditation/:activityId/details"
-            element={<MeditationDetails />}
+            element={<MeditationDetails email={email}/>}
           />
 
           {/* Edit Page */}

@@ -3,7 +3,9 @@ import { Link, useNavigate, useParams } from "react-router";
 import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
-export default function NutritionDetails() {
+export default function NutritionDetails({
+  email,
+}) {
 
   const navigate = useNavigate();
 

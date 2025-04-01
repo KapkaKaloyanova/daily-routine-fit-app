@@ -1,4 +1,14 @@
-export default function CustomerReviewCreate() {
+export default function CustomerReviewCreate({
+  email,
+}) {
+
+  const reviewAction = (formData) =>{
+    const review = formData.get('review');
+
+    console.log(email);
+    console.log(review);
+  }
+
   return (
     <>
       <div className="creates">
@@ -10,7 +20,10 @@ export default function CustomerReviewCreate() {
               </div>
             </div>
             <div className="col-md-12">
-              <form id="create" className="main_form">
+              <form 
+                id="create" 
+                className="main_form"
+                action={reviewAction}>
                 <div className="row">
                   <div className="col-md-12">
                     <textarea

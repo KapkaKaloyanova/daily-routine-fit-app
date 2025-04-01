@@ -4,7 +4,9 @@ import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReview from "../../customer-review/CustomerReview";
 
-export default function WorkoutDetails() {
+export default function WorkoutDetails({
+  email,
+}) {
   const navigate = useNavigate();
 
   const [activity, setActivity] = useState({});
@@ -82,7 +84,7 @@ export default function WorkoutDetails() {
         <div><p></p></div>
       </div>
     </div>
-    <CustomerReview />
+    <CustomerReview email={email}/>
     </>
 
   );
