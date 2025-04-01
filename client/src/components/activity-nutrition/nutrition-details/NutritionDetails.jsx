@@ -39,13 +39,6 @@ export default function NutritionDetails() {
         <div id="ho_shad" className="activity_box details_center text_align_center">
 
           <div className="col-md-6">
-            <figure>
-              {processedImageUrl ? (
-                <img src={processedImageUrl} alt={activity.title} />
-              ) : (
-                <p>No image available</p>
-              )}
-            </figure>
           
             <h3>{activity.title}</h3>
             <div className="details_box text_align_center">
@@ -60,6 +53,13 @@ export default function NutritionDetails() {
             <p>
               {activity.description}
             </p>
+            <figure>
+              {processedImageUrl ? (
+                <img src={processedImageUrl} alt={activity.title} />
+              ) : (
+                <p>No image available</p>
+              )}
+            </figure>
             <h4>Ingredients</h4>
             <p>
               {activity.ingredients}

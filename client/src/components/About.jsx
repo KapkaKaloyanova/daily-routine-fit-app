@@ -20,16 +20,21 @@ export default function About() {
                   Your path to <br /> a healthy lifestyle
                 </h2>
                 <p>
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquipsed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip
+                This is the healthy lifestyle app for anyone who wants to get in shape, have more energy, sleep better, and increase their productivity.
                 </p>
-                <Link className="read_more" to="/about">
+                <p>
+                Our mission is to help everyone achieve a healthy lifestyle by offering the best of health and fitness all in one place. 
+                </p>
+                <p>
+                We see health and fitness as a set of tiny actions that lead us to big changes. From exercising to sleeping well, working smart and drinking water – even making sure you take a breath from time to time.
+                </p>
+                <p>
+
+                Our app offers hundreds of workouts, as well as nutrition ideas and meditation. 
+                </p>
+                {/* <Link className="read_more" to="/about">
                   Read More
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

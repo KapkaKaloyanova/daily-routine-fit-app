@@ -15,11 +15,11 @@ import ActivityEdit from "./components/activity-edit/ActivityEdit";
 import WorkoutCatalog from "./components/activity-workout/WorkoutCatalog";
 import WorkoutDetails from "./components/activity-workout/workout-details/WorkoutDetails";
 import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
-import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
-import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
 import CustomerReview from "./components/customer-review/CustomerReview";
 import NotFound from "./components/notFound/NotFound";
+import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
+import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
 
 function App() {
   return (

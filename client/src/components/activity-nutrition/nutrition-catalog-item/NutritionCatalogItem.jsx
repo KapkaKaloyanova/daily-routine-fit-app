@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from 'react-router';
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 
 export default function NutritionCatalogItem({
@@ -33,7 +33,8 @@ export default function NutritionCatalogItem({
             <p>
               {description}
             </p>
-            <Link className="read_more" to={`/activity/nutrition/${_id}/details"`}>
+
+            <Link className="read_more" to={`/activity/nutrition/${_id}/details`}>
               Details
             </Link>
           </div>
