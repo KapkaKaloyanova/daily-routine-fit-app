@@ -1,44 +1,27 @@
-// import { useActionState } from "react";
 import { useActionState } from "react";
 import { Link, useNavigate } from "react-router";
+import { useLogin } from "../../api/authApi";
 
 
 export default function Login({
   onLogin,
 }) {
   const navigate = useNavigate();
-
-  // const loginHandler =  (previousState, formData) => {
-  //   const values = Object.fromEntries(formData);
-
-  //   // Simple validation 
-  //   if (!values.email || !values.password) {
-  //     console.error('Email and password are required.');
-  //     return;
-  //   }
-
-  //  onLogin(values.email);
-
-  //   navigate('/activity');
-
-  //   return values;
-  // }
-  
-  // const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: ''} )
+  const { login } = useLogin()
  
-  const loginHandler = (previousState, formData) => {
+  const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
-
-    onLogin(values.email);
+    const authData = await login(values.email, values.password);
     
-    // navigate('/activity');
+    onLogin(authData);
+    
+    navigate('/activity');
     
     return values;
 
   }
   
-  const [ values, loginAction, isPending ] = useActionState( loginHandler, {email: '', password: ''} );
-  console.log(values);
+  const [ _, loginAction, isPending ] = useActionState( loginHandler, {email: '', password: ''} );
 
 return (
         <>
