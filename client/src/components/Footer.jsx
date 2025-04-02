@@ -6,19 +6,23 @@ export default function Footer() {
       <div className="footer">
         <div className="container">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-md-6">
               <div className="row">
                 <div className="col-lg-6 col-md-12">
                   <div className="hedingh3 text_align_left">
-                    <h3>Contact us</h3>
-                    <ul className="top_infomation">
+                    <h3>Menu</h3>
+                    <ul className="menu_footer">
                       <li>
-                        <i className="fa fa-phone" aria-hidden="true" />
-                        +359 1234567890
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <i className="fa fa-envelope" aria-hidden="true" />
-                        <Link to="Javascript:void(0)">demo@gmail.com</Link>
+                        <Link to="/about">About</Link>
+                      </li>
+                      <li>
+                        <Link to="/activity">Explore</Link>
+                      </li>
+                      <li>
+                        <Link to="#">Contact us</Link>
                       </li>
                     </ul>
                   </div>
@@ -41,26 +45,19 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-6">
               <div className="row">
                 <div className="col-lg-6 col-md-12">
                   <div className="hedingh3 text_align_left">
-                    <h3>Menu</h3>
-                    <ul className="menu_footer">
+                    <h3>Contact us</h3>
+                    <ul className="top_infomation">
                       <li>
-                        <Link to="/">Home</Link>
+                        <i className="fa fa-phone" aria-hidden="true" />
+                        +359 1234567890
                       </li>
                       <li>
-                        <Link to="/about">About</Link>
-                      </li>
-                      <li>
-                        <Link to="/activity">Explore</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Contact us</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Customer Review</Link>
+                        <i className="fa fa-envelope" aria-hidden="true" />
+                        <Link to="Javascript:void(0)">demo@gmail.com</Link>
                       </li>
                     </ul>
                   </div>

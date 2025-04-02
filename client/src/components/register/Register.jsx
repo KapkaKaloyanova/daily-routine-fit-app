@@ -28,6 +28,15 @@ export default function Register() {
                   <div className="col-md-6">
                     <input
                       className="form_control"
+                      placeholder="Name"
+                      type="text"
+                      id="name"
+                      name="name"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      className="form_control"
                       placeholder="Password"
                       type="password"
                       name="password"
@@ -43,7 +52,9 @@ export default function Register() {
                   </div>
                   
                   <div className="col-md-12">
-                    <input className="send_btn" type="submit" value="Register"/>
+                    <input 
+                      className="send_btn" 
+                      type="submit" value="Register"/>
                     <p className="field">
                         <span>If you already have profile click <a href="/login">here</a></span>
                     </p>

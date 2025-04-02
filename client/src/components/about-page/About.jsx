@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import CustomerReview from "../customer-review/CustomerReview";
+import CustomerReviewShow from "../customer-review-show/CustomerReviewShow";
 
 export default function About() {
   return (
@@ -40,7 +40,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <CustomerReview />
+      {/* <CustomerReviewShow /> */}
     </>
   );
 }

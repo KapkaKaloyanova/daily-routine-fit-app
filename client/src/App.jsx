@@ -19,8 +19,8 @@ import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
 import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
 import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
-import CustomerReview from "./components/customer-review/CustomerReview";
 import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
+import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
 
 function App() {
@@ -30,6 +30,9 @@ const [email,setEmail] = useState('');
 const userLoginHandler = (email) => {
   setEmail(email);
 };
+
+console.log("Email in App.jsx:", email);
+
 
   return (
     <>
@@ -49,7 +52,7 @@ const userLoginHandler = (email) => {
           <Route path="/about" element={<About />} />
 
           {/* Customer Reviews */}
-          <Route path="/customer-review" element={<CustomerReview />} />
+          <Route path="/customer-review" element={<CustomerReviewShow />} />
           <Route path="/customers-review/create" element={<CustomerReviewCreate />} />
 
           {/* Catalogs */}
@@ -60,15 +63,15 @@ const userLoginHandler = (email) => {
           {/* Details Pages */}
           <Route
             path="/activity/workout/:activityId/details"
-            element={<WorkoutDetails email={email}/>}
+            element={<WorkoutDetails email={email} />}
           />
           <Route
             path="/activity/nutrition/:activityId/details"
-            element={<NutritionDetails email={email}/>}
+            element={<NutritionDetails email={email} />}
           />
           <Route
             path="/activity/meditation/:activityId/details"
-            element={<MeditationDetails email={email}/>}
+            element={<MeditationDetails email={email} />}
           />
 
           {/* Edit Page */}

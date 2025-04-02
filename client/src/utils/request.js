@@ -28,16 +28,20 @@ const request = async (method, url, data) => {
         }
     }
 
-    const response = await fetch(url, options);
-    /* const responseContentType = response.headers.get('Content-Type');
-    if (!responseContentType) {
-        return;
-    } */
+    try {
+        const response = await fetch(url, options);
 
-    const result = await response.json();
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
 
-    return result;
+        const result = await response.json();
 
+        return result;
+    } catch (error) {
+        console.error("Request failed:", error);
+        throw new Error("Network request failed");
+    }
 };
 export default {
     get: request.bind(null, 'GET'),

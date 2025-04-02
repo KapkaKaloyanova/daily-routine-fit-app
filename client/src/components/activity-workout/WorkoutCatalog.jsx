@@ -8,7 +8,7 @@ export default function WorkoutCatalog() {
   useEffect(() => {
       activityService.getAll()
           .then((allActivities) => {
-            // Filter only workout actvity
+            // Filter only activity from category workout
             const workoutActivities = allActivities.filter(
               (activity) => activity.category === "workout"
             );

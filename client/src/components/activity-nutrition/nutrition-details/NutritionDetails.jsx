@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
+import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 
 export default function NutritionDetails({
   email,
+  
 }) {
 
   const navigate = useNavigate();
@@ -16,12 +18,10 @@ export default function NutritionDetails({
     ? getDirectImageUrl(activity.imageUrl)
     : null;
 
-  useEffect(() => {
-    (async () => {
-      const result = await activityService.getOne(activityId);
-      setActivity(result);
-    })();
-  }, [activityId]);
+    useEffect(() => {
+      activityService.getOne(activityId)
+        .then(setActivity)
+      }, [activityId]);
 
   const activityDeleteClickHandler = async () => {
     const hasConfirm = confirm(
@@ -89,6 +89,7 @@ export default function NutritionDetails({
             </div>
         </div>
       </div>
+      {/* <CustomerReviewCreate email={email} activityId={activityId}/> */}
     </>
   );
 }

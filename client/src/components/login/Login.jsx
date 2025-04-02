@@ -32,7 +32,7 @@ export default function Login({
     
     navigate('/activity');
 
-    console.log(email);
+    // console.log(email);
   }
   
 
@@ -77,7 +77,7 @@ return (
                       <input 
                         className="send_btn" 
                         type="submit" 
-                        value=""
+                        value="Login"
                         /* value={isPending ? 'Logging In...' : 'Login'}
                         disabled={isPending} // to prevent multiple submit while pending */
                       />
