@@ -53,6 +53,7 @@ export const useRegister = () => {
     }
 };
 
+// useLogout hook
 export const useLogout = () => {
     const { accessToken, userLogoutHandler } = useContext(UserContext);
 
