@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router";
 
+import { UserContext } from "./contexts/UserContext";
+
 import Header from "./components/header/Header";
 import Slider from "./components/home/Slider";
 import Login from "./components/login/Login";
@@ -29,10 +31,11 @@ const [authData,setAuthData] = useState({});
 
 const userLoginHandler = (resultData) => {
   setAuthData(resultData);
-  // console.log("authData in App.jsx:", resultData);
 };
+// console.log("authData in App.jsx:", resultData);
 
   return (
+    <UserContext.Provider value={{...authData, userLoginHandler}}>
     <>
       <Loader />
       <div className="full_bg">
@@ -43,7 +46,7 @@ const userLoginHandler = (resultData) => {
           <Route path="/activity/create" element={<ActivityCreate />} />
 
           {/* Auth Routes */}
-          <Route path="/login" element={<Login onLogin={userLoginHandler}/>} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/pricing" element={<Pricing />} />
@@ -61,15 +64,15 @@ const userLoginHandler = (resultData) => {
           {/* Details Pages */}
           <Route
             path="/activity/workout/:activityId/details"
-            element={<WorkoutDetails email={authData.email} />}
+            element={<WorkoutDetails />}
           />
           <Route
             path="/activity/nutrition/:activityId/details"
-            element={<NutritionDetails email={authData.email} />}
+            element={<NutritionDetails />}
           />
           <Route
             path="/activity/meditation/:activityId/details"
-            element={<MeditationDetails email={authData.email} />}
+            element={<MeditationDetails />}
           />
 
           {/* Edit Page */}
@@ -84,6 +87,7 @@ const userLoginHandler = (resultData) => {
       </div>
       <Footer />
     </>
+    </UserContext.Provider>
   );
 }
 

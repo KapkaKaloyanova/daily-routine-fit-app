@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
 import activityService from "../../../api/activityService";
@@ -7,13 +7,13 @@ import reviewService from "../../../api/reviewService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
+import { UserContext } from "../../../contexts/UserContext";
 
 
 
-export default function WorkoutDetails({ 
-  email, 
-}) {
+export default function WorkoutDetails() {
   const navigate = useNavigate();
+  const { email } = useContext(UserContext);
   const [activity, setActivity] = useState({});
   const [reviews, setReviews] = useState([]);
   const { activityId } = useParams();
