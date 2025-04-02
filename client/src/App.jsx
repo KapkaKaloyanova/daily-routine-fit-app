@@ -25,15 +25,12 @@ import NotFound from "./components/notFound/NotFound";
 
 function App() {
 
-const [email,setEmail] = useState('');
+const [authData,setAuthData] = useState({});
 
-const userLoginHandler = (authData) => {
-  setEmail(authData.email);
-  console.log("authData in App.jsx:", authData);
+const userLoginHandler = (resultData) => {
+  setAuthData(resultData);
+  // console.log("authData in App.jsx:", resultData);
 };
-
-console.log("Email in App.jsx:", email);
-
 
   return (
     <>
@@ -64,15 +61,15 @@ console.log("Email in App.jsx:", email);
           {/* Details Pages */}
           <Route
             path="/activity/workout/:activityId/details"
-            element={<WorkoutDetails email={email} />}
+            element={<WorkoutDetails email={authData.email} />}
           />
           <Route
             path="/activity/nutrition/:activityId/details"
-            element={<NutritionDetails email={email} />}
+            element={<NutritionDetails email={authData.email} />}
           />
           <Route
             path="/activity/meditation/:activityId/details"
-            element={<MeditationDetails email={email} />}
+            element={<MeditationDetails email={authData.email} />}
           />
 
           {/* Edit Page */}

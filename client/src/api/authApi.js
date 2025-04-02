@@ -30,6 +30,20 @@ export const useLogin = () => {
     }
 };
 
+    /* Plain without abortController
+    export const useLogin = () => {
+        const login = async (email, password) =>{       
+            const result = await request.post(
+                `${baseUrl}/login`,
+                { email, password },
+                );           
+                return result;
+            }                  
+        return {
+            login,
+        }
+    }; */
+
 export const useRegister = () => {
     const register = (email, password) =>
         request.post(`${baseUrl}/register`, { email, password });
