@@ -36,10 +36,9 @@ const userLoginHandler = (resultData) => {
 const userLogoutHandler = () => {
   setAuthData({});
 }
-// console.log("authData in App.jsx:", resultData);
 
   return (
-    <UserContext.Provider value={{...authData, userLoginHandler}}>
+    <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
     <>
       <Loader />
       <div className="full_bg">

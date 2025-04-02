@@ -15,7 +15,6 @@ const request = async (method, url, data, options = {}) => {
             body: JSON.stringify(data),
         }
     }
-
     const response = await fetch(url, options);
     const responseContentType = response.headers.get('Content-Type');
     if (!responseContentType) {
@@ -26,8 +25,12 @@ const request = async (method, url, data, options = {}) => {
     
     return result;
 
-}
     
+}
+  
+
+
+
 
 export default {
     get: request.bind(null, 'GET'),
