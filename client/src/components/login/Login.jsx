@@ -1,4 +1,5 @@
 // import { useActionState } from "react";
+import { useActionState } from "react";
 import { Link, useNavigate } from "react-router";
 
 
@@ -25,16 +26,19 @@ export default function Login({
   
   // const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: ''} )
  
-  const loginAction = (formData) => {
-    const email = formData.get('email');
+  const loginHandler = (previousState, formData) => {
+    const values = Object.fromEntries(formData);
 
-    onLogin(email);
+    onLogin(values.email);
     
-    navigate('/activity');
+    // navigate('/activity');
+    
+    return values;
 
-    // console.log(email);
   }
   
+  const [ values, loginAction, isPending ] = useActionState( loginHandler, {email: '', password: ''} );
+  console.log(values);
 
 return (
         <>
@@ -78,8 +82,8 @@ return (
                         className="send_btn" 
                         type="submit" 
                         value="Login"
-                        /* value={isPending ? 'Logging In...' : 'Login'}
-                        disabled={isPending} // to prevent multiple submit while pending */
+                        /* value={isPending ? 'Logging In...' : 'Login'} */
+                        disabled={isPending} // to prevent multiple submit while pending
                       />
                     <p className="field">
                         <span>If you don't have profile click <Link to="/register">here</Link></span>
