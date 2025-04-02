@@ -32,6 +32,10 @@ const [authData,setAuthData] = useState({});
 const userLoginHandler = (resultData) => {
   setAuthData(resultData);
 };
+
+const userLogoutHandler = () => {
+  setAuthData({});
+}
 // console.log("authData in App.jsx:", resultData);
 
   return (

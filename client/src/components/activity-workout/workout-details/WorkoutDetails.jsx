@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
-import activityService from "../../../api/activityService";
-import reviewService from "../../../api/reviewService";
+import activityService from "../../../services/activityService";
+import reviewService from "../../../services/reviewService";
 
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";

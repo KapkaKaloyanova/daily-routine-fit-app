@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import activityService from "../../api/activityService";
 import MeditationCatalogItem from "./meditation-catalog-item/MeditationCatalogItem";
+import activityService from "../../services/activityService";
 
 export default function MeditationCatalog() {
   const [activities, setActivities] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import activityService from "../../api/activityService";
+import activityService from "../../services/activityService";
 
 export default function ActivityEdit(){
     const navigate = useNavigate();

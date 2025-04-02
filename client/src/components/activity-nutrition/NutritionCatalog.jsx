@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import activityService from "../../api/activityService";
+import activityService from "../../services/activityService";
 import NutritionCatalogItem from "./nutrition-catalog-item/NutritionCatalogItem";
 
 export default function NutritionCatalog() {

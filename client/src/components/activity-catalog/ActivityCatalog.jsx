@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import activityService from "../../api/activityService";
+import activityService from "../../services/activityService";
 
 export default function ActivityCatalog() {
   const [activities, setActivities] = useState([]);

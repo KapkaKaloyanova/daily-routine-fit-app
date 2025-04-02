@@ -1,8 +1,31 @@
-
-
+import { useContext } from "react";
+import { useRegister } from "../../api/authApi";
+import { UserContext } from "../../contexts/UserContext";
+import { useNavigate } from "react-router";
 
 export default function Register() {
+  const navigate = useNavigate();
+  const { register } = useRegister();
+  const { userLoginHandler } = useContext(UserContext);
+
     
+  const registerHandler = async (formData) => {
+    const {email, password} = Object.fromEntries(formData);
+
+    const confirmPassword = formData.get("confirm-password");
+
+    if (password !== confirmPassword) {
+      console.log('Password mismatch');
+
+      return ;
+    }
+    const authData = await register(email, password);
+    
+    userLoginHandler(authData);
+    
+    navigate('/');
+  }
+
   return (
     <>
       <div className="creates">
@@ -14,7 +37,10 @@ export default function Register() {
               </div>
             </div>
             <div className="col-md-12">
-              <form id="register"  className="main_form">
+              <form 
+                id="register"  
+                className="main_form"
+                action={registerHandler}>
                 <div className="row">
                   <div className="col-md-6">
                     <input
@@ -28,10 +54,10 @@ export default function Register() {
                   <div className="col-md-6">
                     <input
                       className="form_control"
-                      placeholder="Name"
+                      placeholder="Username"
                       type="text"
                       id="name"
-                      name="name"
+                      name="username"
                     />
                   </div>
                   <div className="col-md-6">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import activityService from "../../api/activityService";
+import activityService from "../../services/activityService";
 import WorkoutCatalogItem from "./workout-catalog-item/WorkoutCatalogItem";
 
 export default function WorkoutCatalog() {

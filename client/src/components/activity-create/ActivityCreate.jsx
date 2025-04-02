@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import activityService from "../../api/activityService";
+import activityService from "../../services/activityService";
 
 export default function ActivityCreate() {
   const navigate = useNavigate();

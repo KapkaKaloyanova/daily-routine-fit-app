@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-import activityService from "../../../api/activityService";
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
+import activityService from "../../../services/activityService";
 
 export default function NutritionDetails({
   email,

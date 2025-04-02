@@ -1,5 +1,5 @@
 import { useState } from "react";
-import reviewService from "../../api/reviewService";
+import reviewService from "../../services/reviewService";
 
 export default function CustomerReviewCreate({ 
   email, 
