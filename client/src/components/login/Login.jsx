@@ -6,8 +6,8 @@ import { UserContext } from "../../contexts/UserContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userLoginHandler } = useContext(UserContext);
-  const { login } = useLogin()
+  const { userLoginHandler } = useContext(UserContext); // enables userLoginHandler in this component through the UserContext.Provider
+  const { login } = useLogin();
  
   const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
@@ -64,8 +64,8 @@ return (
                       <input 
                         className="send_btn" 
                         type="submit" 
-                        value="Login"
-                        /* value={isPending ? 'Logging In...' : 'Login'} */
+                        // value="Login"
+                        value={isPending ? 'Logging In...' : 'Login'}
                         disabled={isPending} // to prevent multiple submit while pending
                       />
                     <p className="field">

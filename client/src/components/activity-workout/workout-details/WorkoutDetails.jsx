@@ -18,7 +18,6 @@ export default function WorkoutDetails() {
   const [reviews, setReviews] = useState([]);
   const { activityId } = useParams();
 
-  // console.log("activityId from useParams:", activityId);
 
   const processedImageUrl = activity.imageUrl
     ? getDirectImageUrl(activity.imageUrl)
@@ -32,9 +31,6 @@ export default function WorkoutDetails() {
           .then(setReviews);
   }, [activityId]);
 
-
-  // console.log("Email in WorkoutDetails:", email);
-  // console.log("Activity ID in WorkoutDetails:", activityId);
 
   const activityDeleteClickHandler = async () => {
     const hasConfirm = confirm(

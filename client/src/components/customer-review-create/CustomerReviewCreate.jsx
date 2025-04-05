@@ -6,8 +6,6 @@ export default function CustomerReviewCreate({
   activityId, 
   onCreate, 
 }) {
-  // console.log("Email in ReviewCreate:", email);
-  // console.log("ActivityID in ReviewCreate:", activityId);
 
   const reviewAction = async (formData) => {
       const review = formData.get('review');
@@ -15,9 +13,7 @@ export default function CustomerReviewCreate({
       const createdReview = await reviewService.create( email, activityId, review);
       
       onCreate(createdReview);
-      
-      // console.log("Created review:", createdReview);
-      
+            
   };
 
 
