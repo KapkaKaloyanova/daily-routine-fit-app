@@ -19,6 +19,7 @@ export default function Register() {
 
       return ;
     }
+    
     const authData = await register(email, password);
     
     userLoginHandler(authData);

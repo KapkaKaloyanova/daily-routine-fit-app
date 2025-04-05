@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 
 const baseUrl = 'http://localhost:3030/users';
 
+    // useLogin hook with abort controller
 export const useLogin = () => {
     const abortRef = useRef(new AbortController());
 
@@ -36,24 +37,11 @@ export const useLogin = () => {
     }
 };
 
-    // Plain without abortController
-    // export const useLogin = () => {
-    //     const login = async (email, password) =>{       
-    //         const result = await request.post(
-    //             `${baseUrl}/login`,
-    //             { email, password },
-    //             );           
-    //             return result;
-    //         }                  
-    //     return {
-    //         login,
-    //     }
-    // };
-
+    // useRegister hook
 export const useRegister = () => {
     const register = (email, password) =>
-        request.post(`${baseUrl}/register`, { email, password });
-
+    request.post(`${baseUrl}/register`, { email, password });
+    
     return {
         register,
     }
@@ -67,22 +55,37 @@ export const useLogout = () => {
         if (!accessToken) {
             return;
         }
-
+        
         const options = {
             headers: {
                 'X-Authorization': accessToken,
             }
         };
-
+        
         request.get(`${baseUrl}/logout`, null, options)
-            .then(userLogoutHandler)
-            .catch(error => {
-                console.error('Logout failed:', error);
-            });
-
+        .then(userLogoutHandler)
+        .catch(error => {
+            console.error('Logout failed:', error);
+        });
+        
     }, [accessToken, userLogoutHandler]);
-
+    
     return {
         isLoggedOut: !accessToken, //double ! was used before
     };
 };
+
+
+// Plain useLogin hook without abortController
+// export const useLogin = () => {
+//     const login = async (email, password) =>{       
+//         const result = await request.post(
+//             `${baseUrl}/login`,
+//             { email, password },
+//             );           
+//             return result;
+//         }                  
+//     return {
+//         login,
+//     }
+// };

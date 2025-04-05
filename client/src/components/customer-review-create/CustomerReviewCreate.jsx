@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import reviewService from "../../services/reviewService";
+import { UserContext } from "../../contexts/UserContext";
+import { useNavigate } from "react-router";
 
 export default function CustomerReviewCreate({ 
   email, 
   activityId, 
   onCreate, 
 }) {
+  const navigate = useNavigate();
 
   const reviewAction = async (formData) => {
-      const review = formData.get('review');
+      const review = formData.get("review");
+      const {email} = useContext(UserContext);
     
       const createdReview = await reviewService.create( email, activityId, review);
       
