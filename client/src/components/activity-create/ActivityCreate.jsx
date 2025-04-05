@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import activityService from "../../services/activityService";
+import { useCreateActivity } from "../../api/activityApi";
 
 export default function ActivityCreate() {
+  
   const navigate = useNavigate();
+  const { create: createActivity } = useCreateActivity();
+
   const [category, setCategory] = useState("");
 
   const handleCategoryChange = (e) => {
@@ -15,12 +18,8 @@ export default function ActivityCreate() {
     const formData = new FormData(e.target);
     const activityData = Object.fromEntries(formData);
 
-    console.log(activityData);
-
-    
-
     try {
-      await activityService.create(activityData);
+      await createActivity(activityData);
       if (category === "workout") {
         navigate("/activity/workout");
       } else if (category === "nutrition") {
