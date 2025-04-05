@@ -15,11 +15,11 @@ export default function Login() {
     
     userLoginHandler(authData);
     
-    navigate('/');
+    navigate('/activity');
     
     return values;
 
-  }
+  };
   
   const [ _, loginAction, isPending ] = useActionState( loginHandler, {email: '', password: ''} );
 

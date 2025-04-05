@@ -7,30 +7,30 @@ const baseUrl = 'http://localhost:3030/users';
 
     // useLogin hook with abort controller
 export const useLogin = () => {
-    const abortRef = useRef(new AbortController());
+    // const abortRef = useRef(new AbortController());
 
     const login = async (email, password) =>{
         
-        try {
+        // try {
             const result = await request.post(
                 `${baseUrl}/login`,
                 { email, password },
-                { signal: abortRef.current.signal }
+                // { signal: abortRef.current.signal }
                 );
                 return result;
-        }catch (error){
-            if(error.name === 'AbortError'){
-                console.log('Login request aborted');
-            } else {
-                console.log('Login failed:', error);
-            }
-        }
+        // }catch (error){
+            // if(error.name === 'AbortError'){
+                // console.log('Login request aborted');
+            // } else {
+                // console.log('Login failed:', error);
+            // }
+        // }
     };
         
-        useEffect(() => {
-            return () => abortRef.current.abort();
+        // useEffect(() => {
+        //     return () => abortRef.current.abort();
 
-        }, []);
+        // }, []);
             
     return {
         login,
@@ -49,31 +49,56 @@ export const useRegister = () => {
 
 // useLogout hook
 export const useLogout = () => {
-    const { accessToken, userLogoutHandler } = useContext(UserContext);
+    const {accessToken, userLogoutHandler} = useContext(UserContext);
 
     useEffect(() => {
-        if (!accessToken) {
+        if (!accessToken){
             return;
         }
-        
+
         const options = {
             headers: {
                 'X-Authorization': accessToken,
             }
         };
-        
+
         request.get(`${baseUrl}/logout`, null, options)
-        .then(userLogoutHandler)
-        .catch(error => {
-            console.error('Logout failed:', error);
-        });
-        
-    }, [accessToken, userLogoutHandler]);
-    
+            .then(() => {
+                userLogoutHandler();
+            })
+    }, [accessToken, userLogoutHandler ] );
+
     return {
-        isLoggedOut: !accessToken, //double ! was used before
+        isLoggedOut: !!accessToken,
     };
 };
+
+// export const useLogout = () => {
+//     const { accessToken, userLogoutHandler } = useContext(UserContext);
+
+//     useEffect(() => {
+//         if (!accessToken) {
+//             return;
+//         }
+        
+//         const options = {
+//             headers: {
+//                 'X-Authorization': accessToken,
+//             }
+//         };
+        
+//         request.get(`${baseUrl}/logout`, null, options)
+//         .then(userLogoutHandler)
+//         .catch(error => {
+//             console.error('Logout failed:', error);
+//         });
+        
+//     }, [accessToken, userLogoutHandler]);
+    
+//     return {
+//         isLoggedOut: !!accessToken, //double ! was used before
+//     };
+// };
 
 
 // Plain useLogin hook without abortController
