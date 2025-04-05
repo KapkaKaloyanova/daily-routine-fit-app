@@ -101,12 +101,12 @@ export default function MeditationDetails(){
           </div>
         </div>
       </div>
-      <CustomerReviewShow reviews={reviews}/>
+      {/* <CustomerReviewShow reviews={reviews}/>
       <CustomerReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
-      />
+      /> */}
       
     </>
     );

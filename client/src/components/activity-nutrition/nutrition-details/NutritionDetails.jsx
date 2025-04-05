@@ -100,12 +100,12 @@ export default function NutritionDetails() {
             </div>
         </div>
       </div>
-      <CustomerReviewShow reviews={reviews}/>
-      <CustomerReviewCreate 
+      {/* <CustomerReviewShow reviews={reviews}/> */}
+      {/* <CustomerReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
-      />
+      /> */}
     </>
   );
 }

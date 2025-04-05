@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Header(){
+  const { email } = useContext(UserContext);
+
+
     return (
         <>
             <header className="header-area">
@@ -24,22 +29,29 @@ export default function Header(){
                     <Link to="/activity">Explore</Link>
                   </li>
                   <li>
-                    <Link to="/activity/create">Create</Link>
-                  </li>
-                  <li>
                     <Link to="/about">About</Link>
                   </li>
-                  <li>
-                    <Link to="/logout">Logout</Link>
-                  </li>
-                  <li>
-                    <Link to="/register">Register</Link>
-                  </li>
-                  <li className="d_none">
-                    <Link to="/login">
-                      <i className="fa fa-user" aria-hidden="true" />
-                    </Link>
-                  </li>
+                  {/* Logged-in users */}
+                  {email 
+                    ? (<>
+                        <li>
+                          <Link to="/activity/create">Create</Link>
+                        </li>
+                        <li>
+                          <Link to="/logout">Logout {email}</Link>
+                        </li>
+                      </>)
+                    : (<>                    
+                        <li>
+                          <Link to="/register">Register</Link>
+                        </li>
+                        <li className="d_none">
+                          <Link to="/login">
+                            <i className="fa fa-user" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      </>)
+                  }
                   <li className="d_none">
                     <Link to="Javascript:void(0)">
                       <i className="fa fa-search" aria-hidden="true" />
