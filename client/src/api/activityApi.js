@@ -5,13 +5,6 @@ import { UserContext } from "../contexts/UserContext";
 const baseUrl = 'http://localhost:3030/data/activity';
 
 export default {
-    
-     getOne(activityId) {
-        return  request.get(`${baseUrl}/${activityId}`);
-
-    },
-
-
     edit(activityId, activityData ) {
         return request.put(`${baseUrl}/${activityId}`, {...activityData, _id: activityId});
 
@@ -38,6 +31,19 @@ export const useActivities = (category) => {
         activities,
     }
 }
+
+export const useOneActivity = (activityId) => {
+    const [activity, setActivity] = useState({});
+
+    useEffect( () => {
+        request.get(` ${baseUrl}/${activityId}`)
+            .then(setActivity);
+    }, [activityId])
+
+    return {
+        activity,
+    };
+};
 
 export const useCreateActivity = () => {
     const {accessToken} = useContext(UserContext);

@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
 import MeditationCatalogItem from "./meditation-catalog-item/MeditationCatalogItem";
-import activityService from "../../services/activityService";
+import { useActivities } from "../../api/activityApi";
 
 export default function MeditationCatalog() {
-  const [activities, setActivities] = useState([]);
-
-  useEffect(() => {
-      activityService.getAll()
-          .then((allActivities) => {
-            // Filter only meditation activity
-            const meditationActivities = allActivities.filter(
-              (activity) => activity.category === "meditation"
-            );
-            setActivities(meditationActivities)
-          });
-  }, []);
+  
+  const { activities } = useActivities("meditation")
 
   return (
     <>

@@ -8,23 +8,22 @@ import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { UserContext } from "../../../contexts/UserContext";
+import { useOneActivity } from "../../../api/activityApi";
 
 
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
   const { email } = useContext(UserContext);
-  const [activity, setActivity] = useState({});
   const [reviews, setReviews] = useState([]);
   const { activityId } = useParams();
+  const { activity } = useOneActivity(activityId);
 
   const processedImageUrl = activity.imageUrl
     ? getDirectImageUrl(activity.imageUrl)
     : null;
 
   useEffect(() => {
-      activityService.getOne(activityId)
-        .then(setActivity);
 
       reviewService.getAll(activityId)
         .then(setReviews);
