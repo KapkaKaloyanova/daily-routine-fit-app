@@ -10,20 +10,20 @@ export const useLogin = () => {
 
     const login = async (email, password) =>{
         
-        // try {
+        try {
             const result = await request.post(
                 `${baseUrl}/login`,
                 { email, password },
                 { signal: abortRef.current.signal }
                 );
                 return result;
-        // }catch (error){
-        //     if(error.name === 'AbortError'){
-        //         console.log('Login request aborted');
-        //     } else {
-        //         console.log('Login failed:', error);
-        //     }
-        // }
+        }catch (error){
+            if(error.name === 'AbortError'){
+                console.log('Login request aborted');
+            } else {
+                console.log('Login failed:', error);
+            }
+        }
     };
         
         useEffect(() => {

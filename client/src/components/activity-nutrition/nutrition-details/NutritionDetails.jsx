@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
+
+import activityService from "../../../services/activityService";
+import reviewService from "../../../services/reviewService";
+
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
-import activityService from "../../../services/activityService";
+import { UserContext } from "../../../contexts/UserContext";
+import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 
-export default function NutritionDetails({
-  email,
-  
-}) {
+export default function NutritionDetails() {
 
   const navigate = useNavigate();
-
+  const { email } = useContext(UserContext);
   const [ activity, setActivity ] = useState({});
+  const [ reviews, setReviews] = useState([]);
   const { activityId } = useParams();
 
   const processedImageUrl = activity.imageUrl
@@ -21,6 +24,9 @@ export default function NutritionDetails({
     useEffect(() => {
       activityService.getOne(activityId)
         .then(setActivity)
+
+      reviewService.getAll(activityId)
+        .then(setReviews);
       }, [activityId]);
 
   const activityDeleteClickHandler = async () => {
@@ -33,6 +39,10 @@ export default function NutritionDetails({
     await activityService.delete(activityId);
 
     navigate("/activity/nutrition");
+  };
+
+  const reviewCreateHandler = (newReview) => {
+    setReviews(state => [...state, newReview] );
   };
 
   return (
@@ -74,7 +84,8 @@ export default function NutritionDetails({
 
             {/* Edit/delete/comment nav */}
             <div className="button-container2">
-                <Link className="edit_delete read_more" to="Javascript:void(0)">
+                <Link className="edit_delete read_more" to={"/customers-review/create"} 
+                >
                   Add review
                 </Link>
                 <Link className="edit_delete read_more" to={`/activity/nutrition/${activityId}/edit`}>
@@ -89,7 +100,12 @@ export default function NutritionDetails({
             </div>
         </div>
       </div>
-      {/* <CustomerReviewCreate email={email} activityId={activityId}/> */}
+      <CustomerReviewShow reviews={reviews}/>
+      <CustomerReviewCreate 
+        email={email} 
+        activityId={activityId} 
+        onCreate={reviewCreateHandler}
+      />
     </>
   );
 }
