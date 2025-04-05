@@ -1,18 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import request from "../utils/request";
 import { UserContext } from "../contexts/UserContext";
 
 const baseUrl = 'http://localhost:3030/data/activity';
 
 export default {
-    async getAll() {
-        const result = await request.get(baseUrl);
-
-        const activities = Object.values(result);
-
-        return activities;
-
-    },
+    
      getOne(activityId) {
         return  request.get(`${baseUrl}/${activityId}`);
 
@@ -30,6 +23,22 @@ export default {
 
 }
 
+export const useActivities = (category) => {
+    const [activities, setActivities] = useState([]);
+
+    useEffect( () => {
+        request.get(baseUrl)
+            .then(data => {
+                setActivities(category 
+                    ? data.filter(activity => activity.category === category)
+                    : data);
+            });
+    }, [category]);
+    return {
+        activities,
+    }
+}
+
 export const useCreateActivity = () => {
     const {accessToken} = useContext(UserContext);
 
@@ -41,7 +50,7 @@ export const useCreateActivity = () => {
 
     const create = (activityData) => 
         request.post(baseUrl, activityData, options);
-        
+
         return {
             create,
         }

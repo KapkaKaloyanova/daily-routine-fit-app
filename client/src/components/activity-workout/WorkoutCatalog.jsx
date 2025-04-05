@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react";
-import activityService from "../../services/activityService";
 import WorkoutCatalogItem from "./workout-catalog-item/WorkoutCatalogItem";
+import { useActivities } from "../../api/activityApi";
 
 export default function WorkoutCatalog() {
-  const [activities, setActivities] = useState([]);
 
-  useEffect(() => {
-      activityService.getAll()
-          .then((allActivities) => {
-            // Filter only activity from category workout
-            const workoutActivities = allActivities.filter(
-              (activity) => activity.category === "workout"
-            );
-            setActivities(workoutActivities)
-          });
-  }, []);
+  const { activities } = useActivities("workout");
 
   return (
     <>
