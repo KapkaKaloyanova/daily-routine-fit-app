@@ -26,8 +26,8 @@ export default function WorkoutDetails() {
       activityService.getOne(activityId)
         .then(setActivity);
 
-        reviewService.getAll(activityId)
-          .then(setReviews);
+      reviewService.getAll(activityId)
+        .then(setReviews);
   }, [activityId]);
 
   const activityDeleteClickHandler = async () => {

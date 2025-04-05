@@ -1,6 +1,10 @@
-export default function CustomerReviewShow({ 
-  reviews 
-}) {
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
+
+export default function CustomerReviewShow() {
+
+  const { email,  } = useContext(UserContext);
+
   return (
     <>
       <div className="customers">
