@@ -35,6 +35,7 @@ basic
 
 .container {
     max-width: 1170px;
+    padding-bottom: 60px;
 }
 
 html {
@@ -50,6 +51,21 @@ body {
     font-weight: normal;
     overflow-x: hidden;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+  
+  .content-wrapper {
+    flex-grow: 1; 
+  }
 
 a {
     color: #1f1f1f;
@@ -704,7 +720,7 @@ button {
 
 .activity {
     background: #fff;
-    padding-top: 90px;
+    padding-top: 60px;
 }
 
 .activity .titlepage {
@@ -714,18 +730,27 @@ button {
 .activity_box {
     margin-top: 30px;
     display: flex;
-    justify-content: center; 
+    /* justify-content: center;  */
+    justify-content: flex-start;
     align-items: center; 
     flex-wrap: wrap;
     flex-direction: column;
+    /* */
+    height: 100%;
+    padding-bottom: 60px;
 }
 
 .activity_box figure {
     margin: 0;
+    /***/
+    display: flex;
+    justify-content: center;
 }
 
 .activity_box figure img {
     transition: ease-in all 0.5s;
+    /**/
+    /* max-height: 400px; */
 }
 
 .activity_box h3 {
@@ -733,20 +758,36 @@ button {
     font-size: 24px;
     line-height: 25px;
     font-weight: bold;
-    padding-top: 25px;
     padding-bottom: 25px;
+    margin: 0;
+    height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;    
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .activity_box h4 {
-    color: #363636;
+    color: #565656;
     font-weight: bold;
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 .activity_box p {
     line-height: 30px;
     padding-top: 23px;
     padding-bottom: 30px;
+    flex-grow: 1;
+    /**/
+    margin-bottom: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;    
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .activity_box duration {
@@ -756,7 +797,7 @@ button {
 }
 
 .activity_box .col-md-8 {
-    margin-bottom: 20px; /* Add spacing below the video player if necessary */
+    margin-bottom: 20px; /* Space below videoPlayer */
   }
 
 .details_center {
@@ -792,7 +833,7 @@ button {
     width: 100%;
     height: auto;
     max-width: 100%;
-    z-index: 10;  /* Ensure the player is above other elements */
+    z-index: 10;  /* Player is on top of all */
   }
 
   .video-player-container iframe {
@@ -801,6 +842,8 @@ button {
     max-width: 640px; /* Limit the width of the video player */
     margin: 0 auto;   /* Center the video player */
   }
+
+
 
 /** end activity section **/
 
@@ -1132,6 +1175,8 @@ button {
     padding-top: 90px;
     background: #2d2d2d;
     text-align: center;
+    position: relative;
+    width: 100%;
 }
 
 .logo_footer {
@@ -1331,3 +1376,30 @@ ul.social_icon li a i:hover {
 .portfolio_page .footer {
     margin-top: 60px;
 }
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .site-navbar ul {
+      display: none;
+      flex-direction: column;
+      background-color: #fff;
+      position: absolute;
+      top: 60px; /* Adjust according to your header height */
+      right: 0;
+      width: 100%;
+    }
+  
+    .site-navbar ul.active {
+      display: flex;
+    }
+  
+    .site-navbar ul li {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    .nav-toggler {
+      display: block;
+    }
+  }

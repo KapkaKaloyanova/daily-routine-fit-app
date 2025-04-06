@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 
 export default function Header(){
@@ -13,7 +13,7 @@ export default function Header(){
         <div className="row d_flex">
           <div className=" col-md-3 col-sm-3">
             <div className="logo">
-              <Link to="/">Daily Fit Routine</Link>
+              <NavLink to="/">Daily Fit Routine</NavLink>
             </div>
           </div>
           <div className="col-md-9 col-sm-9">
@@ -21,46 +21,46 @@ export default function Header(){
               <nav className="site-navbar">
                 <ul>
                   <li>
-                    <Link className="active" to="/">
+                    <NavLink to="/">
                       Home
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/activity">Explore</Link>
+                    <NavLink to="/activity">Explore</NavLink>
                   </li>
                   <li>
-                    <Link to="/about">About</Link>
+                    <NavLink to="/about">About</NavLink>
                   </li>
                   {/* Logged-in users */}
                   {email 
                     ? (<>
                         <li>
-                          <Link to="/activity/create">Create</Link>
+                          <NavLink to="/activity/create">Create</NavLink>
                         </li>
                         <li>
-                          <Link to="/logout">Logout {email}</Link>
+                          <NavLink to="/logout">Logout {email}</NavLink>
                         </li>
                       </>)
                     : (<>                    
                         <li>
-                          <Link to="/register">Register</Link>
+                          <NavLink to="/register">Register</NavLink>
                         </li>
                         <li className="d_none">
-                          <Link to="/login">
+                          <NavLink to="/login">
                             <i className="fa fa-user" aria-hidden="true" />
-                          </Link>
+                          </NavLink>
                         </li>
                       </>)
                   }
                   <li className="d_none">
-                    <Link to="Javascript:void(0)">
+                    <NavLink to="Javascript:void(0)">
                       <i className="fa fa-search" aria-hidden="true" />
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
-                {/* <button className="nav-toggler">
+                <button className="nav-toggler">
                   <span />
-                </button> */}
+                </button>
               </nav>
             </div>
           </div>

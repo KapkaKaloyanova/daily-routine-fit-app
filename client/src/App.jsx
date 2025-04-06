@@ -39,10 +39,11 @@ const userLogoutHandler = () => {
 
   return (
     <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
-    <>
+    <div className="page-wrapper">
       <Loader />
       <div className="full_bg">
         <Header />
+        <div className="content-wrapper">
         <Routes>
           <Route path="/" element={<Slider />} />
           <Route path="/activity" element={<ActivityCatalog />} />
@@ -89,7 +90,8 @@ const userLogoutHandler = () => {
         </Routes>
       </div>
       <Footer />
-    </>
+      </div>
+    </div>
     </UserContext.Provider>
   );
 }

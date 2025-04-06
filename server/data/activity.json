@@ -1,35 +1,5 @@
-{
-    "df34835e-80c0-4b44-b6a1-7a626c555bf2": {
-        "title": "Desk Remedy I",
-        "category": "workout",
-        "time": "20",
-        "intensity": "medium",
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVilyOHIy_07Jg8vXeSsTN0Y_t1pAJPGdHA&s",
-        "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
-        "description": "Restore future flexibility and mobility through a series of tension-releasing exercises that can be done at your desk - no equipment needed.",
-        "_id": "df34835e-80c0-4b44-b6a1-7a626c555bf2"
-    },
-    "72e8bfb9-3a96-48ca-847f-c84d52eb30a3": {
-        "title": "Workout 1",
-        "category": "workout",
-        "time": "10",
-        "intensity": "medium",
-        "imageUrl": "",
-        "videoLink": "",
-        "description": "First workout",
-        "_id": "72e8bfb9-3a96-48ca-847f-c84d52eb30a3"
-    },
-    "ff456e7d-4e33-41d8-ba11-43e84acce291": {
-        "title": "Workout 1",
-        "category": "workout",
-        "time": "2",
-        "intensity": "rice",
-        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
-        "videoLink": "",
-        "description": "Picture from google drive",
-        "_id": "ff456e7d-4e33-41d8-ba11-43e84acce291"
-    },
-    "47268cdd-01d8-413a-932b-cb0b1695d338": {
+[
+    {
         "title": "Balance of Trilogy III",
         "category": "workout",
         "time": "27",
@@ -37,51 +7,165 @@
         "imageUrl": "https://media.licdn.com/dms/image/C4E12AQHfaaK3vWQPwQ/article-cover_image-shrink_720_1280/0/1533805156688?e=2147483647&v=beta&t=zEjY1tBQustR0lddd-HQUS9g_uxD8kx_kUesUN80Syk",
         "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
         "description": "Restore nourishment to your kidneys and liver through a series of flowing exercises that effectively stimulate two of the body's most vital organs.",
-        "_id": "47268cdd-01d8-413a-932b-cb0b1695d338"
+        "_id": "0",
+        "_createdOn": 1743889644227,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_updatedOn": 1743940081949
     },
-    "4385b0f0-0db2-45c7-8c3d-e2e852a3f570": {
-        "title": "new conditional from google drive",
-        "category": "workout",
-        "time": "5",
-        "intensity": "low",
-        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
-        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
-        "description": "conditional first try",
-        "_id": "4385b0f0-0db2-45c7-8c3d-e2e852a3f570"
-    },
-    "9ccaf8e9-8c6d-4264-b411-f3194fcae3c4": {
-        "title": "Red lentil cream soup",
+    {
+        "title": "Coconut avocado scrambled eggs",
         "category": "nutrition",
-        "time": "5",
-        "imageUrl": "https://simpleveganblog.com/wp-content/uploads/2021/01/red-lentil-soup-1.jpg",
-        "foodType": "smoothies-juices",
-        "typeBenefit": "high protein",
-        "difficulty": "",
-        "calories": "",
-        "ingredients": "red lentil",
-        "preparation": "saute | simmer & blend",
-        "description": "For quick lunch!",
-        "_id": "9ccaf8e9-8c6d-4264-b411-f3194fcae3c4"
+        "time": "15",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3LjHskxzKyDoj1e3_MFBVF_ac6JssmY5f3A&s",
+        "foodType": "soups-stews",
+        "typeBenefit": "Increase Metabolism",
+        "difficulty": "Easy",
+        "calories": "150",
+        "ingredients": "1-2 eggs\na small amount of milk or oat milk\nsalt and pepper\ncoconut oil\n1 avocado\ncurry powder",
+        "preparation": "Mix the eggs together with the seasonings and the milk, and then pour into a pre-heated pan greased with coconut oil. Whisk the eggs until they reach the consistency you\ndesire. In the meantime, slice an avocado and place the slices on a plate. Add the scrambled eggs to the plate. If desired, you can add a few slices of fresh tomato as a garnish. ",
+        "description": "For a tasty alternative, vegans can substitute the eggs with tofu (plain, silken and\nsmoked). Use a fork to mash the plain tofu and then fry it in the coconut oil along\nwith cubes of smoked tofu. For a moist and creamy version, cut the silken tofu in large\npieces and let it fry with the other tofu for a short time. Adding a dash of turmeric will\ngive your tofu the classic yellow color of scrambled eggs.",
+        "_id": "1",
+        "_createdOn": 1743889948735,
+        "_updatedOn": 1743940612901,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
     },
-    "c961dba5-1f40-4602-b9af-71437a0bf8df": {
-        "title": "Meditation I2",
+    {
+        "title": "Meditation 2",
         "category": "meditation",
-        "time": "7",
-        "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/220531190304-woman-meditation-stock.jpg?c=original",
-        "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
-        "description": "Meditation test 1",
-        "_id": "c961dba5-1f40-4602-b9af-71437a0bf8df"
-    },
-    "f7310f54-8564-4845-95b4-12c079a106b4": {
-        "title": "meditation 2",
-        "category": "meditation",
-        "time": "5",
+        "time": "10",
         "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA0YaeQd80ZUicAIvbkE-vMEuBVznakreaGsEAxYmBGSNf5UGPNMj-GSnkFeitAT5km3w&usqp=CAU",
         "videoLink": "https://drive.google.com/file/d/1F8W8dtuMvMIQ-apGfcl-SkhHw9KkABKi/view?usp=sharing",
-        "description": "test 2",
-        "_id": "f7310f54-8564-4845-95b4-12c079a106b4"
+        "description": "Description for meditation",
+        "_id": "2",
+        "_createdOn": 1743893985842,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_updatedOn": 1743939723085
     },
-    "117295d0-f8ce-4153-a8a8-b40fd7de6ba0": {
+    {
+        "title": "TEST for EDIT",
+        "category": "workout",
+        "time": "2",
+        "intensity": "medium",
+        "imageUrl": "",
+        "videoLink": "",
+        "description": "proba za EDIT functionality",
+        "_id": "3",
+        "_createdOn": 1743898005206,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_updatedOn": 1743900586357
+    },
+    {
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "title": "for DELETE",
+        "category": "workout",
+        "time": "2",
+        "intensity": "low",
+        "imageUrl": "",
+        "videoLink": "",
+        "description": "test za delete ",
+        "_createdOn": 1743898678685,
+        "_id": "4"
+    },
+    {
+        "title": "Test for DELETE",
+        "category": "nutrition",
+        "time": "5",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3LjHskxzKyDoj1e3_MFBVF_ac6JssmY5f3A&s",
+        "foodType": "soups-stews",
+        "typeBenefit": "Low Calorie",
+        "difficulty": "Easy",
+        "calories": "100",
+        "ingredients": "Ingredients",
+        "preparation": "Preparation",
+        "description": "Description",
+        "_id": "5",
+        "_createdOn": 1743900071300,
+        "_updatedOn": 1743940717971,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
+    },
+    {
+        "title": "Test for EDIT",
+        "category": "nutrition",
+        "time": "15",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVilyOHIy_07Jg8vXeSsTN0Y_t1pAJPGdHA&s",
+        "foodType": "pasta",
+        "typeBenefit": "High fiber",
+        "difficulty": "",
+        "calories": "100",
+        "ingredients": "Ingredients",
+        "preparation": "Preparation",
+        "description": "Description",
+        "_id": "6",
+        "_createdOn": 1743900108245,
+        "_updatedOn": 1743940782442,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
+    },
+    {
+        "title": "Test for EDIT ",
+        "category": "meditation",
+        "time": "16",
+        "imageUrl": "https://drive.google.com/file/d/1FrAYb_Fb6M9iP8itqhEsXk6x5BSz0ZSm/view?usp=sharing",
+        "videoLink": "https://youtu.be/LRJkTLee0uo?si=SIfn5WyGfz34DbPE",
+        "description": "SUCCESS",
+        "_id": "7",
+        "_createdOn": 1743900198764,
+        "_updatedOn": 1743900487060,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
+    },
+    {
+        "_ownerId": "54089dfc-27d4-4c45-b832-023d7cb21cca",
+        "title": "test za delete",
+        "category": "meditation",
+        "time": "12",
+        "imageUrl": "",
+        "videoLink": "https://youtu.be/LRJkTLee0uo?si=SIfn5WyGfz34DbPE",
+        "description": "123",
+        "_createdOn": 1743900298148,
+        "_id": "8"
+    },
+    {
+        "title": "Desk Dwellers",
+        "category": "workout",
+        "time": "29",
+        "intensity": "medium",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVilyOHIy_07Jg8vXeSsTN0Y_t1pAJPGdHA&s",
+        "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
+        "description": "Restore future flexibility and mobility through a series of tension-releasing exercises that can be done at your desk - no equipment needed.",
+        "_id": "9",
+        "_createdOn": 1743938900935,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_updatedOn": 1743940124739
+    },
+    {
+        "title": "Red lentil cream soup",
+        "category": "nutrition",
+        "time": "30",
+        "imageUrl": "https://simpleveganblog.com/wp-content/uploads/2021/01/red-lentil-soup-1.jpg",
+        "foodType": "soups-stews",
+        "typeBenefit": "high protein",
+        "difficulty": "Easy",
+        "calories": "143",
+        "ingredients": "red lentil, onion, garlic, sweet potatoes, milk, salt and pepper",
+        "preparation": "saute | simmer & blend",
+        "description": "Ideal for a quick lunch!",
+        "_id": "10",
+        "_createdOn": 1743939187235,
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_updatedOn": 1743939453781
+    },
+    {
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "title": "Give Gratitude",
+        "category": "meditation",
+        "time": "15",
+        "imageUrl": "https://cdn.yogajournal.com/wp-content/uploads/2017/11/gratitude-meditation.jpg",
+        "videoLink": "https://youtu.be/71GPvwBgJ00?si=Yturoy7csuIcoKzx",
+        "description": "Commit to gratitude, embrace a sense of fulfilment. Bring  happiness through a mindset of abundance.",
+        "_createdOn": 1743939277507,
+        "_id": "11"
+    },
+    {
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         "title": "Green Matcha Smoothie",
         "category": "nutrition",
         "time": "10",
@@ -93,15 +177,19 @@
         "ingredients": "100 g. Spinach , 200 g. Cucumber, 2 tsp Matcha Powder, 1 Green Apple, 4 Dried Dates, 1/2 Pink Grapefruit, 2 tbsp Mint, 10 g Ginger",
         "preparation": "Using a hand blender, finely puree all the ingredients together. Serve in a glass with a slice of pink grapefruit.",
         "description": "Packed with an incredible number of antioxidants, matcha powder is a potent source of nutrients. ...",
-        "_id": "117295d0-f8ce-4153-a8a8-b40fd7de6ba0"
+        "_createdOn": 1743939435741,
+        "_id": "12"
     },
-    "4bc22d0f-9a8b-4122-9dbe-ed895aab10d5": {
-        "title": "Give Gratitude",
-        "category": "meditation",
-        "time": "15",
-        "imageUrl": "https://cdn.yogajournal.com/wp-content/uploads/2017/11/gratitude-meditation.jpg",
-        "videoLink": "https://youtu.be/71GPvwBgJ00?si=Yturoy7csuIcoKzx",
-        "description": "Commit to gratitude, embrace a sense of fulfilment. Bring  happiness through a mindset of abundance.",
-        "_id": "4bc22d0f-9a8b-4122-9dbe-ed895aab10d5"
+    {
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "title": "New Workout",
+        "category": "workout",
+        "time": "30",
+        "intensity": "low",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLtvcd4sGiYia5o9ePQTXWI7NwU5T9UhLGsQ&s",
+        "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
+        "description": "Dive into newfound energy. Using active breath with each flow movement, you'll wake up your entire body and get your blood pumping.",
+        "_createdOn": 1743964067365,
+        "_id": "0936210e-c1f4-420d-b81d-9d1abd638fc4"
     }
-}
+]

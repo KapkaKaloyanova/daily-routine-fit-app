@@ -18,7 +18,7 @@ export default function NutritionCatalogItem({
         <div className="col-md-4">
           <div id="ho_shad" className="activity_box text_align_left">
             <div className="duration"><span>{time} MIN</span> | <span>{foodType}</span></div>
-            <p className="duration"> {typeBenefit} </p>
+            <h4 > {typeBenefit} </h4>
             <h3>{title}</h3>
             <figure>
               <img
