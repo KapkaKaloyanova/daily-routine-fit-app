@@ -1,6 +1,11 @@
 import { Link } from "react-router";
+import { useLatestActivity } from "../../../api/activityApi";
 
 export default function HomeSlideMeditation() {
+  const { latestActivities } = useLatestActivity("meditation");
+
+  console.log(latestActivities);
+
   return (
     <>
       <div className="carousel-item">
@@ -15,8 +20,7 @@ export default function HomeSlideMeditation() {
                   </h1>
                   <p>
                     commodo consequat. Duis aute irure dolor in reprehenderit in
-                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint
+                    voluptate velit esse cillum dolore 
                   </p>
                   {/* <Link className="read_more" to="Javascript:void(0)">
                         Contact us

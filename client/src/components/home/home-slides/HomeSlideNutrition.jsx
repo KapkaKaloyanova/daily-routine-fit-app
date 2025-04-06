@@ -1,6 +1,10 @@
 import { Link } from "react-router";
+import { useLatestActivity } from "../../../api/activityApi";
 
 export default function HomeSlideNutrition() {
+  const { latestActivities } = useLatestActivity("nutrition");
+
+  console.log(latestActivities);
   return (
     <>
       <div className="carousel-item">

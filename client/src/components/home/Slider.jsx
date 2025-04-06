@@ -1,9 +1,8 @@
-import { Link } from "react-router";
-import HomeSlideWorkout from "./home-slides/HomeSlideWorkout";
-import HomeSlideMeditation from "./home-slides/HomeSlideMeditation";
-import HomeSlideNutrition from "./home-slides/HomeSlideNutrition";
+import HomeSlideActivityItem from "./home-slides/HomeSlideActivityItem";
 
 export default function Slider(){
+
+
     return (
         <>
             <div className="slider_main">
@@ -16,11 +15,11 @@ export default function Slider(){
         </ol>
         <div className="carousel-inner">
           {/* first slide */}
-          <HomeSlideWorkout />
+          <HomeSlideActivityItem category="workout" index={0} />
           {/* second slide */}
-          <HomeSlideNutrition />
+          <HomeSlideActivityItem category="nutrition" index={1} />
           {/* third slide*/}
-          <HomeSlideMeditation />
+          <HomeSlideActivityItem category="meditation" index={2} />
         </div>
         {/* controls from bootstrap */}
                <a className="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
