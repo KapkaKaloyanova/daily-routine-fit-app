@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import processImageUrl from "../../../utils/processImageUrl";
+import styles from '../../activity-workout/workout-activity-styles.module.css'
 
 export default function WorkoutCatalogItem({
     _id,
@@ -18,14 +18,11 @@ export default function WorkoutCatalogItem({
             <div className="duration">{time} MIN</div>
             <h3>{title}</h3>
             <figure>
-            {/* {processedImageUrl ? ( */}
               <img
+                className={styles.image}
                 src={processedImageUrl}
                 alt={title}
               />
-           {/*  ) : (
-              <p>No image available</p>
-            )} */}
           </figure>
             <p>
               {description}

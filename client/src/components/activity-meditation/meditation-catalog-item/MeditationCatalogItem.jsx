@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import processImageUrl from '../../../utils/processImageUrl';
+import styles from '../../activity-meditation/meditation-activity-styles.module.css'
 
 export default function MeditationCatalogItem({
     _id,
@@ -18,6 +19,7 @@ export default function MeditationCatalogItem({
             <h3>{title}</h3>
             <figure>
               <img
+                className={styles.image}
                 src={processedImageUrl}
                 alt={title}
               />

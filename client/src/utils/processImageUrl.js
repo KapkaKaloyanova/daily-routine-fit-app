@@ -1,10 +1,10 @@
-import { isBase64, fixBase64URL, isHttpUrl, isValidUrl } from './validateUrls'; // Import your existing validation functions
-import getDirectImageUrl from './directImgUrlDriveLink'; // Import your URL fixer function
+import { isBase64, fixBase64URL, isHttpUrl, isValidUrl } from './validateUrls'; 
+import getDirectImageUrl from './directImgUrlDriveLink';
 
 const processImageUrl = (imageUrl) => {
-  if (!imageUrl) return "/images/default-image.png"; // Return default image if no URL
+  if (!imageUrl) return "/images/default-image.jpg"; // Return default image if no URL
 
-  let processedImageUrl = "/images/default-image.png"; // Fallback image URL
+  let processedImageUrl = "/images/default-image.jpg"; // Fallback image URL
 
   // Check if it's Base64
   if (isBase64(imageUrl)) {

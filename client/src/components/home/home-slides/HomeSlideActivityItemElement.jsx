@@ -1,10 +1,5 @@
 import processImageUrl from "../../../utils/processImageUrl";
-import {
-  isBase64,
-  fixBase64URL,
-  isHttpUrl,
-  isValidUrl,
-} from "../../../utils/validateUrls";
+import styles from './home-slide-activity.module.css';
 
 export default function HomeSlideActivityItemElement({ latestActivities }) {
   return (
@@ -20,11 +15,14 @@ export default function HomeSlideActivityItemElement({ latestActivities }) {
               return (
                 <div key={index} className="col-md-6">
                   <div className="agency">
-                    <h2>{activity.title}</h2>
+                    <h3 className={styles.h3}>{activity.title}</h3>
                     <figure>
-                      <img src={processedImageUrl} alt={activity.title} />
+                      <img 
+                        className={styles.image}
+                        src={processedImageUrl} 
+                        alt={activity.title} />
                     </figure>
-                    <p>{activity.description}</p>
+                    <p className={styles.p}>{activity.description}</p>
                   </div>
                 </div>
               );

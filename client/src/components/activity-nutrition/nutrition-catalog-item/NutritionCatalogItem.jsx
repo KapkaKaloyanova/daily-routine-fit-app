@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import processImageUrl from '../../../utils/processImageUrl';
+import styles from '../../activity-nutrition/nutrition-activity-styles.module.css'
 
 export default function NutritionCatalogItem({
     _id,
@@ -21,6 +22,7 @@ export default function NutritionCatalogItem({
             <h3>{title}</h3>
             <figure>
               <img
+                className={styles.image}
                 src={processedImageUrl}
                 alt={title}
               />
