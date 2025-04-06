@@ -62,7 +62,9 @@ export default function MeditationDetails(){
             </figure>
 
             <div className="play_icon">
-              <a className="play-btn" href="javascript:void(0)">
+              <a 
+                className="play-btn" 
+                href={activity.videoLink}>
                 <img src="/images/play_icon.png" />
               </a>
             </div>

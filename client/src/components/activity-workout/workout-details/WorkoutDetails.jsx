@@ -60,11 +60,14 @@ export default function WorkoutDetails() {
 
           <div className="col-md-8">
             <figure>
-                <img src={processedImageUrl} alt={activity.title} />             
+                <img 
+                  src={processedImageUrl} 
+                  alt={activity.title} />             
             </figure>
 
             <div className="play_icon">
-              <a className="play-btn" href="javascript:void(0)">
+              <a className="play-btn"   
+                href={activity.videoLink}>
                 <img src="/images/play_icon.png" />
               </a>
             </div>
