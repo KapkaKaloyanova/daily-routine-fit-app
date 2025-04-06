@@ -1649,7 +1649,128 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        activity: [
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "new with collections",
+                "category": "workout",
+                "time": "1",
+                "intensity": "low",
+                "imageUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKWs0vNI6CByUHxANAF8UZKVS5AOz_CrzXaz4Z7pLFFPNXAarZqVZ0UeaesCZProEuPrMZpa2j0eMifOrYW8I_LQ",
+                "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
+                "description": "proba1",
+                "_createdOn": 1743889644227,
+                "_id": "eea93ad7-ec0c-4d7f-aac0-f75b2c020e72"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "food with collections",
+                "category": "nutrition",
+                "time": "1",
+                "imageUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKWs0vNI6CByUHxANAF8UZKVS5AOz_CrzXaz4Z7pLFFPNXAarZqVZ0UeaesCZProEuPrMZpa2j0eMifOrYW8I_LQ",
+                "foodType": "soups-stews",
+                "typeBenefit": "",
+                "difficulty": "Easy",
+                "calories": "3",
+                "ingredients": "123",
+                "preparation": "123",
+                "description": "123",
+                "_createdOn": 1743889948735,
+                "_id": "328a54f5-c072-47aa-ac27-a7d56fc9e972"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "meditation with collections",
+                "category": "meditation",
+                "time": "10",
+                "imageUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQKWs0vNI6CByUHxANAF8UZKVS5AOz_CrzXaz4Z7pLFFPNXAarZqVZ0UeaesCZProEuPrMZpa2j0eMifOrYW8I_LQ",
+                "videoLink": "https://youtu.be/u80T6fkxevw?si=y-6xZY5DOPl0CD5Y",
+                "description": "proba za meditation with collections",
+                "_createdOn": 1743893985842,
+                "_id": "2e6eef08-a6cf-4fec-a05b-b9362caffdc1"
+            },
+            {
+                "title": "TEST for EDIT",
+                "category": "workout",
+                "time": "2",
+                "intensity": "medium",
+                "imageUrl": "",
+                "videoLink": "",
+                "description": "proba za EDIT functionality",
+                "_id": "47f553de-9b79-4ac0-8302-bcfc2c2a2037",
+                "_createdOn": 1743898005206,
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_updatedOn": 1743900586357
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "for DELETE",
+                "category": "workout",
+                "time": "2",
+                "intensity": "low",
+                "imageUrl": "",
+                "videoLink": "",
+                "description": "test za delete ",
+                "_createdOn": 1743898678685,
+                "_id": "294e71ee-aac0-44fa-8c45-4a9dcc0cce6b"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "proba za DELETE",
+                "category": "nutrition",
+                "time": "2",
+                "imageUrl": "",
+                "foodType": "soups-stews",
+                "typeBenefit": "",
+                "difficulty": "Easy",
+                "calories": "5",
+                "ingredients": "123",
+                "preparation": "123",
+                "description": "123",
+                "_createdOn": 1743900071300,
+                "_id": "88204aaa-b5fd-4f9f-b4bd-1b4a9a2b5531"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "proba za EDIT",
+                "category": "nutrition",
+                "time": "9",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVilyOHIy_07Jg8vXeSsTN0Y_t1pAJPGdHA&s",
+                "foodType": "pasta",
+                "typeBenefit": "",
+                "difficulty": "",
+                "calories": "100",
+                "ingredients": "456",
+                "preparation": "456",
+                "description": "456",
+                "_createdOn": 1743900108245,
+                "_id": "cff35acc-9bb7-4cc7-be22-a80968af116a"
+            },
+            {
+                "title": "Test for EDIT ",
+                "category": "meditation",
+                "time": "16",
+                "imageUrl": "https://www.google.com/imgres?q=%D0%BA%D0%B0%D1%80%D1%83%D1%87%D0%BA%D0%B0&imgurl=https%3A%2F%2Fcdn.now.bg%2Fprod%2Fproducts%2Fimages%2F2%2F1066%2F1682238448.webp&imgrefurl=https%3A%2F%2Figuana.bg%2Fdarvena-dekorativna-karuchka-svetlo-darvo-proizvedena-v-balgariya-iguana-bg-p1042165&docid=PCf1YLsN-MyLhM&tbnid=EidtTtfbC3iiyM&vet=12ahUKEwi069Tm4OOHAxVURPEDHWAZAIcQM3oECBkQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwi069Tm4OOHAxVURPEDHWAZAIcQM3oECBkQAA",
+                "videoLink": "https://youtu.be/LRJkTLee0uo?si=SIfn5WyGfz34DbPE",
+                "description": "SUCCESS",
+                "_id": "03090f5c-1ace-4d03-b35f-0d9dd3693df6",
+                "_createdOn": 1743900198764,
+                "_updatedOn": 1743900487060,
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
+            },
+            {
+                "_ownerId": "54089dfc-27d4-4c45-b832-023d7cb21cca",
+                "title": "test za delete",
+                "category": "meditation",
+                "time": "12",
+                "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEBUTExMTFRUVFRcWGRgVFxgWGBgSGBUXFxcZGBkYHCggGhslHRUVIjEjJykrLi4uFyAzODMvNygtLisBCgoKDg0OGxAQGy4lHyU1LS0vKy0tNS8tNS0tLS0tLy0tLS0tLS8tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABQMEBgIHAf/EAEYQAAEDAgIFBwoDBwMDBQAAAAEAAgMEERIhBQYxQVETImFxgZGhFjIzU3SUsbPB00LR8FJigpKi4fEVI3JDssIUY3OD0v/EABkBAQADAQEAAAAAAAAAAAAAAAACAwQBBf/EACcRAQEAAgEEAgEEAwEAAAAAAAABAhEDEiExQQRREyIykdFhgaEU/9oADAMBAAIRAxEAPwD7iiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiCZoDShqGSOLHM5Oomh5wIxCKRzA4X3EAeKpqRqz6OX2qp+e9V0BERAREQEREBEWvNXxMkZE6SNskmLAwuAe/CLuwtJu6wzNtiDYRc5HrnT8rKxwljbE2d3KvaBG8UzgyowEEuOBxAN2i+66/KzWwMhZMKapwumbHhfGWSYCwvMjYzdzrNaThycbEWvkg6RFzWqGsjqsyh7A0Y3vgc2+GWi5V8ccgJ/FzDccHMP4l0ckgaCXEADMkmwA6SUHpFoaJ0zBVNLqeRsrQbFzLlt+AdaxPUVvoCIiAiIgIiICIiAiIgIiICIiCRqz6OX2qp+e9V1I1Z9HL7VU/Peq6AiIgIiICIvEsga0uN7AXyBcewAXJ6Ag9qFrVo18jYZYWB08FRDI3NrSY8eCZuI7jFJL2r9ptLVMwvFSOiAcW4qp4jJaNjmMjxud",
+                "videoLink": "https://youtu.be/LRJkTLee0uo?si=SIfn5WyGfz34DbPE",
+                "description": "123",
+                "_createdOn": 1743900298148,
+                "_id": "2cbb3e23-5274-490c-93c6-4047e0860991"
+            }
+        ]
     };
     var rules$1 = {
     	users: {
