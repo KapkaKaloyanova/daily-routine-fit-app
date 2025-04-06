@@ -34,7 +34,7 @@ export const useOneActivity = (activityId) => {
 };
 
 export const useLatestActivity = ({category}) => {
-    const PAGE_SIZE = 1;
+    const PAGE_SIZE = 2;
     const [latestActivities, setLatestActivities] = useState([]);
 
     useEffect( () => {

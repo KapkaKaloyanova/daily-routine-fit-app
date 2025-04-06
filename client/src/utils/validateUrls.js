@@ -7,6 +7,11 @@ const isBase64 = (str) => {
     );
   };
   
+// fix Base64 URL 
+const fixBase64URL = (url) => {
+  return url.replace(/[\n\r]/g, ''); // removes new lines and 
+};
+
   // Check if the string is a valid HTTP(S) URL
   const isHttpUrl = (str) => {
     const pattern = /^https?:\/\/[^ "]+$/;
@@ -23,4 +28,4 @@ const isBase64 = (str) => {
     }
   };
   
-  export { isBase64, isHttpUrl, isValidUrl };
+  export { isBase64, fixBase64URL, isHttpUrl, isValidUrl };
