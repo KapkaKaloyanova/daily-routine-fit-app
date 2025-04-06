@@ -3,11 +3,11 @@ import { Link, useNavigate, useParams } from "react-router";
 
 import reviewService from "../../../services/reviewService";
 
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
+import processImageUrl from "../../../utils/processImageUrl";
 
 
 
@@ -19,9 +19,7 @@ export default function WorkoutDetails() {
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
 
-  const processedImageUrl = activity.imageUrl
-    ? getDirectImageUrl(activity.imageUrl)
-    : null;
+  const processedImageUrl = processImageUrl(activity.imageUrl);
 
   useEffect(() => {
 
@@ -62,11 +60,7 @@ export default function WorkoutDetails() {
 
           <div className="col-md-8">
             <figure>
-              {processedImageUrl ? (
-                <img src={processedImageUrl} alt={activity.title} />
-              ) : (
-                <p>No image provided</p>
-              )}
+                <img src={processedImageUrl} alt={activity.title} />             
             </figure>
 
             <div className="play_icon">

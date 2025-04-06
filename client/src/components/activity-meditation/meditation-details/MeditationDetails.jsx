@@ -3,11 +3,11 @@ import { Link, useNavigate, useParams } from "react-router";
 
 import reviewService from "../../../services/reviewService";
 
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { UserContext } from "../../../contexts/UserContext";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
+import processImageUrl from "../../../utils/processImageUrl";
 
 export default function MeditationDetails(){
     const navigate = useNavigate();
@@ -17,9 +17,7 @@ export default function MeditationDetails(){
     const { activity } = useOneActivity(activityId);
     const { deleteActivity } = useDeleteActivity();
 
-    const processedImageUrl = activity.imageUrl
-    ? getDirectImageUrl(activity.imageUrl)
-    : null;
+    const processedImageUrl = processImageUrl(activity.imageUrl)
 
     useEffect(() =>{
 
@@ -60,11 +58,7 @@ export default function MeditationDetails(){
 
           <div className="col-md-8">
             <figure>
-              {processedImageUrl ? (
                 <img src={processedImageUrl} alt={activity.title} />
-              ) : (
-                <p>No image provided</p>
-              )}
             </figure>
 
             <div className="play_icon">

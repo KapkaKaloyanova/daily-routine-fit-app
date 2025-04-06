@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
+import processImageUrl from '../../../utils/processImageUrl';
 
 export default function MeditationCatalogItem({
     _id,
@@ -8,7 +8,7 @@ export default function MeditationCatalogItem({
     description,
     imageUrl,
 }){
-  const processedImageUrl = imageUrl ? getDirectImageUrl(imageUrl) : null;
+  const processedImageUrl = processImageUrl(imageUrl);
 
     return (
         <>
@@ -17,14 +17,11 @@ export default function MeditationCatalogItem({
             <div className="duration">{time} MIN</div>
             <h3>{title}</h3>
             <figure>
-            {processedImageUrl ? (
               <img
                 src={processedImageUrl}
                 alt={title}
               />
-            ) : (
-              <p>No image available</p>
-            )}
+
           </figure>
             {/* <div className="play_icon">
               <a className="play-btn" href="javascript:void(0)">

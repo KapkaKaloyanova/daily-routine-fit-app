@@ -3,11 +3,11 @@ import { Link, useNavigate, useParams } from "react-router";
 
 import reviewService from "../../../services/reviewService";
 
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import { UserContext } from "../../../contexts/UserContext";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
+import processImageUrl from "../../../utils/processImageUrl";
 
 export default function NutritionDetails() {
 
@@ -18,9 +18,7 @@ export default function NutritionDetails() {
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
 
-  const processedImageUrl = activity.imageUrl
-    ? getDirectImageUrl(activity.imageUrl)
-    : null;
+  const processedImageUrl = processImageUrl(activity.imageUrl)
 
     useEffect(() => {
 
@@ -65,11 +63,7 @@ export default function NutritionDetails() {
               {activity.description}
             </p>
             <figure>
-              {processedImageUrl ? (
                 <img src={processedImageUrl} alt={activity.title} />
-              ) : (
-                <p>No image available</p>
-              )}
             </figure>
             <h4>Ingredients</h4>
             <p>

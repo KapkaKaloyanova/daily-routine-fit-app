@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
+import processImageUrl from '../../../utils/processImageUrl';
 
 export default function NutritionCatalogItem({
     _id,
@@ -10,8 +10,7 @@ export default function NutritionCatalogItem({
     description,
     imageUrl,
 }){
-  const processedImageUrl = imageUrl ? getDirectImageUrl(imageUrl) : null;
-    
+  const processedImageUrl = processImageUrl(imageUrl);
   
   return (
         <>
@@ -21,14 +20,10 @@ export default function NutritionCatalogItem({
             <p className="duration"> {typeBenefit} </p>
             <h3>{title}</h3>
             <figure>
-            {processedImageUrl ? (
               <img
                 src={processedImageUrl}
                 alt={title}
               />
-            ) : (
-              <p>No image available</p>
-            )}
           </figure>
             <p>
               {description}
