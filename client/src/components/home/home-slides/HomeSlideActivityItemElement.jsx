@@ -1,3 +1,4 @@
+import processImageUrl from "../../../utils/processImageUrl";
 import {
   isBase64,
   fixBase64URL,
@@ -13,21 +14,15 @@ export default function HomeSlideActivityItemElement({ latestActivities }) {
           {latestActivities.length > 0 
           ? (
             latestActivities.map((activity, index) => {
-              // Check valid URL (Base64, HTTP or plain URL)
-              let imageUrl = "/images/default-workout-image.png"; // alternate image
-              if (isBase64(activity.imageUrl)) {
-                imageUrl = fixBase64URL(activity.imageUrl); // if Base64 use directly
-              } else if (isHttpUrl(activity.imageUrl)) {
-                imageUrl = activity.imageUrl; // use if valid HTTP(S) URL
-              } else if (isValidUrl(activity.imageUrl)) {
-                imageUrl = activity.imageUrl; // if valid URL (not Base64 and not HTTP)
-              }
+              // Check valid URLs
+              const processedImageUrl = processImageUrl(activity.imageUrl) 
+
               return (
                 <div key={index} className="col-md-6">
                   <div className="agency">
                     <h2>{activity.title}</h2>
                     <figure>
-                      <img src={imageUrl} alt={activity.title} />
+                      <img src={processedImageUrl} alt={activity.title} />
                     </figure>
                     <p>{activity.description}</p>
                   </div>

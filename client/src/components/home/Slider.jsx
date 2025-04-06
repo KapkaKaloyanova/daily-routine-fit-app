@@ -14,13 +14,17 @@ export default function Slider(){
           <li data-target="#banner1" data-slide-to={2} />
         </ol>
         <div className="carousel-inner">
+         
           {/* first slide */}
           <HomeSlideActivityItem category="workout" index={0} />
+          
           {/* second slide */}
           <HomeSlideActivityItem category="nutrition" index={1} />
+          
           {/* third slide*/}
           <HomeSlideActivityItem category="meditation" index={2} />
         </div>
+        
         {/* controls from bootstrap */}
                <a className="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
                <i className="fa fa-angle-left" aria-hidden="true"></i>
