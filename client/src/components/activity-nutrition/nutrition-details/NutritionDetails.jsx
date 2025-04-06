@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
-import activityService from "../../../services/activityService";
 import reviewService from "../../../services/reviewService";
 
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import { UserContext } from "../../../contexts/UserContext";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
-import { useOneActivity } from "../../../api/activityApi";
+import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 
 export default function NutritionDetails() {
 
@@ -17,6 +16,7 @@ export default function NutritionDetails() {
   const [ reviews, setReviews] = useState([]);
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
+  const { deleteActivity } = useDeleteActivity();
 
   const processedImageUrl = activity.imageUrl
     ? getDirectImageUrl(activity.imageUrl)
@@ -35,7 +35,7 @@ export default function NutritionDetails() {
     if (!hasConfirm) {
       return;
     }
-    await activityService.delete(activityId);
+    await deleteActivity(activityId);
 
     navigate("/activity/nutrition");
   };

@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import activityService from "../../services/activityService";
+import { useEditActivity, useOneActivity } from "../../api/activityApi";
 
 export default function ActivityEdit(){
     const navigate = useNavigate();
     const { activityId } = useParams();
-    const [activity, setActivity] = useState({});
-    const [category, setCategory] = useState("");
+    const { activity, isLoading, error } = useOneActivity(activityId);
+    const { edit } = useEditActivity();
+    const [ category, setCategory ] = useState("");
 
     useEffect(() => {
-      (async () => {
-        const result = await activityService.getOne(activityId);
-        setActivity(result);
-        setCategory(result.category);
-      })();
-    }, [activityId]);
+
+      if ( activity ) {
+        setCategory(activity.category);
+      }
+    }, [activity]);
 
     const handleCategoryChange = (e) => {
       setCategory(e.target.value);
@@ -25,7 +25,7 @@ export default function ActivityEdit(){
       const formData = new FormData(e.target);
       const activityData =  Object.fromEntries(formData);
       try {
-        await activityService.edit(activityId, activityData);
+        await edit(activityId, activityData);
 
         navigate(`/activity/${activityData.category}/${activityId}/details`);
       }
@@ -33,7 +33,11 @@ export default function ActivityEdit(){
         console.log("Error editing activity", error);
       }
 
-    }
+    };
+
+    if (isLoading) return <div>Loading...</div>;
+
+    if (error) return <div>Error loading activity</div>;
 
     return (
         <>

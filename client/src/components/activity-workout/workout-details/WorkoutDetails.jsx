@@ -1,23 +1,23 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
-import activityService from "../../../services/activityService";
 import reviewService from "../../../services/reviewService";
 
 import getDirectImageUrl from "../../../utils/directImgUrlDriveLink";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
-import { UserContext } from "../../../contexts/UserContext";
-import { useOneActivity } from "../../../api/activityApi";
+import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
+import useAuth from "../../../hooks/useAuth";
 
 
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
-  const { email } = useContext(UserContext);
+  const { email } = useAuth();
   const [reviews, setReviews] = useState([]);
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
+  const { deleteActivity } = useDeleteActivity();
 
   const processedImageUrl = activity.imageUrl
     ? getDirectImageUrl(activity.imageUrl)
@@ -36,7 +36,7 @@ export default function WorkoutDetails() {
     if (!hasConfirm) {
       return;
     }
-    await activityService.delete(activityId);
+    await deleteActivity(activityId);
 
     navigate("/activity/workout");
   };

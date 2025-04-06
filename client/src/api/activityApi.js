@@ -1,20 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import request from "../utils/request";
-import { UserContext } from "../contexts/UserContext";
+import useAuth from "../hooks/useAuth";
 
 const baseUrl = 'http://localhost:3030/data/activity';
-
-export default {
-    edit(activityId, activityData ) {
-        return request.put(`${baseUrl}/${activityId}`, {...activityData, _id: activityId});
-
-    },
-    
-    delete(activityId) {
-        return request.delete(`${baseUrl}/${activityId}`)
-    }
-
-}
 
 export const useActivities = (category) => {
     const [activities, setActivities] = useState([]);
@@ -46,18 +34,36 @@ export const useOneActivity = (activityId) => {
 };
 
 export const useCreateActivity = () => {
-    const {accessToken} = useContext(UserContext);
-
-    const options = {
-        headers: {
-            'X-Authorization': accessToken,
-        }
-    };
+    const { request } = useAuth();
 
     const create = (activityData) => 
-        request.post(baseUrl, activityData, options);
+        request.post(baseUrl, activityData);
 
         return {
             create,
         }
+};
+
+export const useEditActivity = () => {
+    const { request } = useAuth();
+
+    const edit = (activityId, activityData) => 
+        request.put(`${baseUrl}/${activityId}`, {...activityData, _id: activityId});
+
+        return {
+            edit,
+        }
+};
+
+export const useDeleteActivity = () => {
+    const { request } = useAuth();
+
+    const deleteActivity = (activityId) => 
+        request.delete(`${baseUrl}/${activityId}`);
+    
+    return {
+        deleteActivity,
     }
+
+
+};
