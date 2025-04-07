@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import processImageUrl from '../../../utils/processImageUrl';
-import styles from '../../activity-nutrition/nutrition-activity-styles.module.css'
+import styles from '../../activity-nutrition/NutritionActivity.module.css'
 
 export default function NutritionCatalogItem({
     _id,
@@ -27,7 +27,7 @@ export default function NutritionCatalogItem({
                 alt={title}
               />
           </figure>
-            <p>
+            <p className={styles.lineclamp}>
               {description}
             </p>
 

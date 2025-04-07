@@ -1,5 +1,5 @@
 import processImageUrl from "../../../utils/processImageUrl";
-import styles from './home-slide-activity.module.css';
+import styles from './HomeSlide.module.css';
 
 export default function HomeSlideActivityItemElement({ latestActivities }) {
   
@@ -25,13 +25,14 @@ export default function HomeSlideActivityItemElement({ latestActivities }) {
                     <div className="play_icon">
                         <a className="play-btn" href={`/activity/${activity.category}/${activity._id}/details`}><img src="images/play_icon.png" /></a>
                     </div>
-                    <p className={styles.p}>{activity.description}</p>
+                    <p className={styles.lineclamp}>{activity.description}</p>
                   </div>
                 </div>
               );
-            })) 
+            })
+            ) 
           : (
-            <p>No activities available for the selected category.</p>
+                <h3>No activities available for the selected category.</h3>
           )}
         </div>
       </div>

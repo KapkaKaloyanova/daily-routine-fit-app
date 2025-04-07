@@ -761,12 +761,7 @@ button {
     padding-bottom: 25px;
     margin: 0;
     height: 60px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;    
-    line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
 }
 
 .activity_box h4 {
@@ -780,14 +775,6 @@ button {
     padding-top: 23px;
     padding-bottom: 30px;
     flex-grow: 1;
-    /**/
-    margin-bottom: auto;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;    
-    line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .activity_box duration {

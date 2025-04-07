@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import processImageUrl from '../../../utils/processImageUrl';
-import styles from '../../activity-meditation/meditation-activity-styles.module.css'
+import styles from '../../activity-meditation/MeditationActivity.module.css'
 
 export default function MeditationCatalogItem({
     _id,
@@ -31,7 +31,7 @@ export default function MeditationCatalogItem({
               </a>
             </div> */}
             
-            <p>
+            <p className={styles.lineclamp}>
               {description} 
             </p>
 

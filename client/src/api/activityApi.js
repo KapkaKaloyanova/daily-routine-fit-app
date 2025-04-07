@@ -95,26 +95,3 @@ export const useDeleteActivity = () => {
 };
 
 
-//export const useLatestActivity = (category) => {
-//     const PAGE_SIZE = 2;
-//     const [latestActivities, setLatestActivities] = useState([]);
-
-//     useEffect( () => {
-//         const searchParams = new URLSearchParams({
-//             sortBy: '_createdOn desc',
-//             pageSize: PAGE_SIZE,
-//         });
-        
-//         request.get(`${baseUrl}?${searchParams.toString()}`)
-//             .then(data => {
-//                 setLatestActivities(category 
-//                     ? data.filter(activity => activity.category === category)
-//                     : data);
-//             });
-//     }, [category]);
-//     return {
-//         latestActivities,
-//         category,
-//     }
-
-// };

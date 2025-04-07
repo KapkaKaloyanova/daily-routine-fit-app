@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import processImageUrl from "../../../utils/processImageUrl";
-import styles from '../../activity-workout/workout-activity-styles.module.css'
+import styles from '../../activity-workout/WorkoutActivity.module.css'
 
 export default function WorkoutCatalogItem({
     _id,
@@ -24,7 +24,7 @@ export default function WorkoutCatalogItem({
                 alt={title}
               />
           </figure>
-            <p>
+            <p className={styles.lineclamp}>
               {description}
             </p>
             <Link className="read_more" to={`/activity/workout/${_id}/details`}>
