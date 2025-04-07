@@ -13,8 +13,8 @@ import processImageUrl from "../../../utils/processImageUrl";
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
-  const { email } = useAuth();
-  const [reviews, setReviews] = useState([]);
+  const { email , _id: userId } = useAuth();
+  const [ reviews, setReviews ] = useState([]);
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
@@ -42,6 +42,8 @@ export default function WorkoutDetails() {
   const reviewCreateHandler = (newReview) => {
     setReviews(state => [...state, newReview] );
   };
+
+  const isOwner = userId === activity._ownerId;
 
   return (
     <>
@@ -81,24 +83,27 @@ export default function WorkoutDetails() {
             >
               Add review
             </Link>
-            <Link
-              className="edit_delete read_more"
-              to={`/activity/workout/${activityId}/edit`}
-            >
-              Edit
-            </Link>
-            <button
-              onClick={activityDeleteClickHandler}
-              className="edit_delete read_more"
-            >
-              Delete
-            </button>
-          </div>
-          <div>
-            <p></p>
-          </div>
+            {isOwner && (
+              <>
+                  <Link
+                    className="edit_delete read_more"
+                    to={`/activity/workout/${activityId}/edit`}
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={activityDeleteClickHandler}
+                    className="edit_delete read_more"
+                  >
+                    Delete
+                  </button>
+              </>
+            )}
+            </div>
         </div>
+        <p></p>
       </div>
+
       {/* <CustomerReviewShow reviews={reviews}/>
       <CustomerReviewCreate 
         email={email} 

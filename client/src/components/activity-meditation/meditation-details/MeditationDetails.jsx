@@ -11,7 +11,7 @@ import processImageUrl from "../../../utils/processImageUrl";
 
 export default function MeditationDetails(){
     const navigate = useNavigate();
-    const { email } = useContext(UserContext);
+    const { email, _id: userId } = useContext(UserContext);
     const [reviews, setReviews] = useState([]);
     const { activityId } = useParams();
     const { activity } = useOneActivity(activityId);
@@ -41,6 +41,8 @@ export default function MeditationDetails(){
       const reviewCreateHandler = (newReview) => {
         setReviews(state => [...state, newReview]);
       };
+
+      const isOwner = userId === activity._ownerId;
 
     return (
         <>
@@ -78,18 +80,20 @@ export default function MeditationDetails(){
             >
               Add review
             </Link>
-            <Link
-              className="edit_delete read_more"
-              to={`/activity/meditation/${activityId}/edit`}
-            >
-              Edit
-            </Link>
-            <button
-              onClick={activityDeleteClickHandler}
-              className="edit_delete read_more"
-            >
-              Delete
-            </button>
+            {isOwner && (<>
+              <Link
+                className="edit_delete read_more"
+                to={`/activity/meditation/${activityId}/edit`}
+              >
+                Edit
+              </Link>
+              <button
+                onClick={activityDeleteClickHandler}
+                className="edit_delete read_more"
+              >
+                Delete
+              </button>
+            </>)}
           </div>
           <div>
             <p></p>
