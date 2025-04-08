@@ -3,18 +3,11 @@ import useAuth from "../hooks/useAuth";
 
 const baseUrl = 'http://localhost:3030/data/reviews';
 
-
-export default {
-
-    
-     create(email, activityId, review) {
-
-       return  request.post(baseUrl, { email, activityId, review });
-
-    }
-
-    
-};
+// export default {
+//      create(email, activityId, review) {
+//        return  request.post(baseUrl, { email, activityId, review });
+//     }
+// };
 
 export const useReviews = (activityId) => {
     const { request } = useAuth();
@@ -27,7 +20,7 @@ export const useReviews = (activityId) => {
 
         request.get(`${baseUrl}?${searchParams.toString()}`)
             .then(setReviews)
-    }, [request, activityId]);
+    }, [ activityId ]); 
 
     return {
         reviews,
