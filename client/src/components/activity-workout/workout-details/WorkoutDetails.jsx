@@ -6,12 +6,14 @@ import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
 import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts/UserContext";
 
 
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
-  const { email , _id: userId } = useAuth();
+  const { email , _id: userId } = useContext(UserContext);
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
