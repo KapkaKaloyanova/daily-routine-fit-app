@@ -1,31 +1,23 @@
-import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-
-import reviewService from "../../../services/reviewService";
 
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
 import processImageUrl from "../../../utils/processImageUrl";
+import { useReviews } from "../../../api/reviewsApi";
 
 
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
   const { email , _id: userId } = useAuth();
-  const [ reviews, setReviews ] = useState([]);
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
+  const { reviews } = useReviews(activityId) 
 
   const processedImageUrl = processImageUrl(activity.imageUrl);
-
-  useEffect(() => {
-
-      reviewService.getAll(activityId)
-        .then(setReviews);
-  }, [activityId]);
 
   const activityDeleteClickHandler = async () => {
     const hasConfirm = confirm(
