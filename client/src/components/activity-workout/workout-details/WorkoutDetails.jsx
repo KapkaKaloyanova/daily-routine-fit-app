@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams } from "react-router";
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
-import useAuth from "../../../hooks/useAuth";
 import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
 import { useContext } from "react";

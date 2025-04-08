@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import processImageUrl from "../../../utils/processImageUrl";
 import styles from './HomeSlide.module.css';
 
@@ -9,11 +10,12 @@ export default function HomeSlideActivityItemElement({ latestActivities }) {
         <div className="row mar_right">
           {latestActivities.length > 0 
           ? (
-            latestActivities.map((activity, index) => {
-              const processedImageUrl = processImageUrl(activity.imageUrl) 
+            latestActivities.map((activity) => {
+              const processedImageUrl = processImageUrl(activity.imageUrl);
+              const activityId = activity._id; 
 
               return (
-                <div key={index} className="col-md-6">
+                <div key={activityId} className="col-md-6">
                   <div className="agency">
                     <h3 className={styles.h3}>{activity.title}</h3>
                     <figure>
@@ -23,7 +25,12 @@ export default function HomeSlideActivityItemElement({ latestActivities }) {
                         alt={activity.title} />
                     </figure>
                     <div className="play_icon">
-                        <a className="play-btn" href={`/activity/${activity.category}/${activity._id}/details`}><img src="images/play_icon.png" /></a>
+                        <Link 
+                          className="play-btn" 
+                          to={`/activity/${activity.category}/${activityId}/details`}
+                        >
+                          <img src="images/play_icon.png" alt="Play" />
+                        </Link>
                     </div>
                     <p className={styles.lineclamp}>{activity.description}</p>
                   </div>

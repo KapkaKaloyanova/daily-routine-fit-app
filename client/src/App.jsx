@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router";
 
 import { UserContext } from "./contexts/UserContext";
@@ -24,10 +23,11 @@ import MeditationDetails from "./components/activity-meditation/meditation-detai
 import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
+import usePersistedState from "./hooks/usePersistedState";
 
 function App() {
 
-const [authData,setAuthData] = useState({});
+const [authData,setAuthData] = usePersistedState({});
 
 const userLoginHandler = (resultData) => {
   setAuthData(resultData);
