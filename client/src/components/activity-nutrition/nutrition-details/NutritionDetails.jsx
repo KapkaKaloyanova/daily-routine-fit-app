@@ -1,15 +1,13 @@
-import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-
-import { UserContext } from "../../../contexts/UserContext";
-
-import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
-import processImageUrl from "../../../utils/processImageUrl";
-import { useReviews } from "../../../api/reviewsApi";
-import Loader from "../../Loader";
 import ReviewShow from "../../review-show/ReviewShow";
 import ReviewCreate from "../../review-create/ReviewCreate";
+import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
+import { useCreateReview, useReviews } from "../../../api/reviewsApi";
+import processImageUrl from "../../../utils/processImageUrl";
+import { useOptimistic } from "react";
+import Loader from "../../Loader";
+import { v4 as uuid } from 'uuid';
 
 export default function NutritionDetails() {
 
