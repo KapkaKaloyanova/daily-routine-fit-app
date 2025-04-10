@@ -1,30 +1,22 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
-import reviewService from "../../../services/reviewService";
-
 import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { UserContext } from "../../../contexts/UserContext";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import processImageUrl from "../../../utils/processImageUrl";
+import { useReviews } from "../../../api/reviewsApi";
 
 export default function MeditationDetails(){
     const navigate = useNavigate();
     const { email, _id: userId } = useContext(UserContext);
-    const [reviews, setReviews] = useState([]);
     const { activityId } = useParams();
     const { activity } = useOneActivity(activityId);
     const { deleteActivity } = useDeleteActivity();
+    const {reviews} = useReviews(activityId);
 
     const processedImageUrl = processImageUrl(activity.imageUrl)
-
-    useEffect(() =>{
-
-        reviewService.getAll(activityId)
-            .then(setReviews);
-
-    }, [activityId]);
 
     const activityDeleteClickHandler = async () => {
         const hasConfirm = confirm(
