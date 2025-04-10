@@ -1,26 +1,29 @@
 import { Link, useNavigate, useParams } from "react-router";
 
-import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
-import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
-import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
+import { useCreateActivity, useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import processImageUrl from "../../../utils/processImageUrl";
-import { useReviews } from "../../../api/reviewsApi";
+import { useCreateReview, useReviews } from "../../../api/reviewsApi";
 import { useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import Loader from "../../Loader";
-
-
+import ReviewShow from "../../review-show/ReviewShow";
+import ReviewCreate from "../../review-create/ReviewCreate";
+import useAuth from "../../../hooks/useAuth";
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
-  const { email , _id: userId } = useContext(UserContext);
+  const { email, _id: userId} = useAuth();
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
-  const { reviews } = useReviews(activityId) 
+  const { reviews, setReviews } = useReviews(activityId);
+  const { create } = useCreateReview();
 
-  if (!activity){
-    return <Loader />; // or spinner
+
+  console.log(reviews);
+
+  if (!activity) {
+    return <Loader />;  
   }
 
   const processedImageUrl = processImageUrl(activity.imageUrl);
@@ -37,8 +40,10 @@ export default function WorkoutDetails() {
     navigate("/activity/workout");
   };
 
-  const reviewCreateHandler = (newReview) => {
-    setReviews(state => [...state, newReview] );
+  const reviewCreateHandler = async (review) => {
+    const newReview = await create( activityId, review );
+
+    setReviews(state => [...state, newReview])
   };
 
   const isOwner = userId === activity._ownerId;
@@ -60,14 +65,11 @@ export default function WorkoutDetails() {
 
           <div className="col-md-8">
             <figure>
-                <img 
-                  src={processedImageUrl} 
-                  alt={activity.title} />             
+              <img src={processedImageUrl} alt={activity.title} />
             </figure>
 
             <div className="play_icon">
-              <a className="play-btn"   
-                href={activity.videoLink}>
+              <a className="play-btn" href={activity.videoLink}>
                 <img src="/images/play_icon.png" />
               </a>
             </div>
@@ -75,40 +77,33 @@ export default function WorkoutDetails() {
 
           {/* Edit/delete/comment nav */}
           <div className="button-container2">
-            <Link
-              className="edit_delete read_more"
-              to={"/customers-review/create"}
-            >
-              Add review
-            </Link>
             {isOwner && (
               <>
-                  <Link
-                    className="edit_delete read_more"
-                    to={`/activity/workout/${activityId}/edit`}
-                  >
-                    Edit
-                  </Link>
-                  <button
-                    onClick={activityDeleteClickHandler}
-                    className="edit_delete read_more"
-                  >
-                    Delete
-                  </button>
+                <Link
+                  className="edit_delete read_more"
+                  to={`/activity/workout/${activityId}/edit`}
+                >
+                  Edit
+                </Link>
+                <button
+                  onClick={activityDeleteClickHandler}
+                  className="edit_delete read_more"
+                >
+                  Delete
+                </button>
               </>
             )}
-            </div>
+          </div>
         </div>
         <p></p>
       </div>
 
-      {/* <CustomerReviewShow reviews={reviews}/>
-      <CustomerReviewCreate 
+      <ReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
-      /> */}
-      
+      />
+      <ReviewShow reviews={reviews}/>
     </>
   );
 }

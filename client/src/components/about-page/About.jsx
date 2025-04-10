@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import CustomerReviewShow from "../customer-review-show/CustomerReviewShow";
+import CustomerReviewShow from "../review-show/ReviewShow";
 
 export default function About() {
   return (

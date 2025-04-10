@@ -1,23 +1,16 @@
-import { useContext, useState } from "react";
-import reviewService from "../../services/reviewService";
-import { UserContext } from "../../contexts/UserContext";
-import { useNavigate } from "react-router";
 
-export default function CustomerReviewCreate({ 
-  email, 
-  activityId, 
+export default function ReviewCreate({ 
   onCreate, 
 }) {
-  const navigate = useNavigate();
 
   const reviewAction = async (formData) => {
       const review = formData.get("review");
-      const {email} = useContext(UserContext);
-    
-      const createdReview = await reviewService.create( email, activityId, review);
-      
-      onCreate(createdReview);
-            
+  
+      if (onCreate && typeof onCreate === 'function') {
+        onCreate(review);  
+    } else {
+        console.error('onCreate is not a function');
+    }
   };
 
 
@@ -36,7 +29,12 @@ export default function CustomerReviewCreate({
               <form 
                 id="create" 
                 className="main_form" 
-                action={reviewAction}>
+                // action={reviewAction}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.target);
+                  reviewAction(formData);
+                }}>
 
                 <div className="row">
                   <div className="col-md-12">

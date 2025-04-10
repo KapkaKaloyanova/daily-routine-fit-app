@@ -20,11 +20,11 @@ import NutritionCatalog from "./components/activity-nutrition/NutritionCatalog";
 import MeditationCatalog from "./components/activity-meditation/MeditationCatalog";
 import NutritionDetails from "./components/activity-nutrition/nutrition-details/NutritionDetails";
 import MeditationDetails from "./components/activity-meditation/meditation-details/MeditationDetails";
-import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
-import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
+import ReviewShow from "./components/review-show/ReviewShow";
+import ReviewCreate from "./components/review-create/ReviewCreate";
 
 function App() {
   return (
@@ -53,11 +53,11 @@ function App() {
               <Route path="/about" element={<About />} />
 
               {/* Customer Reviews */}
-              <Route path="/customer-review" element={<CustomerReviewShow />} />
-              <Route
-                path="/customers-review/create"
-                element={<CustomerReviewCreate />}
-              />
+              <Route path="/review" element={<ReviewShow />} />
+              {/* <Route
+                path="/review/create"
+                element={<ReviewCreate />}
+              /> */}
 
               {/* Catalogs */}
               <Route path="/activity/workout" element={<WorkoutCatalog />} />

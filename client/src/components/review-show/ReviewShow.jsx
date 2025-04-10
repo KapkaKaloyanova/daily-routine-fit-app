@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
 
-export default function CustomerReviewShow() {
 
-  const { email,  } = useContext(UserContext);
+export default function ReviewShow({
+  reviews
+}) {
+
 
   return (
     <>
@@ -39,20 +39,20 @@ export default function CustomerReviewShow() {
               <div className="container">
                 <div className="carousel-caption relative">
                 {reviews.length > 0 
-                  ? reviews.map(review => (
-                  <div key={review._id} className="row d_flex">
+                  ? reviews.map(({_id, _ownerId, review }) => (
+                  <div key={_id} className="row d_flex">
                     <div className="col-md-2 col-sm-8">
                       <div className="pro_file">
                         <i>
                           <img src="/images/test2.png" alt="#" />
                         </i>
-                        <h4>{review.name}</h4>
-                        <span>{review.email}</span>
+                        <h4>User</h4>
+                        <span>{_ownerId}</span>
                       </div>
                     </div>
                     <div className="col-md-10">
                       <div className="test_box text_align_left">
-                        <p>{review.reviews}</p>
+                        <p>{review}</p>
                       </div>
                     </div>
                   </div>

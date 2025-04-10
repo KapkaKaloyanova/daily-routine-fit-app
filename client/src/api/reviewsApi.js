@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 
-const baseUrl = 'http://localhost:3030/data/reviews';
+const baseUrl = 'http://localhost:3030/data/comments';
 
 // export default {
 //      create(email, activityId, review) {
@@ -15,18 +15,31 @@ export const useReviews = (activityId) => {
 
     useEffect( () => {
         const searchParams = new URLSearchParams({
-            where: 'activityId="${activityId}"',
+            where: `activityId="${activityId}"`,
         });
 
         request.get(`${baseUrl}?${searchParams.toString()}`)
             .then(setReviews)
-    }, [ activityId ]); 
+    }, [ activityId ]); // TODO fix this
 
     return {
-        reviews,
+        reviews, 
+        setReviews,
     }
 };
 
 export const useCreateReview = () => {
+    const { request } = useAuth();
 
+    const create = (activityId, review) => { 
+        const reviewData = {
+            activityId,
+            review,
+        }
+        return request.post( baseUrl, reviewData )
+    }
+
+    return {
+        create, 
+    }
 }

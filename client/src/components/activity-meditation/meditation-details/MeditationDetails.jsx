@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 
-import CustomerReviewCreate from "../../customer-review-create/CustomerReviewCreate";
-import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { UserContext } from "../../../contexts/UserContext";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
 import Loader from "../../Loader";
+import ReviewShow from "../../review-show/ReviewShow";
+import ReviewCreate from "../../review-create/ReviewCreate";
 
 export default function MeditationDetails(){
     const navigate = useNavigate();
@@ -74,7 +74,7 @@ export default function MeditationDetails(){
           <div className="button-container2">
             <Link
               className="edit_delete read_more"
-              to={`/customers-review/create`}
+              to={`/review/create`}
             >
               Add review
             </Link>
@@ -98,12 +98,12 @@ export default function MeditationDetails(){
           </div>
         </div>
       </div>
-      {/* <CustomerReviewShow reviews={reviews}/>
-      <CustomerReviewCreate 
+      <ReviewShow reviews={reviews}/>
+      <ReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
-      /> */}
+      />
       
     </>
     );
