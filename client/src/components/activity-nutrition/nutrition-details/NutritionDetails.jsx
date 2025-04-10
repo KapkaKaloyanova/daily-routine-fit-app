@@ -9,15 +9,18 @@ import { useReviews } from "../../../api/reviewsApi";
 import Loader from "../../Loader";
 import ReviewShow from "../../review-show/ReviewShow";
 import ReviewCreate from "../../review-create/ReviewCreate";
+import useAuth from "../../../hooks/useAuth";
 
 export default function NutritionDetails() {
 
   const navigate = useNavigate();
-  const { email, _id: userId } = useContext(UserContext);
+  const { email, userId } = useAuth();
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
-  const {reviews} = useReviews(activityId);
+  const { create } = useCreateReview();
+  const { reviews, addReview } = useReviews(activityId);
+  const [optimisticReviews, setOptimisticReviews] = useOptimistic( reviews, (state, newReview) => [...state, newReview]);
   
   if(!activity){
     return <Loader />; // or 
@@ -40,8 +43,28 @@ export default function NutritionDetails() {
     navigate("/activity/nutrition");
   };
 
-  const reviewCreateHandler = (newReview) => {
-    setReviews(state => [...state, newReview] );
+  const reviewCreateHandler = async (review) => {
+    // create Optimistic review
+    const newOptimisticReview = {
+      _id: uuid(),
+      _ownerId: userId,
+      activityId,
+      review,
+      pending: true,
+      author: {
+        email,
+      }
+    };
+
+    // optimistic update
+    setOptimisticReviews(newOptimisticReview);
+
+    // server update
+    const reviewResult = await create( activityId, review );
+
+    // local state update
+    addReview({ ...reviewResult, author: { email }})
+
   };
 
   const isOwner = userId === activity._ownerId;
@@ -81,11 +104,7 @@ export default function NutritionDetails() {
           </div>
 
             {/* Edit/delete/comment nav */}
-            <div className="button-container2">
-                <Link className="edit_delete read_more" to={"/review/create"} 
-                >
-                  Add review
-                </Link>
+
                 {isOwner && (
                   <>
                   <Link className="edit_delete read_more" to={`/activity/nutrition/${activityId}/edit`}>
@@ -101,13 +120,12 @@ export default function NutritionDetails() {
                 )}
             </div>
         </div>
-      </div>
-      {/* {<ReviewShow reviews={reviews}/>}
       <ReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
-      /> */}
+        />
+        {<ReviewShow reviews={reviews}/>}
     </>
   );
 }
