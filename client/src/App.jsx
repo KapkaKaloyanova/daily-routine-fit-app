@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router";
 
-import { UserContext } from "./contexts/UserContext";
+import UserProvider from "./providers/UserProvider";
 
 import Header from "./components/header/Header";
 import Slider from "./components/home/Slider";
@@ -23,76 +23,73 @@ import MeditationDetails from "./components/activity-meditation/meditation-detai
 import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
-import usePersistedState from "./hooks/usePersistedState";
 
 function App() {
-
-const [authData,setAuthData] = usePersistedState('auth',{});
-
-const userLoginHandler = (resultData) => {
-  setAuthData(resultData);
-};
-
-const userLogoutHandler = () => {
-  setAuthData({});
-}
-
   return (
-    <UserContext.Provider value={{...authData, userLoginHandler, userLogoutHandler}}>
-    <div className="page-wrapper">
-      <Loader />
-      <div className="full_bg">
-        <Header />
-        <div className="content-wrapper">
-        <Routes>
-          <Route path="/" element={<Slider />} />
-          <Route path="/activity" element={<ActivityCatalog />} />
-          <Route path="/activity/create" element={<ActivityCreate />} />
+    <UserProvider>
+      <div className="page-wrapper">
+        <Loader />
+        <div className="full_bg">
+          <Header />
+          <div className="content-wrapper">
+            <Routes>
+              <Route path="/" element={<Slider />} />
+              <Route path="/activity" element={<ActivityCatalog />} />
+              <Route path="/activity/create" element={<ActivityCreate />} />
 
-          {/* Auth Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
+              {/* Auth Routes */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/about" element={<About />} />
 
-          {/* Customer Reviews */}
-          <Route path="/customer-review" element={<CustomerReviewShow />} />
-          <Route path="/customers-review/create" element={<CustomerReviewCreate />} />
+              {/* Customer Reviews */}
+              <Route path="/customer-review" element={<CustomerReviewShow />} />
+              <Route
+                path="/customers-review/create"
+                element={<CustomerReviewCreate />}
+              />
 
-          {/* Catalogs */}
-          <Route path="/activity/workout" element={<WorkoutCatalog />} />
-          <Route path="/activity/meditation" element={<MeditationCatalog />} />
-          <Route path="/activity/nutrition" element={<NutritionCatalog />} />
+              {/* Catalogs */}
+              <Route path="/activity/workout" element={<WorkoutCatalog />} />
+              <Route
+                path="/activity/meditation"
+                element={<MeditationCatalog />}
+              />
+              <Route
+                path="/activity/nutrition"
+                element={<NutritionCatalog />}
+              />
 
-          {/* Details Pages */}
-          <Route
-            path="/activity/workout/:activityId/details"
-            element={<WorkoutDetails />}
-          />
-          <Route
-            path="/activity/nutrition/:activityId/details"
-            element={<NutritionDetails />}
-          />
-          <Route
-            path="/activity/meditation/:activityId/details"
-            element={<MeditationDetails />}
-          />
+              {/* Details Pages */}
+              <Route
+                path="/activity/workout/:activityId/details"
+                element={<WorkoutDetails />}
+              />
+              <Route
+                path="/activity/nutrition/:activityId/details"
+                element={<NutritionDetails />}
+              />
+              <Route
+                path="/activity/meditation/:activityId/details"
+                element={<MeditationDetails />}
+              />
 
-          {/* Edit Page */}
-          <Route
-            path="/activity/:category/:activityId/edit"
-            element={<ActivityEdit />}
-          />
-          
-          {/* Fallback Route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+              {/* Edit Page */}
+              <Route
+                path="/activity/:category/:activityId/edit"
+                element={<ActivityEdit />}
+              />
+
+              {/* Fallback Route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
-      </div>
-    </div>
-    </UserContext.Provider>
+    </UserProvider>
   );
 }
 
