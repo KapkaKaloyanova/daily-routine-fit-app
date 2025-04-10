@@ -7,6 +7,7 @@ import { UserContext } from "../../../contexts/UserContext";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
+import Loader from "../../Loader";
 
 export default function MeditationDetails(){
     const navigate = useNavigate();
@@ -15,6 +16,11 @@ export default function MeditationDetails(){
     const { activity } = useOneActivity(activityId);
     const { deleteActivity } = useDeleteActivity();
     const {reviews} = useReviews(activityId);
+
+    if(!activity){
+      return <Loader />; // or <div>Loading...</div>
+  
+    }
 
     const processedImageUrl = processImageUrl(activity.imageUrl)
 

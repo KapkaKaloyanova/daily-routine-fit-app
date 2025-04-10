@@ -14,5 +14,5 @@ export default function getDirectImageUrl(url){
     return `https://drive.google.com/uc?export=view&id=${fileId}`;
   }
 
-  return url; // Return original URL if not a Google Drive link
+  return null; // Return original URL if not a Google Drive link
 };

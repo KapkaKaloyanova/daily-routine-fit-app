@@ -6,7 +6,7 @@ import { UserContext } from "../../contexts/UserContext";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { userLoginHandler } = useContext(UserContext); // enables userLoginHandler in this component through the UserContext.Provider
+  const { userLoginHandler } = useContext(UserContext); 
   const { login } = useLogin();
  
   const loginHandler = async (_, formData) => {
@@ -15,7 +15,7 @@ export default function Login() {
     
     userLoginHandler(authData);
     
-    navigate('/activity');
+    navigate(-1);
     
     return values;
 

@@ -8,6 +8,7 @@ import CustomerReviewShow from "../../customer-review-show/CustomerReviewShow";
 import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
+import Loader from "../../Loader";
 
 export default function NutritionDetails() {
 
@@ -18,6 +19,10 @@ export default function NutritionDetails() {
   const { deleteActivity } = useDeleteActivity();
   const {reviews} = useReviews(activityId);
   
+  if(!activity){
+    return <Loader />; // or 
+
+  }
 
   const processedImageUrl = processImageUrl(activity.imageUrl)
 

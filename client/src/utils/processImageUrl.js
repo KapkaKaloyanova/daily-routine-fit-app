@@ -16,7 +16,11 @@ const processImageUrl = (imageUrl) => {
   } 
   // Check if it's a valid URL (e.g., Google Drive link)
   else if (isValidUrl(imageUrl)) {
-    processedImageUrl = getDirectImageUrl(imageUrl); // Process Google Drive URL if needed
+    processedImageUrl = getDirectImageUrl(imageUrl); // Process Google Drive URL
+
+    if (!processedImageUrl) {
+      processedImageUrl = "/images/default-image.jpg"; // if check failed return default image
+    }
   }
 
   return processedImageUrl;

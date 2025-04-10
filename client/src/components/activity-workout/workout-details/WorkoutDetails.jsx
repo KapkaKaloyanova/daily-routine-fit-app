@@ -7,6 +7,7 @@ import processImageUrl from "../../../utils/processImageUrl";
 import { useReviews } from "../../../api/reviewsApi";
 import { useContext } from "react";
 import { UserContext } from "../../../contexts/UserContext";
+import Loader from "../../Loader";
 
 
 
@@ -17,6 +18,10 @@ export default function WorkoutDetails() {
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
   const { reviews } = useReviews(activityId) 
+
+  if (!activity){
+    return <Loader />; // or spinner
+  }
 
   const processedImageUrl = processImageUrl(activity.imageUrl);
 

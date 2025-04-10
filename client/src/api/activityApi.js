@@ -21,12 +21,14 @@ export const useActivities = (category) => {
 }
 
 export const useOneActivity = (activityId) => {
-    const [activity, setActivity] = useState({});
+    const [activity, setActivity] = useState(null);
 
     useEffect( () => {
-        request.get(` ${baseUrl}/${activityId}`)
-            .then(setActivity);
-    }, [activityId])
+        if (activityId && (!activity || activity._id !== activityId)){
+            request.get(`${baseUrl}/${activityId}`)
+                .then(setActivity);
+        }
+    }, [activityId, activity])
 
     return {
         activity,

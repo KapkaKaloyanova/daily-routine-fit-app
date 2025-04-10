@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { NavLink } from "react-router";
-import { UserContext } from "../../contexts/UserContext";
+import useAuth from "../../hooks/useAuth";
 
 export default function Header(){
-  const { email } = useContext(UserContext);
+  const { email, isAuthenticated } = useAuth();
 
 
     return (
@@ -32,7 +31,7 @@ export default function Header(){
                     <NavLink to="/about">About</NavLink>
                   </li>
                   {/* Logged-in users */}
-                  {email 
+                  {isAuthenticated 
                     ? (<>
                         <li>
                           <NavLink to="/activity/create">Create</NavLink>
