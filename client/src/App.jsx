@@ -23,6 +23,7 @@ import MeditationDetails from "./components/activity-meditation/meditation-detai
 import CustomerReviewCreate from "./components/customer-review-create/CustomerReviewCreate";
 import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
+import AuthGuard from "./components/guards/AuthGuard";
 
 function App() {
   return (
@@ -35,12 +36,16 @@ function App() {
             <Routes>
               <Route path="/" element={<Slider />} />
               <Route path="/activity" element={<ActivityCatalog />} />
-              <Route path="/activity/create" element={<ActivityCreate />} />
+              <Route element={<AuthGuard />} >
+                  <Route path="/activity/create" element={<ActivityCreate />} />
+                  <Route path="/activity/:category/:activityId/edit" element={<ActivityEdit />} />
+                  <Route path="/logout" element={<Logout />} />
+              
+              </Route>
 
               {/* Auth Routes */}
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
 
@@ -74,12 +79,6 @@ function App() {
               <Route
                 path="/activity/meditation/:activityId/details"
                 element={<MeditationDetails />}
-              />
-
-              {/* Edit Page */}
-              <Route
-                path="/activity/:category/:activityId/edit"
-                element={<ActivityEdit />}
               />
 
               {/* Fallback Route */}
