@@ -24,6 +24,7 @@ import CustomerReviewCreate from "./components/customer-review-create/CustomerRe
 import CustomerReviewShow from "./components/customer-review-show/CustomerReviewShow";
 import NotFound from "./components/notFound/NotFound";
 import AuthGuard from "./components/guards/AuthGuard";
+import GuestGuard from "./components/guards/GuestGuard";
 
 function App() {
   return (
@@ -44,8 +45,10 @@ function App() {
               </Route>
 
               {/* Auth Routes */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route element={<GuestGuard />}>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+              </Route>
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
 
