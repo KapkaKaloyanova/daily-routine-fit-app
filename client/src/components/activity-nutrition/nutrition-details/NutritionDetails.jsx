@@ -102,6 +102,7 @@ export default function NutritionDetails() {
           </div>
 
             {/* Edit/delete/comment nav */}
+            <div className="button-container2">
 
                 {isOwner && (
                   <>
@@ -116,6 +117,7 @@ export default function NutritionDetails() {
                   </button>
                   </>
                 )}
+            </div>
             </div>
         </div>
       <ReviewCreate 

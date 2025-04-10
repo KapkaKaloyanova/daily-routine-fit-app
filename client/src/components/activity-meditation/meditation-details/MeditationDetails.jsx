@@ -1,21 +1,23 @@
-import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-
-import { UserContext } from "../../../contexts/UserContext";
-import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
-import processImageUrl from "../../../utils/processImageUrl";
-import { useReviews } from "../../../api/reviewsApi";
-import Loader from "../../Loader";
 import ReviewShow from "../../review-show/ReviewShow";
 import ReviewCreate from "../../review-create/ReviewCreate";
+import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
+import useAuth from "../../../hooks/useAuth";
+import { useCreateReview, useReviews } from "../../../api/reviewsApi";
+import processImageUrl from "../../../utils/processImageUrl";
+import { useOptimistic } from "react";
+import Loader from "../../Loader";
+import { v4 as uuid } from 'uuid';
 
 export default function MeditationDetails(){
-    const navigate = useNavigate();
-    const { email, _id: userId } = useContext(UserContext);
-    const { activityId } = useParams();
-    const { activity } = useOneActivity(activityId);
-    const { deleteActivity } = useDeleteActivity();
-    const {reviews} = useReviews(activityId);
+  const navigate = useNavigate();
+  const { email, userId } = useAuth();
+  const { activityId } = useParams();
+  const { activity } = useOneActivity(activityId);
+  const { deleteActivity } = useDeleteActivity();
+  const { create } = useCreateReview();
+  const { reviews, addReview } = useReviews(activityId);
+  const [optimisticReviews, setOptimisticReviews] = useOptimistic( reviews, (state, newReview) => [...state, newReview]);
 
     if(!activity){
       return <Loader />; // or <div>Loading...</div>
@@ -36,8 +38,28 @@ export default function MeditationDetails(){
         navigate("/activity/meditation");
       };
 
-      const reviewCreateHandler = (newReview) => {
-        setReviews(state => [...state, newReview]);
+      const reviewCreateHandler = async (review) => {
+        // create Optimistic review
+        const newOptimisticReview = {
+          _id: uuid(),
+          _ownerId: userId,
+          activityId,
+          review,
+          pending: true,
+          author: {
+            email,
+          }
+        };
+    
+        // optimistic update
+        setOptimisticReviews(newOptimisticReview);
+    
+        // server update
+        const reviewResult = await create( activityId, review );
+    
+        // local state update
+        addReview({ ...reviewResult, author: { email }})
+    
       };
 
       const isOwner = userId === activity._ownerId;
@@ -72,12 +94,7 @@ export default function MeditationDetails(){
 
           {/* Edit/delete/comment nav */}
           <div className="button-container2">
-            <Link
-              className="edit_delete read_more"
-              to={`/review/create`}
-            >
-              Add review
-            </Link>
+
             {isOwner && (<>
               <Link
                 className="edit_delete read_more"
@@ -98,12 +115,12 @@ export default function MeditationDetails(){
           </div>
         </div>
       </div>
-      <ReviewShow reviews={reviews}/>
       <ReviewCreate 
         email={email} 
         activityId={activityId} 
         onCreate={reviewCreateHandler}
       />
+      <ReviewShow reviews={reviews}/>
       
     </>
     );
