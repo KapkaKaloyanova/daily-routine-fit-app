@@ -1,7 +1,7 @@
 
 
 export default function ReviewShow({
-  reviews
+  reviews,
 }) {
 
 
@@ -39,15 +39,15 @@ export default function ReviewShow({
               <div className="container">
                 <div className="carousel-caption relative">
                 {reviews.length > 0 
-                  ? reviews.map(({_id, _ownerId, review }) => (
+                  ? reviews.map(({_id, review, pending, author }) => (
                   <div key={_id} className="row d_flex">
                     <div className="col-md-2 col-sm-8">
                       <div className="pro_file">
                         <i>
                           <img src="/images/test2.png" alt="#" />
                         </i>
-                        <h4>User</h4>
-                        <span>{_ownerId}</span>
+                        <h4>{author?.email ? "User" : "Anonymous"}</h4>
+                        <span>{author?.email || "No email"}</span>
                       </div>
                     </div>
                     <div className="col-md-10">

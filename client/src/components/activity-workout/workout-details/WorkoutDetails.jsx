@@ -1,26 +1,27 @@
 import { Link, useNavigate, useParams } from "react-router";
-
-import { useCreateActivity, useDeleteActivity, useOneActivity } from "../../../api/activityApi";
-import processImageUrl from "../../../utils/processImageUrl";
-import { useCreateReview, useReviews } from "../../../api/reviewsApi";
-import { useContext } from "react";
-import { UserContext } from "../../../contexts/UserContext";
-import Loader from "../../Loader";
 import ReviewShow from "../../review-show/ReviewShow";
 import ReviewCreate from "../../review-create/ReviewCreate";
+import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
+import { useCreateReview, useReviews } from "../../../api/reviewsApi";
+import processImageUrl from "../../../utils/processImageUrl";
+import { useOptimistic } from "react";
+import Loader from "../../Loader";
+import { v4 as uuid } from 'uuid';
+
 
 export default function WorkoutDetails() {
   const navigate = useNavigate();
-  const { email, _id: userId} = useAuth();
+  const { email, userId} = useAuth();
   const { activityId } = useParams();
   const { activity } = useOneActivity(activityId);
   const { deleteActivity } = useDeleteActivity();
-  const { reviews, setReviews } = useReviews(activityId);
   const { create } = useCreateReview();
+  const { reviews, addReview } = useReviews(activityId);
+  const [optimisticReviews, setOptimisticReviews] = useOptimistic( reviews, (state, newReview) => [...state, newReview]);
 
 
-  console.log(reviews);
+  console.log(optimisticReviews);
 
   if (!activity) {
     return <Loader />;  
@@ -41,9 +42,27 @@ export default function WorkoutDetails() {
   };
 
   const reviewCreateHandler = async (review) => {
-    const newReview = await create( activityId, review );
+    // create Optimistic review
+    const newOptimisticReview = {
+      _id: uuid(),
+      _ownerId: userId,
+      activityId,
+      review,
+      pending: true,
+      author: {
+        email,
+      }
+    };
 
-    setReviews(state => [...state, newReview])
+    // optimistic update
+    setOptimisticReviews(newOptimisticReview);
+
+    // server update
+    const reviewResult = await create( activityId, review );
+
+    // local state update
+    addReview({ ...reviewResult, author: { email }})
+
   };
 
   const isOwner = userId === activity._ownerId;
@@ -103,7 +122,7 @@ export default function WorkoutDetails() {
         activityId={activityId} 
         onCreate={reviewCreateHandler}
       />
-      <ReviewShow reviews={reviews}/>
+      <ReviewShow reviews={optimisticReviews}/>
     </>
   );
 }

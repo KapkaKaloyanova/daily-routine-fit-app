@@ -58,7 +58,6 @@ export const useLatestActivity = ({category}) => {
     return {
         latestActivities,
     }
-
 };
 
 export const useCreateActivity = () => {

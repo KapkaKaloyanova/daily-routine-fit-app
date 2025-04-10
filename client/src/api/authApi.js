@@ -37,7 +37,7 @@ export const useLogin = () => {
     }
 };
 
-    // useRegister hook
+// useRegister hook
 export const useRegister = () => {
     const register = (email, password) =>
     request.post(`${baseUrl}/register`, { email, password });
@@ -63,9 +63,7 @@ export const useLogout = () => {
         };
 
         request.get(`${baseUrl}/logout`, null, options)
-            .then(() => {
-                userLogoutHandler();
-            })
+            .finally(userLogoutHandler);
     }, [accessToken, userLogoutHandler ] );
 
     return {
