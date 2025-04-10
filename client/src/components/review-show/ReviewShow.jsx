@@ -1,3 +1,4 @@
+import ReviewCarouselItem from "./ReviewCarouselItem";
 
 
 export default function ReviewShow({
@@ -26,45 +27,33 @@ export default function ReviewShow({
           data-ride="carousel"
         >
           <ol className="carousel-indicators">
-            <li
+            {reviews.map((_, index) => (
+
+              <li
+              key={index}
               data-target="#myCarousel"
-              data-slide-to={0}
-              className="active"
-            />
-            <li data-target="#myCarousel" data-slide-to={1} />
-            <li data-target="#myCarousel" data-slide-to={2} />
+              data-slide-to={index}
+              className={index === 0 ? "active" : ""}
+              />
+              ))}
           </ol>
+
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="container">
-                <div className="carousel-caption relative">
+
                 {reviews.length > 0 
-                  ? reviews.map(({_id, review, pending, author }) => (
-                  <div key={_id} className="row d_flex">
-                    <div className="col-md-2 col-sm-8">
-                      <div className="pro_file">
-                        <i>
-                          <img src="/images/test2.png" alt="#" />
-                        </i>
-                        <h4>{author?.email ? "User" : "Anonymous"}</h4>
-                        <span>{author?.email || "No email"}</span>
-                      </div>
-                    </div>
-                    <div className="col-md-10">
-                      <div className="test_box text_align_left">
-                        <p>{review}</p>
-                      </div>
-                    </div>
-                  </div>
-                  ))
-                  : <h1 className="titlepage text_align_center"> No Reviews yet. </h1>
-
-                  }
-
+                  ? (reviews.map(({_id, review, pending, author }, index) => (
+                    <ReviewCarouselItem 
+                      key={_id}
+                      review={review}
+                      author={author}
+                      isActive={index === 0} // set active for first item
+                    />
+                  )))
+                  : (
+                    <h1 className="titlepage text_align_center"> No Reviews yet. </h1>
+                  )}
                 </div>
-              </div>
-            </div>
-          </div>
+
           <a
             className="carousel-control-prev"
             href="#myCarousel"

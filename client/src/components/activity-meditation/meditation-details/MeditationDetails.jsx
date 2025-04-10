@@ -120,7 +120,7 @@ export default function MeditationDetails(){
         activityId={activityId} 
         onCreate={reviewCreateHandler}
       />
-      <ReviewShow reviews={reviews}/>
+      <ReviewShow reviews={optimisticReviews}/>
       
     </>
     );

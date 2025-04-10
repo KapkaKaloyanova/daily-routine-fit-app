@@ -12,7 +12,7 @@ export default function useAuth() {
                 ...options.headers
             }
         };
-        return request.baseRequest(method, url, data, authOptions);
+        return request.baseRequest(method, url, data, accessToken ? authOptions : options);
     },[accessToken]);
         
     const requestObject = useMemo(() => ({

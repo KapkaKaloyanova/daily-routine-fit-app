@@ -125,7 +125,7 @@ export default function NutritionDetails() {
         activityId={activityId} 
         onCreate={reviewCreateHandler}
         />
-        {<ReviewShow reviews={reviews}/>}
+        {<ReviewShow reviews={optimisticReviews}/>}
     </>
   );
 }
