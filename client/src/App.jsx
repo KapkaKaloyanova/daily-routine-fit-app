@@ -24,7 +24,6 @@ import NotFound from "./components/notFound/NotFound";
 import AuthGuard from "./components/guards/AuthGuard";
 import GuestGuard from "./components/guards/GuestGuard";
 import ReviewShow from "./components/review-show/ReviewShow";
-import ReviewCreate from "./components/review-create/ReviewCreate";
 
 function App() {
   return (
@@ -49,15 +48,10 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
               </Route>
-              <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />
 
               {/* Customer Reviews */}
               <Route path="/review" element={<ReviewShow />} />
-              {/* <Route
-                path="/review/create"
-                element={<ReviewCreate />}
-              /> */}
 
               {/* Catalogs */}
               <Route path="/activity/workout" element={<WorkoutCatalog />} />

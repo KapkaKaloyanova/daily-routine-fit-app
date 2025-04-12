@@ -17,13 +17,12 @@ function reviewsReducer(state, action) {
 
 export const useReviews = (activityId) => {
     const { request } = useAuth();
-    // const [ reviews, setReviews ] = useState([]);
-    const [reviews, dispatch] = useReducer(reviewsReducer, [])
+    const [reviews, dispatch] = useReducer(reviewsReducer, []) // [] = initial state
 
     useEffect( () => {
         const searchParams = new URLSearchParams({
             where: `activityId="${activityId}"`,
-            load: `author=_ownerId:users`,
+            load: `author=_ownerId:users`, // from relations from the practice server
         });
 
         request.get(`${baseUrl}?${searchParams.toString()}`)

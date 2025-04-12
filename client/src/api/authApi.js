@@ -23,6 +23,7 @@ export const useLogin = () => {
                 // console.log('Login request aborted');
             // } else {
                 // console.log('Login failed:', error);
+                // throw error;
             // }
         // }
     };
