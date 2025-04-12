@@ -11,8 +11,10 @@ export default function UserProvider({
   };
 
   const userLogoutHandler = () => {
+    localStorage.removeItem('auth'); // optimization: remove from localStorage
     setAuthData({});
-  };
+  }; // resets UserContext.Provider with an empty object authData 
+  
 
   return (
     <UserContext.Provider

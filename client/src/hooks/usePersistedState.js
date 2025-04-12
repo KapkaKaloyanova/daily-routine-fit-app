@@ -21,7 +21,7 @@ import { useState } from "react";
  
          const persistedData = JSON.stringify(data);
  
-         localStorage.setItem(stateKey, persistedData);
+         localStorage.setItem(stateKey, persistedData); 
  
          setState(data);
      };
