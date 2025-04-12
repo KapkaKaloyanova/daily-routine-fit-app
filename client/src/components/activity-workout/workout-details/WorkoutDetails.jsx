@@ -5,7 +5,7 @@ import { useDeleteActivity, useOneActivity } from "../../../api/activityApi";
 import useAuth from "../../../hooks/useAuth";
 import { useCreateReview, useReviews } from "../../../api/reviewsApi";
 import processImageUrl from "../../../utils/processImageUrl";
-import { useOptimistic } from "react";
+import { startTransition, useOptimistic } from "react";
 import Loader from "../../Loader";
 import { v4 as uuid } from 'uuid';
 
@@ -42,26 +42,35 @@ export default function WorkoutDetails() {
   };
 
   const reviewCreateHandler = async (review) => {
+    const authorEmail = email || 'guest@example.com'; // for guests
+    const authorId = userId || 'guest'; // for guests
+    
+    if(!review){
+      console.error('No review provided');
+      return;
+    }
     // create Optimistic review
     const newOptimisticReview = {
       _id: uuid(),
-      _ownerId: userId,
+      _ownerId: userId || 'guest',
       activityId,
       review,
       pending: true,
       author: {
-        email,
+        email: authorEmail,
       }
     };
 
-    // optimistic update
-    setOptimisticReviews(newOptimisticReview);
+    // optimistic update 
+    startTransition(()=>{
+      setOptimisticReviews((prevState) => [...prevState, newOptimisticReview]);
+    });
 
     // server update
     const reviewResult = await create( activityId, review );
 
     // local state update
-    addReview({ ...reviewResult, author: { email }})
+    addReview({ ...reviewResult, author: { email: authorEmail }})
 
   };
 

@@ -3,8 +3,15 @@ export default function ReviewCreate({
   onCreate, 
 }) {
 
-  const reviewAction = async (formData) => {
+  const reviewAction = async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
       const review = formData.get("review");
+
+      if(!review){
+        console.error('Review is empty');
+        return;
+      }
   
       if (onCreate && typeof onCreate === 'function') {
         onCreate(review);  
