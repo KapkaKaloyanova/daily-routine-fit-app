@@ -1,5 +1,5 @@
 import { useActionState, useContext } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useLogin } from "../../api/authApi";
 import { UserContext } from "../../contexts/UserContext";
 
@@ -8,6 +8,8 @@ export default function Login() {
   const navigate = useNavigate();
   const { userLoginHandler } = useContext(UserContext); 
   const { login } = useLogin();
+  const location = useLocation();
+  const from = location.state?.from || '/'
  
   const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
@@ -15,7 +17,8 @@ export default function Login() {
     
     userLoginHandler(authData);
     
-    navigate(-1);
+    // navigate(-1); back in history, but it will be upgraded to:
+    navigate(from, { replace:true }); // redirects to place where it was before login
     
     return values;
 
