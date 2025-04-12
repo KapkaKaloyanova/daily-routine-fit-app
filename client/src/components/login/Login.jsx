@@ -9,7 +9,6 @@ export default function Login() {
   const { userLoginHandler } = useContext(UserContext); 
   const { login } = useLogin();
   const location = useLocation();
-  const from = location.state?.from || '/'
  
   const loginHandler = async (_, formData) => {
     const values = Object.fromEntries(formData);
@@ -18,6 +17,7 @@ export default function Login() {
     userLoginHandler(authData);
     
     // navigate(-1); back in history, but it will be upgraded to:
+    const from = location.state?.from || '/';
     navigate(from, { replace:true }); // redirects to place where it was before login
     
     return values;
