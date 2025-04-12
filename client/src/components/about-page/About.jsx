@@ -1,5 +1,6 @@
-import { Link } from "react-router";
-import CustomerReviewShow from "../review-show/ReviewShow";
+import Pricing from "../Pricing";
+import Blog from "../Blog";
+import ContactPage from "../ContactPage";
 
 export default function About() {
   return (
@@ -42,7 +43,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      {/* <CustomerReviewShow /> */}
+      <ContactPage />
+      <Blog />
+      <Pricing />
     </>
   );
 }

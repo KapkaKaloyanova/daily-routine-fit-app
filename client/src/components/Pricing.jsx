@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Pricing(){
     return (
         <>
@@ -8,8 +10,7 @@ export default function Pricing(){
           <div className="titlepage text_align_center">
             <h2>Our Priceing </h2>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu
+              If you want to use our special activities or to have a personal activity plan you can choose your option here. 
             </p>
           </div>
         </div>
@@ -31,9 +32,9 @@ export default function Pricing(){
                     <br /> magna aliqua. Utenim <br /> ad minim aliquip
                   </p>
                 </div>
-                <a className="read_more" href="javascript:void(0)">
-                  Read More
-                </a>
+                <Link className="read_more" to="javascript:void(0)">
+                  Comming soon
+                </Link>
               </div>
             </div>
             <div className="col-md-6">
@@ -50,9 +51,9 @@ export default function Pricing(){
                     <br /> magna aliqua. Utenim <br /> ad minim aliquip
                   </p>
                 </div>
-                <a className="read_more" href="javascript:void(0)">
-                  Read More
-                </a>
+                <Link className="read_more" to="javascript:void(0)">
+                  Comming soon
+                </Link>
               </div>
             </div>
           </div>
