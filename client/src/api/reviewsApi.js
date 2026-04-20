@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import useAuth from "../hooks/useAuth";
 
-const baseUrl = 'http://localhost:3030/data/comments';
+const baseUrl = 'https://daily-routine-fit-app.onrender.com/data/comments';
 
 
 function reviewsReducer(state, action) {

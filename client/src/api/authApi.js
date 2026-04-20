@@ -3,7 +3,7 @@ import { useContext } from "react";
 import request from "../utils/request";
 import { UserContext } from "../contexts/UserContext";
 
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = 'https://daily-routine-fit-app.onrender.com/users';
 
     // useLogin hook with abort controller
 export const useLogin = () => {
